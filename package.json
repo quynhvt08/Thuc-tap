@@ -21,7 +21,7 @@
     "@ant-design/icons": "^5.3.1",
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
+    "@emotion/styled": "^11.11.0",
     "@fontsource/inter": "^5.0.17",
     "@fontsource/poppins": "^5.0.12",
     "@fontsource/public-sans": "^5.0.17",
@@ -29,15 +29,15 @@
     "@mui/base": "^5.0.0-beta.38",
     "@mui/icons-material": "^5.15.17",
     "@mui/lab": "^5.0.0-alpha.167",
-    "@mui/material": "^5.15.17",
+    "@mui/material": "^5.15.12",
     "@mui/system": "^5.15.12",
     "@svgr/webpack": "^8.1.0",
     "@vitejs/plugin-react": "^4.2.1",
     "apexcharts": "^3.49.0",
-    "country-state-city": "^3.2.1",
-    "express": "^4.19.2",
+    "axios": "0.25.0",
     "formik": "^2.4.5",
     "framer-motion": "^11.0.8",
+    "json-server": "^1.0.0-beta.0",
     "lodash": "^4.17.21",
     "process": "^0.11.10",
     "prop-types": "^15.8.1",
@@ -52,9 +52,7 @@
     "simplebar-react": "^3.2.4",
     "slick-carousel": "^1.8.1",
     "swr": "^2.2.5",
-    "tinh": "^0.1.0",
     "util": "^0.12.5",
-    "vite": "^5.2.10",
     "vite-jsconfig-paths": "^2.0.1",
     "web-vitals": "^3.5.2",
     "yup": "^1.4.0"
@@ -96,6 +94,7 @@
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^3.2.5",
-    "react-error-overlay": "6.0.11"
+    "react-error-overlay": "6.0.11",
+    "vite": "^5.2.11"
   }
 }

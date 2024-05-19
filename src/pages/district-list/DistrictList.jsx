@@ -1,121 +1,100 @@
-import React, { useState, useEffect } from 'react';
-import { State, City } from 'country-state-city';
-import { Stack, FormControl, Select, MenuItem } from '@mui/material';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
-import TableSortLabel from '@mui/material/TableSortLabel';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import DeleteIcon from '@mui/icons-material/Delete';
-import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
+import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, Toolbar, Typography, Paper, Checkbox, IconButton, Tooltip, FormControlLabel, Switch, Stack, Button } from '@mui/material';
 import { visuallyHidden } from '@mui/utils';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import Button from '@mui/material/Button';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import { useTheme } from '@mui/material/styles';
+import FirstPageIcon from '@mui/icons-material/FirstPage';
+import LastPageIcon from '@mui/icons-material/LastPage';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import axios from 'axios';
+import Filter from './Filter_District';
+import Edit from './Edit_District';
+import Add from './Add_District';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-function createData(id,name,cityname,action) {
-  return {id,name,cityname, action};
-}
-
-const rows = [
-  createData(1,'Thành Phố Vũng Tàu','Bà Rịa - Vũng Tàu'),
-  createData(2, 'Quận 1','Hồ Chí Minh'),
-  createData(3, 'Quận Đống Đa','Hà Nội'),
-  createData(4, 'Quận Ba Đình','Hà Nội'),
-  createData(5,'Thành Phố Bà Rịa','Bà Rịa - Vũng Tàu'),
-  createData(6, 'Quận 7','Hồ Chí Minh'),
-  createData(7, 'Quận 5','Hồ Chí Minh'),
-  createData(8, 'Quận 10','Hồ Chí Minh'),
-];
-
-const squareButtonStyle = {
-  minWidth: '36px',
-  height: '36px',
-  borderRadius: '0.35em',
-  padding: '10px',
+const handleDetail = (event) => {
+  event.stopPropagation();
 };
 
-
-function descendingComparator(a, b, orderBy) {
-  if (b[orderBy] < a[orderBy]) {
-    return -1;
-  }
-  if (b[orderBy] > a[orderBy]) {
-    return 1;
-  }
-  return 0;
+function createData(id, cityname, name, code, path_with_type) {
+  return { id, cityname, name, code, path_with_type };
 }
 
-function getComparator(order, orderBy) {
-  return order === 'desc'
-    ? (a, b) => descendingComparator(a, b, orderBy)
-    : (a, b) => -descendingComparator(a, b, orderBy);
+// PHÂN TRANG
+function TablePaginationActions(props) {
+  const theme = useTheme();
+  const { count, page, rowsPerPage, onPageChange } = props;
+
+  const handleFirstPageButtonClick = (event) => {
+    onPageChange(event, 0);
+  };
+
+  const handleBackButtonClick = (event) => {
+    onPageChange(event, page - 1);
+  };
+
+  const handleNextButtonClick = (event) => {
+    onPageChange(event, page + 1);
+  };
+
+  const handleLastPageButtonClick = (event) => {
+    onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
+  };
+
+  return (
+    <Box sx={{ flexShrink: 0, ml: 2.5 }}>
+      <IconButton
+        onClick={handleFirstPageButtonClick}
+        disabled={page === 0}
+        aria-label="first page"
+      >
+        {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
+      </IconButton>
+      <IconButton
+        onClick={handleBackButtonClick}
+        disabled={page === 0}
+        aria-label="previous page"
+      >
+        {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+      </IconButton>
+      <IconButton
+        onClick={handleNextButtonClick}
+        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+        aria-label="next page"
+      >
+        {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+      </IconButton>
+      <IconButton
+        onClick={handleLastPageButtonClick}
+        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+        aria-label="last page"
+      >
+        {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
+      </IconButton>
+    </Box>
+  );
 }
 
-function stableSort(array, comparator) {
-  const stabilizedThis = array.map((el, index) => [el, index]);
-  stabilizedThis.sort((a, b) => {
-    const order = comparator(a[0], b[0]);
-    if (order !== 0) {
-      return order;
-    }
-    return a[1] - b[1];
-  });
-  return stabilizedThis.map((el) => el[0]);
-}
+TablePaginationActions.propTypes = {
+  count: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
+  rowsPerPage: PropTypes.number.isRequired,
+};
 
 const headCells = [
-  {
-    id: 'id',
-    numeric: false,
-    disablePadding: true,
-    label: 'STT',
-  },
-  {
-    id: 'cityname',
-    numeric: false,
-    disablePadding: true,
-    label: 'Tên Tỉnh/Thành Phố',
-  },
-  
-  {
-    id: 'name',
-    numeric: false,
-    disablePadding: true,
-    label: 'Tên Quận/Huyện',
-  },
-
-  {
-    id: 'action',
-    numeric: false,
-    disablePadding: true,
-    label: 'Action',
-  },
+  { id: 'code', numeric: false, disablePadding: true, label: 'Mã' },
+  { id: 'name', numeric: false, disablePadding: true, label: 'Tên Quận/Huyện' },
+  { id: 'cityname', numeric: false, disablePadding: true, label: 'Tên Tỉnh/Thành Phố' },
+  { id: 'path_with_type', numeric: false, disablePadding: true, label: 'Chi tiết' },
+  { id: 'action', numeric: false, disablePadding: true, label: 'Action' },
 ];
 
 function EnhancedTableHead(props) {
-
-  
-  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } =
-    props;
-  const createSortHandler = (property) => (event) => {
-    onRequestSort(event, property);
-  };
+  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
+  const createSortHandler = (property) => (event) => { onRequestSort(event, property); };
 
   return (
     <TableHead>
@@ -126,9 +105,7 @@ function EnhancedTableHead(props) {
             indeterminate={numSelected > 0 && numSelected < rowCount}
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
-            inputProps={{
-              'aria-label': 'select all desserts',
-            }}
+            inputProps={{ 'aria-label': 'select all desserts' }}
           />
         </TableCell>
         {headCells.map((headCell) => (
@@ -167,20 +144,41 @@ EnhancedTableHead.propTypes = {
 };
 
 function EnhancedTableToolbar(props) {
-  const { numSelected } = props;
+  const { numSelected, rows } = props;
+  const [open, setOpen] = React.useState(false);
+  const [formData, setFormData] = useState({
+    cityname: '',
+    name: '',
+    code: '',
+    path_with_type: ''
+  });
+  // MỞ DIALOG
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  // ĐÓNG DIALOG
+  const handleClose = () => {
+    setOpen(false);
+  };
 
-  // bộ lọc
-  const [provinces, setProvinces] = useState([]);
-  const [filterProvince, setFilterProvince] = useState('');
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
 
-  useEffect(() => {
-    const vietnamProvinces = State.getStatesOfCountry('VN');
-    setProvinces(vietnamProvinces);
-  }, []);
-
-  const handleProvinceChange = (e) => {
-    const stateCode = e.target.value;
-    setFilterProvince(stateCode);
+  // DELETE API
+  const deleteDistrict = async (slug) => {
+    try {
+      console.log('Deleting district with slug:', slug); // In ra giá trị slug trước khi gửi yêu cầu DELETE
+      await axios.delete(`http://localhost:3002/districts/${slug}`);
+      fetchDistricts(); // Cập nhật lại danh sách quận/huyện sau khi xóa thành công
+      console.log('District deleted successfully');
+    } catch (error) {
+      console.error('Error deleting district:', error);
+    }
   };
 
   return (
@@ -194,7 +192,6 @@ function EnhancedTableToolbar(props) {
         }),
       }}
     >
-      
       {numSelected > 0 ? (
         <Typography
           sx={{ flex: '1 1 100%' }}
@@ -207,65 +204,27 @@ function EnhancedTableToolbar(props) {
       ) : (
         <>
           <Typography
-          sx={{ flex: '1 1 100%' }}
-          variant="h6"
-          id="tableTitle"
-          component="div"
+            sx={{ flex: '1 1 100%' }}
+            variant="h6"
+            id="tableTitle"
+            component="div"
           >
-          <h2>Danh sách Quận / Huyện</h2>
-          <Toolbar>
-          <FilterAltIcon /> {/* Biểu tượng lọc ở đây */} Lọc &nbsp;&nbsp;
-          <Stack spacing={2} direction="row">
-          <FormControl variant="outlined">
-          <Select value={filterProvince} onChange={handleProvinceChange} displayEmpty>
-          <MenuItem value="">
-            <span>Tất cả các tỉnh</span>
-          </MenuItem>
-          {provinces.map((province) => (
-            <MenuItem key={province.isoCode} value={province.isoCode}>
-              {province.name}
-            </MenuItem>
-          ))}
-        </Select>
-        </FormControl>
-          </Stack>
-          </Toolbar>
-
+            <h3>Danh sách Quận/ Huyện</h3>
+            <Filter/>
           </Typography>
-          <Stack spacing={2} sx={{ width: 300 }}>
-            <Autocomplete
-              freeSolo
-              id="free-solo-2-demo"
-              disableClearable
-              options={rows.map((option) => option.cityname)}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Search input"
-                  InputProps={{
-                    ...params.InputProps,
-                    type: 'search',
-                  }}
-                />
-              )}
-            />
-          </Stack>
         </>
       )}
 
       {numSelected > 0 ? (
         <Tooltip title="Delete">
-          <IconButton>
+          <IconButton onClick={() => deleteDistrict(selected[0])}>
             <DeleteIcon />
           </IconButton>
         </Tooltip>
       ) : (
-        
-        <Tooltip title="Add student">
-          <IconButton>
-            <PersonAddAlt1Icon />
-          </IconButton>
-        </Tooltip>
+        <>
+        <Add/>
+        </>
       )}
     </Toolbar>
   );
@@ -273,15 +232,40 @@ function EnhancedTableToolbar(props) {
 
 EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
+  rows: PropTypes.array.isRequired,
 };
 
 export default function EnhancedTable() {
   const [order, setOrder] = React.useState('asc');
-  const [orderBy, setOrderBy] = React.useState('calories');
+  const [orderBy, setOrderBy] = React.useState('name');
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rows, setRows] = React.useState([]);
+
+  useEffect(() => {
+    axios.all([
+      axios.get('http://localhost:3001/data'),
+      axios.get('http://localhost:3002/districts')
+    ]).then(axios.spread((citiesResponse, districtsResponse) => {
+      const citiesData = citiesResponse.data;
+      const districtsData = districtsResponse.data;
+
+      const formattedData = districtsData.map(district => {
+        const city = citiesData.find(city => city.code === district.parent_code);
+        return createData(
+          district.id,
+          city ? city.name_with_type : 'N/A',
+          district.name_with_type,
+          district.code,
+          district.path_with_type
+        );
+      });
+
+      setRows(formattedData);
+    })).catch(error => console.error('Error fetching data:', error));
+  }, []);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -289,15 +273,10 @@ export default function EnhancedTable() {
     setOrderBy(property);
   };
 
-  const handleDetail = (event) => {
-    // Ngăn chặn sự kiện click từ lan ra các phần tử con bên trong
-    event.stopPropagation();
-  };
-
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.id);
-      setSelected(newSelected);
+      const newSelecteds = rows.map((n) => n.id);
+      setSelected(newSelecteds);
       return;
     }
     setSelected([]);
@@ -319,6 +298,7 @@ export default function EnhancedTable() {
         selected.slice(selectedIndex + 1),
       );
     }
+
     setSelected(newSelected);
   };
 
@@ -337,23 +317,39 @@ export default function EnhancedTable() {
 
   const isSelected = (id) => selected.indexOf(id) !== -1;
 
-  // Avoid a layout jump when reaching the last page with empty rows.
-  const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
-  const visibleRows = React.useMemo(
-    () =>
-      stableSort(rows, getComparator(order, orderBy)).slice(
-        page * rowsPerPage,
-        page * rowsPerPage + rowsPerPage,
-      ),
-    [order, orderBy, page, rowsPerPage],
-  );
+  // Hàm sắp xếp
+  const stableSort = (array, comparator) => {
+    const stabilizedThis = array.map((el, index) => [el, index]);
+    stabilizedThis.sort((a, b) => {
+      const order = comparator(a[0], b[0]);
+      if (order !== 0) return order;
+      return a[1] - b[1];
+    });
+    return stabilizedThis.map((el) => el[0]);
+  };
+
+  const getComparator = (order, orderBy) => {
+    return order === 'desc'
+      ? (a, b) => descendingComparator(a, b, orderBy)
+      : (a, b) => -descendingComparator(a, b, orderBy);
+  };
+
+  const descendingComparator = (a, b, orderBy) => {
+    if (b[orderBy] < a[orderBy]) {
+      return -1;
+    }
+    if (b[orderBy] > a[orderBy]) {
+      return 1;
+    }
+    return 0;
+  };
 
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <EnhancedTableToolbar numSelected={selected.length} />
+        <EnhancedTableToolbar numSelected={selected.length} rows={rows} />
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
@@ -369,59 +365,46 @@ export default function EnhancedTable() {
               rowCount={rows.length}
             />
             <TableBody>
-              {visibleRows.map((row, index) => {
-                const isItemSelected = isSelected(row.id);
-                const labelId = `enhanced-table-checkbox-${index}`;
+              {stableSort(rows, getComparator(order, orderBy))
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((row, index) => {
+                  const isItemSelected = isSelected(row.id);
+                  const labelId = `enhanced-table-checkbox-${index}`;
 
-                return (
-                  <TableRow
-                    hover
-                    onClick={(event) => handleClick(event, row.id)}
-                    role="checkbox"
-                    aria-checked={isItemSelected}
-                    tabIndex={-1}
-                    key={row.id}
-                    selected={isItemSelected}
-                    sx={{ cursor: 'pointer' }}
-                  >
-                    <TableCell padding="checkbox">
-                      <Checkbox
-                        color="primary"
-                        checked={isItemSelected}
-                        inputProps={{
-                          'aria-labelledby': labelId,
-                        }}
-                      />
-                    </TableCell>
-                    <TableCell
-                      component="th"
-                      id={labelId}
-                      scope="row"
-                      padding="none"
+                  return (
+                    <TableRow
+                      hover
+                      onClick={(event) => handleClick(event, row.id)}
+                      role="checkbox"
+                      aria-checked={isItemSelected}
+                      tabIndex={-1}
+                      key={row.id}
+                      selected={isItemSelected}
                     >
-                      {row.id}
-                    </TableCell>
-                    <TableCell align="left">{row.cityname}</TableCell>
-                    <TableCell align="left">{row.name}</TableCell>
-                    <TableCell align="left">{row.action}
-                    {/* <a href="/free/Chitiethoso" target="_self"> */}
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        style={squareButtonStyle}
-                        onClick={handleDetail}>Chỉnh sửa
-                    </Button>
-                    {/* </a> */}
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
+                      <TableCell padding="checkbox">
+                        <Checkbox
+                          color="primary"
+                          checked={isItemSelected}
+                          inputProps={{ 'aria-labelledby': labelId }}
+                        />
+                      </TableCell>
+                      <TableCell component="th" id={labelId} scope="row" padding="none">
+                        {row.code}
+                      </TableCell>
+                      <TableCell align="left">{row.name}</TableCell>
+                      <TableCell align="left">{row.cityname}</TableCell>                    
+                      <TableCell align="left">{row.path_with_type}</TableCell>
+                      <TableCell align="left">
+                        <Stack direction="row" spacing={1}>
+                          <Button onClick={handleDetail} variant="outlined" color="primary" size="small">Xem</Button>
+                          <Button variant="outlined" color="secondary" size="small">Sửa</Button>
+                        </Stack>
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
               {emptyRows > 0 && (
-                <TableRow
-                  style={{
-                    height: (dense ? 33 : 53) * emptyRows,
-                  }}
-                >
+                <TableRow style={{ height: (dense ? 33 : 53) * emptyRows }}>
                   <TableCell colSpan={6} />
                 </TableRow>
               )}
@@ -436,6 +419,7 @@ export default function EnhancedTable() {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+          ActionsComponent={TablePaginationActions}
         />
       </Paper>
       <FormControlLabel

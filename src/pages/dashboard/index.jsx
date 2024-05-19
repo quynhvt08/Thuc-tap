@@ -93,7 +93,7 @@ export default function DashboardDefault() {
           </Box>
           <MonthlyBarChart />
         </MainCard>
-      </Grid>
+  </Grid>
 
       {/* row 3 */}
       <Grid item xs={12} md={7} lg={8}>
