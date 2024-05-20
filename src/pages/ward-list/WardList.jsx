@@ -25,7 +25,6 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 
-
 const handleDetail = (event) => {
   event.stopPropagation();
 };
@@ -158,12 +157,13 @@ EnhancedTableHead.propTypes = {
 };
 
 function EnhancedTableToolbar(props) {
-  const { rows } = props;
+  const { rows, setRows } = props;
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
+    name_with_type: '',
     code: '',
-    type: ''
+    type: '',
+    path_with_type: ''
   });
 
   //MỞ DIALOG
@@ -188,12 +188,28 @@ function EnhancedTableToolbar(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/data', formData);
-      window.location.reload(); //load lại trang để hiện data mới
-      handleClose(); // Đóng dialog sau khi thêm thành công
+      const response = await axios.post('http://localhost:3003/wards', formData);
+      const newEntry = response.data;
+      setRows(prevRows => {
+        const updatedRows = [...prevRows, newEntry].map(item => {
+          if (item.type === 'phuong') {
+            return { ...item, type: 'Phường' };
+          } else if (item.type === 'xa') {
+            return { ...item, type: 'Xã' };
+          } else if (item.type === 'thi-tran') {
+            return { ...item, type: 'Thị trấn' };
+          } else if (item.type === 'tinh') {
+            return { ...item, type: 'Tỉnh' };
+          } else if (item.type === 'quan') {
+            return { ...item, type: 'Quận' };
+          }
+          return item;
+        });
+        return updatedRows;
+      });
+      handleClose();
     } catch (error) {
-      console.error('Error adding city:', error);
-      // Xử lý lỗi nếu có
+      console.error('Lỗi khi thêm tỉnh/thành phố:', error);
     }
   };
 
@@ -239,7 +255,7 @@ function EnhancedTableToolbar(props) {
         </Tooltip>
         {/* DIALOG VÀ FORM DÙNG ĐỂ ADD DATA */}
         <Dialog open={open} onClose={handleClose}>
-          <DialogTitle>Thêm mới 1 Tỉnh/Thành Phố</DialogTitle>
+          <DialogTitle>Thêm mới 1 Phường/Xã</DialogTitle>
           <DialogContent>
             <DialogContentText>
               Nhập đầy đủ các trường thông tin dưới đây để thêm mới 1 bản ghi.
@@ -250,12 +266,12 @@ function EnhancedTableToolbar(props) {
                   autoFocus
                   required
                   margin="normal"
-                  name="name"
-                  label="Tên Tỉnh/Thành Phố"
+                  name="name_with_type"
+                  label="Tên Phường/Xã"
                   type="text"
                   fullWidth
                   variant="outlined"
-                  value={formData.name}
+                  value={formData.name_with_type}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -264,7 +280,7 @@ function EnhancedTableToolbar(props) {
                   required
                   margin="normal"
                   name="code"
-                  label="Mã Tỉnh/Thành Phố"
+                  label="Mã Phường/Xã"
                   type="text"
                   fullWidth
                   variant="outlined"
@@ -282,6 +298,19 @@ function EnhancedTableToolbar(props) {
                   fullWidth
                   variant="outlined"
                   value={formData.type}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <FormControl>
+                <TextField
+                  required
+                  margin="normal"
+                  name="path_with_type"
+                  label="Chi tiết"
+                  type="text"
+                  fullWidth
+                  variant="outlined"
+                  value={formData.path_with_type}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -314,10 +343,29 @@ export default function EnhancedTable() {
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false); 
   const [selectedRowId, setSelectedRowId] = useState(null);
   const [selectedRowData, setSelectedRowData] = useState(null);
+  //LẤY DATA
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios('http://localhost:3003/wards');
-      setRows(result.data);
+      try {
+        const result = await axios.get('http://localhost:3003/wards');
+        const processedData = result.data.map(item => {
+          if (item.type === 'phuong') {
+            return { ...item, type: 'Phường' };
+          } else if (item.type === 'xa') {
+            return { ...item, type: 'Xã' };
+          } else if (item.type === 'thi-tran') {
+            return { ...item, type: 'Thị trấn' };
+          } else if (item.type === 'tinh') {
+            return { ...item, type: 'Tỉnh' };
+          } else if (item.type === 'quan') {
+            return { ...item, type: 'Quận' };
+          } 
+          return item;
+        });
+        setRows(processedData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     };
     fetchData();
   }, []);
@@ -325,12 +373,39 @@ export default function EnhancedTable() {
   useEffect(() => {
     setFilterRows(rows);
   }, [rows]);
-
+  //HANDLE SORT
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
     setOrderBy(property);
   };
+  const sortedRows = React.useMemo(() => {
+    return stableSort(filterRows, getComparator(order, orderBy));
+  }, [filterRows, order, orderBy]);
+  function getComparator(order, orderBy) {
+    return order === 'desc'
+      ? (a, b) => descendingComparator(a, b, orderBy)
+      : (a, b) => -descendingComparator(a, b, orderBy);
+  }
+  function descendingComparator(a, b, orderBy) {
+    if (b[orderBy] < a[orderBy]) {
+      return -1;
+    }
+    if (b[orderBy] > a[orderBy]) {
+      return 1;
+    }
+    return 0;
+  }
+  function stableSort(array, comparator) {
+    const stabilizedThis = array.map((el, index) => [el, index]);
+    stabilizedThis.sort((a, b) => {
+      const order = comparator(a[0], b[0]);
+      if (order !== 0) return order;
+      return a[1] - b[1];
+    });
+    return stabilizedThis.map((el) => el[0]);
+  }
+  //END OF HANDLE SORT
 
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
@@ -355,7 +430,7 @@ export default function EnhancedTable() {
   // };
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3001/data/${selectedRowId}`);
+      await axios.delete(`http://localhost:3003/wards/${selectedRowId}`);
       setRows(rows.filter((row) => row.id !== selectedRowId));
       setFilterRows(filterRows.filter((row) => row.id !== selectedRowId));
       handleCloseDeleteDialog();
@@ -366,22 +441,16 @@ export default function EnhancedTable() {
   const handleEdit = async () => {
     console.log("info: ", selectedRowData);
     try {
-
-      // Gửi request API cập nhật thông tin đến JSON server
-      await axios.put(`http://localhost:3001/data/${selectedRowId}`, selectedRowData);
-      
-      // Cập nhật thông tin trong rows và filterRows
+      await axios.put(`http://localhost:3003/wards/${selectedRowId}`, selectedRowData);
       const updatedRows = rows.map(row =>
         row.id === selectedRowId ? selectedRowData : row
       );
       setRows(updatedRows);
       setFilterRows(updatedRows);
       setSelectedRowId(null);
-      // Đóng dialog
       handleCloseEditDialog();
     } catch (error) {
       console.error("Lỗi khi cập nhật dữ liệu:", error);
-      // Xử lý lỗi (nếu cần)
     }
   };
   const handleClickOpenEditDialog = (rowData) => {
@@ -404,361 +473,371 @@ export default function EnhancedTable() {
   };
 
   // BỘ LỌC
-const [filterOpen, setFilterOpen] = useState(false);
-const [provinces, setProvinces] = useState([]);
-const [districts, setDistricts] = useState([]);
-const [wards, setWards] = useState([]);
-const [filteredDistricts, setFilteredDistricts] = useState([]);
-const [filteredWards, setFilteredWards] = useState([]);
-const [selectedProvince, setSelectedProvince] = useState('');
-const [selectedDistrict, setSelectedDistrict] = useState('');
-const [selectedWard, setSelectedWard] = useState('');
-const [filteredResults, setFilteredResults] = useState([]);
-const [filteredTableData, setFilteredTableData] = useState([]);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [provinces, setProvinces] = useState([]);
+  const [districts, setDistricts] = useState([]);
+  const [wards, setWards] = useState([]);
+  const [filteredDistricts, setFilteredDistricts] = useState([]);
+  const [filteredWards, setFilteredWards] = useState([]);
+  const [selectedProvince, setSelectedProvince] = useState('');
+  const [selectedDistrict, setSelectedDistrict] = useState('');
+  const [selectedWard, setSelectedWard] = useState('');
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [filteredTableData, setFilteredTableData] = useState([]);
 
 
-const boxRef = useRef(null);
+  const boxRef = useRef(null);
 
-// LẤY KẾT QUẢ TỈNH/ THÀNH PHỐ CHO BỘ LỌC
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('http://localhost:3001/data');
-      setProvinces(response.data.map(({ _id, code, name_with_type }) => ({ id: _id, code, name: name_with_type })));
-    } catch (error) {
-      console.error('Error fetching provinces:', error);
-    }
-  };
-
-  fetchData();
-}, []);
-
-// LẤY KẾT QUẢ QUẬN HUYỆN CHO BỘ LỌC
-useEffect(() => {
-  if (selectedProvince) {
-    const fetchDistricts = async () => {
+  // LẤY KẾT QUẢ TỈNH/ THÀNH PHỐ CHO BỘ LỌC
+  useEffect(() => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3002/districts?provinceCode=${selectedProvince}`);
-        setDistricts(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
+        const response = await axios.get('http://localhost:3001/data');
+        setProvinces(response.data.map(({ _id, code, name_with_type }) => ({ id: _id, code, name: name_with_type })));
       } catch (error) {
-        console.error('Error fetching districts:', error);
+        console.error('Error fetching provinces:', error);
       }
     };
 
-    fetchDistricts();
-  } else {
-    setDistricts([]);
-  }
-}, [selectedProvince]);
+    fetchData();
+  }, []);
 
-useEffect(() => {
-  if (selectedDistrict) {
-    const fetchWards = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3003/wards?districtCode=${selectedDistrict}`);
-        setWards(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
-      } catch (error) {
-        console.error('Error fetching wards:', error);
-      }
-    };
+  // LẤY KẾT QUẢ QUẬN HUYỆN CHO BỘ LỌC
+  useEffect(() => {
+    if (selectedProvince) {
+      const fetchDistricts = async () => {
+        try {
+          const response = await axios.get(`http://localhost:3002/districts?provinceCode=${selectedProvince}`);
+          setDistricts(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
+        } catch (error) {
+          console.error('Error fetching districts:', error);
+        }
+      };
 
-    fetchWards();
-  } else {
-    setWards([]);
-  }
-}, [selectedDistrict]);
-
-// Dựa vào city.code === district.parent_code  để lấy ra quận liên quan đến tỉnh thành đó
-useEffect(() => {
-  if (selectedProvince) {
-    const filtered = districts.filter(({ parent_code }) => parent_code === selectedProvince);
-    setFilteredDistricts(filtered);
-  } else {
-    setFilteredDistricts([]);
-  }
-}, [selectedProvince, districts]);
-
-// Dựa vào district.parent_code === ward.parent_code  để lấy ra phường xã quan đến quận đó
-useEffect(() => {
-  if (selectedDistrict) {
-    const filtered = wards.filter(({ parent_code }) => parent_code === selectedDistrict);
-    setFilteredWards(filtered);
-  } else {
-    setFilteredWards([]);
-  }
-}, [selectedDistrict, wards]);
-
-const handleProvinceChange = (event) => {
-  const provinceCode = event.target.value;
-  setSelectedProvince(provinceCode);
-  setSelectedDistrict('');
-  setSelectedWard('');
-};
-
-const handleDistrictChange = (event) => {
-  const districtCode = event.target.value;
-  setSelectedDistrict(districtCode);
-  setSelectedWard('');
-};
-
-const handleWardChange = (event) => {
-  const wardCode = event.target.value;
-  setSelectedWard(wardCode);
-};
-
-const handleToggle = () => {
-  setFilterOpen((prev) => !prev);
-};
-
-const handleClickOutside = (event) => {
-  if (boxRef.current && !boxRef.current.contains(event.target)) {
-    if (!event.target.closest('.MuiSelect-root') && !event.target.closest('.MuiMenu-list')) {
-      setFilterOpen(false);
+      fetchDistricts();
+    } else {
+      setDistricts([]);
     }
-  }
-};
+  }, [selectedProvince]);
 
-useEffect(() => {
-  document.addEventListener("mousedown", handleClickOutside);
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, []);
-
-const handleApplyFilter = () => { 
-  let filteredRows = rows;
-
-  if (selectedProvince) {
-    const filteredDistricts = districts.filter(({ parent_code }) => parent_code === selectedProvince);
-    setFilteredDistricts(filteredDistricts);
-
+  useEffect(() => {
     if (selectedDistrict) {
-      const filteredWards = wards.filter(({ parent_code }) => parent_code === selectedDistrict);
-      setFilteredWards(filteredWards);
+      const fetchWards = async () => {
+        try {
+          const response = await axios.get(`http://localhost:3003/wards?districtCode=${selectedDistrict}`);
+          setWards(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
+        } catch (error) {
+          console.error('Error fetching wards:', error);
+        }
+      };
 
-      if (selectedWard) {
-        filteredRows = rows.filter(row => row.parent_code === selectedWard);
+      fetchWards();
+    } else {
+      setWards([]);
+    }
+  }, [selectedDistrict]);
+
+  // Dựa vào city.code === district.parent_code  để lấy ra quận liên quan đến tỉnh thành đó
+  useEffect(() => {
+    if (selectedProvince) {
+      const filtered = districts.filter(({ parent_code }) => parent_code === selectedProvince);
+      setFilteredDistricts(filtered);
+    } else {
+      setFilteredDistricts([]);
+    }
+  }, [selectedProvince, districts]);
+
+  // Dựa vào district.parent_code === ward.parent_code  để lấy ra phường xã quan đến quận đó
+  useEffect(() => {
+    if (selectedDistrict) {
+      const filtered = wards.filter(({ parent_code }) => parent_code === selectedDistrict);
+      setFilteredWards(filtered);
+    } else {
+      setFilteredWards([]);
+    }
+  }, [selectedDistrict, wards]);
+
+  const handleProvinceChange = (event) => {
+    const provinceCode = event.target.value;
+    setSelectedProvince(provinceCode);
+    setSelectedDistrict('');
+    setSelectedWard('');
+  };
+
+  const handleDistrictChange = (event) => {
+    const districtCode = event.target.value;
+    setSelectedDistrict(districtCode);
+    setSelectedWard('');
+  };
+
+  const handleWardChange = (event) => {
+    const wardCode = event.target.value;
+    setSelectedWard(wardCode);
+  };
+
+  const handleToggle = () => {
+    setFilterOpen((prev) => !prev);
+  };
+
+  const handleClickOutside = (event) => {
+    if (boxRef.current && !boxRef.current.contains(event.target)) {
+      if (!event.target.closest('.MuiSelect-root') && !event.target.closest('.MuiMenu-list')) {
+        setFilterOpen(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleApplyFilter = () => { 
+    let filteredRows = rows;
+
+    if (selectedProvince) {
+      const filteredDistricts = districts.filter(({ parent_code }) => parent_code === selectedProvince);
+      setFilteredDistricts(filteredDistricts);
+
+      if (selectedDistrict) {
+        const filteredWards = wards.filter(({ parent_code }) => parent_code === selectedDistrict);
+        setFilteredWards(filteredWards);
+
+        if (selectedWard) {
+          filteredRows = rows.filter(row => row.parent_code === selectedWard);
+        } else {
+          filteredRows = rows.filter(row => filteredWards.some(ward => ward.parent_code === row.parent_code));
+        }
       } else {
-        filteredRows = rows.filter(row => filteredWards.some(ward => ward.parent_code === row.parent_code));
+        filteredRows = rows.filter(row => filteredDistricts.some(district => district.parent_code === row.parent_code));
       }
     } else {
-      filteredRows = rows.filter(row => filteredDistricts.some(district => district.parent_code === row.parent_code));
+      setFilteredDistricts([]);
+      setFilteredWards([]);
     }
-  } else {
-    setFilteredDistricts([]);
-    setFilteredWards([]);
-  }
 
-  setFilteredResults(filteredRows);
-  setFilterRows(filteredRows);
-  setOpen(false); // Đóng box lọc khi áp dụng filter
-};
+    setFilteredResults(filteredRows);
+    setFilterRows(filteredRows);
+    setOpen(false); // Đóng box lọc khi áp dụng filter
+  };
 
-
-return (
-  <Typography
-    sx={{ flex: '1 1 100%', ml: 2, mt: 1 }}
-    variant="h6"
-    id="tableTitle"
-    component="div"
-  >
-    <Box sx={{ width: '100%' }}>
-      <Paper sx={{ width: '100%', mb: 2 }}>
-        <EnhancedTableToolbar rows={rows} />
-        <div style={{ position: 'relative' }}>
-      <Toolbar>
-        <Button variant="contained" color="primary" size="big" onClick={handleToggle}>
-          <FilterAltIcon /> Lọc
-        </Button>
-      </Toolbar>
-      <Collapse in={filterOpen}>
-        <Box
-          ref={boxRef}
-          sx={{
-            position: 'absolute',
-            left: '5px',
-            zIndex: 1,
-            width: '350px',
-            padding: 0,
-            boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)',
-          }}
-        >
-          <Card>
-            <CardContent>
-              <Stack spacing={2} direction="column">
-                <h3><HomeWorkIcon /> Lọc theo Khu vực </h3>
-                <FormControl variant="outlined" size="big">
-                  <Select
-                    value={selectedProvince}
-                    onChange={handleProvinceChange}
-                    displayEmpty
-                  >
-                    <MenuItem value="">
-                      <span>Tất cả các tỉnh</span>
-                    </MenuItem>
-                    {provinces.map(({ id, code, name }) => (
-                      <MenuItem key={id} value={code}>{name}</MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-                <FormControl variant="outlined" size="big" disabled={!selectedProvince}>
-                  <Select
-                    value={selectedDistrict}
-                    onChange={handleDistrictChange}
-                    displayEmpty
-                  >
-                    <MenuItem value="">
-                      <span>Tất cả các quận/huyện</span>
-                    </MenuItem>
-                    {filteredDistricts.map(({ id, name, code }) => (
-                      <MenuItem key={id} value={code}>{name}</MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-                <FormControl variant="outlined" size="big" disabled={!selectedDistrict}>
-                  <Select
-                    value={selectedWard}
-                    onChange={handleWardChange}
-                    displayEmpty
-                  >
-                    <MenuItem value="">
-                      <span>Tất cả các xã/phường</span>
-                    </MenuItem>
-                    {filteredWards.map(({ id, name, code }) => (
-                      <MenuItem key={id} value={code}>{name}</MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-              </Stack>
-            </CardContent>
-            <CardContent>
-              <Stack spacing={2} direction="column">
-                <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
-                  <Button variant="contained" color="secondary" size="big" onClick={() =>  setFilterRows(rows)}>Xóa lọc</Button>
-                  <Button variant="contained" color="primary" size="big" onClick={() => handleApplyFilter([])}>Áp dụng</Button>
-                </Stack>
-              </Stack>
-            </CardContent>
-          </Card>
-        </Box>
-      </Collapse>
-    </div>
-        <TableContainer sx={{ flex: '1 1 100%', ml: 3, mt: 0 }}>
-          <Table
-            sx={{ minWidth: 750 }}
-            aria-labelledby="tableTitle"
-            size={'medium'}
+  return (
+    <Typography
+      sx={{ flex: '1 1 100%', ml: 2, mt: 1 }}
+      variant="h6"
+      id="tableTitle"
+      component="div"
+    >
+      <Box sx={{ width: '100%' }}>
+        <Paper sx={{ width: '100%', mb: 2 }}>
+          <EnhancedTableToolbar rows={rows} setRows={setRows} />
+          <div style={{ position: 'relative' }}>
+        <Toolbar>
+          <Button variant="contained" color="primary" size="big" onClick={handleToggle}>
+            <FilterAltIcon /> Lọc
+          </Button>
+        </Toolbar>
+        <Collapse in={filterOpen}>
+          <Box
+            ref={boxRef}
+            sx={{
+              position: 'absolute',
+              left: '5px',
+              zIndex: 1,
+              width: '350px',
+              padding: 0,
+              boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)',
+            }}
           >
-            <EnhancedTableHead
-              order={order}
-              orderBy={orderBy}
-              onRequestSort={handleRequestSort}
-            />
-            <TableBody >
-              {filterRows.length > 0 ? (
-                filterRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => (
-                  <TableRow hover tabIndex={-1} key={row.id}>
-                    <TableCell>{page * rowsPerPage + index + 1}</TableCell>
-                    <TableCell component="th" scope="row" padding="none">{row.code}</TableCell>
-                    <TableCell align="left">{row.name_with_type}</TableCell>
-                    <TableCell align="left">{row.type}</TableCell>
-                    <TableCell align="left">{row.path_with_type}</TableCell>
-                    <TableCell align="left">
-                      <Button sx={{ mr: 1 }} variant="contained" color="secondary" size="small" onClick={() => handleClickOpenEditDialog(row)}>Sửa</Button>
-                      <Button sx={{ mr: 1 }} onClick={() => handleClickOpenDeleteDialog(row.id)} variant="contained" color="error" size="small">Xoá</Button>
-                      {/* DIALOG XÁC NHẬN XOÁ */}
-                      <Dialog open={openDeleteDialog} onClose={handleCloseDeleteDialog}>
-                        <DialogTitle>Xác nhận xoá</DialogTitle>
-                        <DialogContent>
-                          <DialogContentText>
-                            Bạn có chắc chắn muốn xoá?
-                          </DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                          <Button variant="outlined" onClick={handleCloseDeleteDialog}>Hủy</Button>
-                          <Button variant="contained" onClick={handleDelete}>Xoá</Button>
-                        </DialogActions>
-                      </Dialog>
-                      {/* DIALOG VÀ FORM DÙNG ĐỂ ADD DATA */}
-                      <Dialog open={openEditDialog} onClose={handleCloseEditDialog}>
-                        <DialogTitle>Cập nhật thông tin Tỉnh/Thành Phố</DialogTitle>
-                        <DialogContent>
-                          <DialogContentText>
-                            Nhập đầy đủ các trường thông tin dưới đây để thêm mới 1 bản ghi.
-                          </DialogContentText>
-                          <FormGroup>
-                            <FormControl>
-                              <TextField
-                                autoFocus
-                                required
-                                margin="normal"
-                                name="name"
-                                label="Tên Tỉnh/Thành Phố"
-                                type="text"
-                                fullWidth
-                                variant="outlined"
-                                value={selectedRowData?.name || ''}
-                                onChange={handleChange}
-                              />
-                            </FormControl>
-                            <FormControl>
-                              <TextField
-                                required
-                                margin="normal"
-                                name="code"
-                                label="Mã Tỉnh/Thành Phố"
-                                type="text"
-                                fullWidth
-                                variant="outlined"
-                                value={selectedRowData?.code || ''}
-                                onChange={handleChange}
-                              />
-                            </FormControl>
-                            <FormControl>
-                              <TextField
-                                required
-                                margin="normal"
-                                name="type"
-                                label="Loại"
-                                type="text"
-                                fullWidth
-                                variant="outlined"
-                                value={selectedRowData?.type || ''}
-                                onChange={handleChange}
-                              />
-                            </FormControl>
-                            <DialogActions>
-                              <Button sx={{ mr: 1 }} variant="outlined" onClick={handleCloseEditDialog}>Hủy</Button>
-                              <Button variant="contained" onClick={handleEdit} type="submit">Cập nhật</Button>
-                            </DialogActions>
-                          </FormGroup>
-                        </DialogContent>
-                      </Dialog>
-                    </TableCell>
+            <Card>
+              <CardContent>
+                <Stack spacing={2} direction="column">
+                  <h3><HomeWorkIcon /> Lọc theo Khu vực </h3>
+                  <FormControl variant="outlined" size="big">
+                    <Select
+                      value={selectedProvince}
+                      onChange={handleProvinceChange}
+                      displayEmpty
+                    >
+                      <MenuItem value="">
+                        <span>Tất cả các tỉnh</span>
+                      </MenuItem>
+                      {provinces.map(({ id, code, name }) => (
+                        <MenuItem key={id} value={code}>{name}</MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                  <FormControl variant="outlined" size="big" disabled={!selectedProvince}>
+                    <Select
+                      value={selectedDistrict}
+                      onChange={handleDistrictChange}
+                      displayEmpty
+                    >
+                      <MenuItem value="">
+                        <span>Tất cả các quận/huyện</span>
+                      </MenuItem>
+                      {filteredDistricts.map(({ id, name, code }) => (
+                        <MenuItem key={id} value={code}>{name}</MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                  <FormControl variant="outlined" size="big" disabled={!selectedDistrict}>
+                    <Select
+                      value={selectedWard}
+                      onChange={handleWardChange}
+                      displayEmpty
+                    >
+                      <MenuItem value="">
+                        <span>Tất cả các xã/phường</span>
+                      </MenuItem>
+                      {filteredWards.map(({ id, name, code }) => (
+                        <MenuItem key={id} value={code}>{name}</MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Stack>
+              </CardContent>
+              <CardContent>
+                <Stack spacing={2} direction="column">
+                  <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
+                    <Button variant="contained" color="secondary" size="big" onClick={() =>  setFilterRows(rows)}>Xóa lọc</Button>
+                    <Button variant="contained" color="primary" size="big" onClick={() => handleApplyFilter([])}>Áp dụng</Button>
+                  </Stack>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Box>
+        </Collapse>
+      </div>
+          <TableContainer sx={{ flex: '1 1 100%', ml: 3, mt: 0 }}>
+            <Table
+              sx={{ minWidth: 750 }}
+              aria-labelledby="tableTitle"
+              size={'medium'}
+            >
+              <EnhancedTableHead
+                order={order}
+                orderBy={orderBy}
+                onRequestSort={handleRequestSort}
+              />
+              <TableBody >
+                {filterRows.length > 0 ? (
+                  sortedRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => (
+                    <TableRow hover tabIndex={-1} key={row.id}>
+                      <TableCell>{page * rowsPerPage + index + 1}</TableCell>
+                      <TableCell component="th" scope="row" padding="none">{row.code}</TableCell>
+                      <TableCell align="left">{row.name_with_type}</TableCell>
+                      <TableCell align="left">{row.type}</TableCell>
+                      <TableCell align="left">{row.path_with_type}</TableCell>
+                      <TableCell align="left">
+                        <Button sx={{ mr: 1 }} variant="contained" color="secondary" size="small" onClick={() => handleClickOpenEditDialog(row)}>Sửa</Button>
+                        <Button sx={{ mr: 1 }} onClick={() => handleClickOpenDeleteDialog(row.id)} variant="contained" color="error" size="small">Xoá</Button>
+                        {/* DIALOG XÁC NHẬN XOÁ */}
+                        <Dialog open={openDeleteDialog} onClose={handleCloseDeleteDialog}>
+                          <DialogTitle>Xác nhận xoá</DialogTitle>
+                          <DialogContent>
+                            <DialogContentText>
+                              Bạn có chắc chắn muốn xoá?
+                            </DialogContentText>
+                          </DialogContent>
+                          <DialogActions>
+                            <Button variant="outlined" onClick={handleCloseDeleteDialog}>Hủy</Button>
+                            <Button variant="contained" onClick={handleDelete}>Xoá</Button>
+                          </DialogActions>
+                        </Dialog>
+                        {/* DIALOG VÀ FORM DÙNG ĐỂ ADD DATA */}
+                        <Dialog open={openEditDialog} onClose={handleCloseEditDialog}>
+                          <DialogTitle>Cập nhật thông tin Phường/Xã</DialogTitle>
+                          <DialogContent>
+                            <DialogContentText>
+                              Sửa thông tin của trường bạn muốn thay đổi và nhấn nút cập nhật để cập nhật thông tin
+                            </DialogContentText>
+                            <FormGroup>
+                              <FormControl>
+                                <TextField
+                                  autoFocus
+                                  required
+                                  margin="normal"
+                                  name="name_with_type"
+                                  label="Tên Phường/Xã"
+                                  type="text"
+                                  fullWidth
+                                  variant="outlined"
+                                  value={selectedRowData?.name_with_type || ''}
+                                  onChange={handleChange}
+                                />
+                              </FormControl>
+                              <FormControl>
+                                <TextField
+                                  required
+                                  margin="normal"
+                                  name="code"
+                                  label="Mã Phường/Xã"
+                                  type="text"
+                                  fullWidth
+                                  variant="outlined"
+                                  value={selectedRowData?.code || ''}
+                                  onChange={handleChange}
+                                />
+                              </FormControl>
+                              <FormControl>
+                                <TextField
+                                  required
+                                  margin="normal"
+                                  name="type"
+                                  label="Loại"
+                                  type="text"
+                                  fullWidth
+                                  variant="outlined"
+                                  value={selectedRowData?.type || ''}
+                                  onChange={handleChange}
+                                />
+                              </FormControl>
+                              <FormControl>
+                                <TextField
+                                  required
+                                  margin="normal"
+                                  name="path_with_type"
+                                  label="Chi tiết"
+                                  type="text"
+                                  fullWidth
+                                  variant="outlined"
+                                  value={selectedRowData?.path_with_type || ''}
+                                  onChange={handleChange}
+                                />
+                              </FormControl>
+                              <DialogActions>
+                                <Button sx={{ mr: 1 }} variant="outlined" onClick={handleCloseEditDialog}>Hủy</Button>
+                                <Button variant="contained" onClick={handleEdit} type="submit">Cập nhật</Button>
+                              </DialogActions>
+                            </FormGroup>
+                          </DialogContent>
+                        </Dialog>
+                      </TableCell>
+                    </TableRow>
+                  ))
+                ) : (
+                  <TableRow>
+                    <TableCell colSpan={6} align="center">No results found</TableCell>
                   </TableRow>
-                ))
-              ) : (
-                <TableRow>
-                  <TableCell colSpan={6} align="center">No results found</TableCell>
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
-          component="div"
-          count={filterRows.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handlePageChange}
-          onRowsPerPageChange={handleRowsPerPageChange}
-          ActionsComponent={TablePaginationActions}
-        />
-      </Paper>
-    </Box>
-  </Typography>
-);
-
-
+                )}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <TablePagination
+            rowsPerPageOptions={[5, 10, 25]}
+            component="div"
+            count={filterRows.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handlePageChange}
+            onRowsPerPageChange={handleRowsPerPageChange}
+            ActionsComponent={TablePaginationActions}
+          />
+        </Paper>
+      </Box>
+    </Typography>
+  );
 }

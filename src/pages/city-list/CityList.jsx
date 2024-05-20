@@ -33,7 +33,8 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControl from '@mui/material/FormControl';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import LocationCityOutlinedIcon from '@mui/icons-material/LocationCityOutlined';
-
+import Stack from '@mui/material/Stack';
+import Autocomplete from '@mui/material/Autocomplete';
 const handleDetail = (event) => {
   event.stopPropagation();
 };
@@ -165,7 +166,7 @@ EnhancedTableHead.propTypes = {
 };
 
 function EnhancedTableToolbar(props) {
-  const { rows } = props;
+  const { rows, setRows } = props;
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -173,12 +174,11 @@ function EnhancedTableToolbar(props) {
     type: ''
   });
 
-  //MỞ DIALOG
+  //MỞ / ĐÓNG DIALOG
   const handleClickOpen = () => {
     setOpen(true);
   };
 
-  //ĐÓNG DIALOG
   const handleClose = () => {
     setOpen(false);
   };
@@ -191,27 +191,49 @@ function EnhancedTableToolbar(props) {
     }));
   };
 
-  //GỌI API ĐỂ ADD DATA SAU KHI SUBMIT FORM
+  //POSTDATA
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:3001/data', formData);
-      window.location.reload(); //load lại trang để hiện data mới
-      handleClose(); // Đóng dialog sau khi thêm thành công
+      const newEntry = response.data;
+      setRows(prevRows => {
+        const updatedRows = [...prevRows, newEntry].map(item => {
+          if (item.type === 'tinh') {
+            return { ...item, type: 'Tỉnh' };
+          } else if (item.type === 'thanh-pho') {
+            return { ...item, type: 'Thành phố' };
+          }
+          return item;
+        });
+        return updatedRows;
+      });
+      handleClose();
     } catch (error) {
-      console.error('Error adding city:', error);
-      // Xử lý lỗi nếu có
+      console.error('Lỗi khi thêm tỉnh/thành phố:', error);
     }
   };
-
+  //SEARCH
+  // const handleSearch = async () => {
+  //   try {
+  //     const response = await axios.get(`http://localhost:3001/data?name_like=${searchTerm}`);
+  //     setFilterRows(response.data);
+  //   } catch (error) {
+  //     console.error('Error searching data:', error);
+  //   }
+  // };
   return (
     <Toolbar
       sx={{
         pl: { sm: 2 },
         pr: { xs: 1, sm: 1 },
+        // pl: { sm: 2 },
+        // pr: { xs: 1, sm: 1 },
+        // display: 'flex',
+        // // justifyContent: 'space-between',
+        // alignItems: 'center',
       }}
     >
-      <>
         <Typography
           sx={{ flex: '1 1 100%' , ml : 2, mt: 1}}
           variant="h6"
@@ -220,22 +242,23 @@ function EnhancedTableToolbar(props) {
         >
           <h2> <LocationCityOutlinedIcon/>  &nbsp; Danh sách Tỉnh/Thành Phố</h2>
         </Typography>
-        {/* <Stack spacing={2} sx={{ width: 300 }} justifyContent={'center'}>
-          <Autocomplete
-            freeSolo
-            id="free-solo-2-demo"
-            disableClearable
-            options={rows.map((option) => option.name)}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Search input"
-                InputProps={{ ...params.InputProps, type: 'search' }}
-              />
-            )}
-          />
-        </Stack> */}
-      </>
+        <FormGroup sx={{ mr: 1 }}>
+          <FormControl>
+            <TextField
+              autoFocus
+              required
+              margin="normal"
+              name="name"
+              label="Tên Tỉnh/Thành Phố"
+              type="text"
+              fullWidth
+              variant="outlined"
+              value={formData.name}
+              onChange={handleChange}
+            />
+          </FormControl>
+        </FormGroup>
+        <Button sx={{ mr: 4, mt: 1 }} variant="contained">Tìm</Button>
       <React.Fragment>
         <Tooltip sx={{ mr : 5 }} title="Thêm Tỉnh/Thành phố">
           <IconButton>
@@ -309,7 +332,7 @@ EnhancedTableToolbar.propTypes = {
 export default function EnhancedTable() {
   const [order, setOrder] = useState('asc');
   const [orderBy, setOrderBy] = useState('name');
-  const [selected] = useState([]);
+  // const [selected] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [rows, setRows] = useState([]);
@@ -319,10 +342,23 @@ export default function EnhancedTable() {
   const [selectedRowId, setSelectedRowId] = useState(null);
   const [selectedRowData, setSelectedRowData] = useState(null);
 
+  //GET DATA
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios('http://localhost:3001/data');
-      setRows(result.data);
+      try {
+        const result = await axios.get('http://localhost:3001/data');
+        const processedData = result.data.map(item => {
+          if (item.type === 'tinh') {
+            return { ...item, type: 'Tỉnh' };
+          } else if (item.type === 'thanh-pho') {
+            return { ...item, type: 'Thành phố' };
+          }
+          return item;
+        });
+        setRows(processedData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     };
     fetchData();
   }, []);
@@ -331,11 +367,38 @@ export default function EnhancedTable() {
     setFilterRows(rows);
   }, [rows]);
 
+  //HANDLE SORT
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
     setOrderBy(property);
   };
+  const sortedRows = React.useMemo(() => {
+    return stableSort(filterRows, getComparator(order, orderBy));
+  }, [filterRows, order, orderBy]);
+  function getComparator(order, orderBy) {
+    return order === 'desc'
+      ? (a, b) => descendingComparator(a, b, orderBy)
+      : (a, b) => -descendingComparator(a, b, orderBy);
+  }
+  function descendingComparator(a, b, orderBy) {
+    if (b[orderBy] < a[orderBy]) {
+      return -1;
+    }
+    if (b[orderBy] > a[orderBy]) {
+      return 1;
+    }
+    return 0;
+  }
+  function stableSort(array, comparator) {
+    const stabilizedThis = array.map((el, index) => [el, index]);
+    stabilizedThis.sort((a, b) => {
+      const order = comparator(a[0], b[0]);
+      if (order !== 0) return order;
+      return a[1] - b[1];
+    });
+    return stabilizedThis.map((el) => el[0]);
+  }
 
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
@@ -345,6 +408,13 @@ export default function EnhancedTable() {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
+
+  // const handleSearch = (searchTerm) => {
+  //   const filtered = rows.filter((row) => {
+  //     return row.name.toLowerCase().includes(searchTerm.toLowerCase());
+  //   });
+  //   setFilterRows(filtered);
+  // };
   const handleChange = (event) => {
     const { name, value } = event.target;
     setSelectedRowData((prevData) => ({
@@ -352,12 +422,7 @@ export default function EnhancedTable() {
       [name]: value,
     }));
   };
-  // const handleSearch = (searchTerm) => {
-  //   const filtered = rows.filter((row) => {
-  //     return row.name.toLowerCase().includes(searchTerm.toLowerCase());
-  //   });
-  //   setFilterRows(filtered);
-  // };
+
   const handleDelete = async () => {
     try {
       await axios.delete(`http://localhost:3001/data/${selectedRowId}`);
@@ -371,24 +436,19 @@ export default function EnhancedTable() {
   const handleEdit = async () => {
     console.log("info: ", selectedRowData);
     try {
-
-      // Gửi request API cập nhật thông tin đến JSON server
       await axios.put(`http://localhost:3001/data/${selectedRowId}`, selectedRowData);
-      
-      // Cập nhật thông tin trong rows và filterRows
       const updatedRows = rows.map(row =>
         row.id === selectedRowId ? selectedRowData : row
       );
       setRows(updatedRows);
       setFilterRows(updatedRows);
       setSelectedRowId(null);
-      // Đóng dialog
       handleCloseEditDialog();
     } catch (error) {
       console.error("Lỗi khi cập nhật dữ liệu:", error);
-      // Xử lý lỗi (nếu cần)
     }
   };
+  
   const handleClickOpenEditDialog = (rowData) => {
     setSelectedRowData(rowData);
     setSelectedRowId(rowData.id);
@@ -410,7 +470,7 @@ export default function EnhancedTable() {
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <EnhancedTableToolbar rows={rows} />
+        <EnhancedTableToolbar rows={rows} setRows={setRows}/>
         <TableContainer  sx={{ flex: '1 1 100%' , ml : 4, mt: 0}}>
           <Table
             sx={{ minWidth: 750 }}
@@ -423,7 +483,7 @@ export default function EnhancedTable() {
               onRequestSort={handleRequestSort}
             />
             <TableBody>
-              {filterRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              {sortedRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
                   return (
                     <TableRow

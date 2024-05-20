@@ -1,0 +1,51 @@
+{
+  "schools": [
+    {
+      "_id": "60eaaa6f1173335842c35663",
+      "name": "Bà Điểm",
+      "type": "Trung học phổ thông",
+      "address": "huyện Hóc Môn, Tp Hồ Chí Minh",
+      "code": "0001",
+      "id": "8de2"
+    },
+    {
+      "_id": "60eaaa6f1173335842c3565b",
+      "name": "Lê Quý Đôn",
+      "type": "Trung học phổ thông",
+      "address": "quận 3, Tp Hồ Chí Minh",
+      "code": "0002",
+      "id": "5546"
+    },
+    {
+      "_id": "60eaaa6f1173335842c35668",
+      "name": "Lê Hồng Phong",
+      "type": "Trung học phổ thông",
+      "address": "quận 5, Tp Hồ Chí Minh",
+      "code": "0003",
+      "id": "cc29"
+    },
+    {
+      "_id": "60eaaa6f1173335842c35639",
+      "name": "Nguyễn Thượng Hiền",
+      "type": "Trung học phổ thông",
+      "address": "quận Tân Bình, Tp Hồ Chí Minh",
+      "code": "0004",
+      "id": "66d4"
+    },
+    {
+      "_id": "60eaaa6f1173335842c3562e",
+      "name": "Nguyễn Thị Minh Khai",
+      "type": "Trung học phổ thông",
+      "address": "quận 3, Tp Hồ Chí Minh",
+      "code": "0005",
+      "id": "fc63"
+    },
+    {
+      "id": "f8ac",
+      "name": "test",
+      "code": "0006",
+      "type": "Trung học phổ thông",
+      "address": "testdata"
+    }
+  ]
+}
