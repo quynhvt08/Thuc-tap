@@ -25,13 +25,6 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 
-const handleDetail = (event) => {
-  event.stopPropagation();
-};
-
-function createData(id, name_with_type, code, type, path_with_type) {
-  return { id, name_with_type, code, type, path_with_type };
-}
 //PHÂN TRANG
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -155,7 +148,7 @@ EnhancedTableHead.propTypes = {
 };
 
 function EnhancedTableToolbar(props) {
-  const { rows, setRows } = props;
+  const { rows, setRows, searchTerm, setSearchTerm} = props;
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -202,6 +195,10 @@ function EnhancedTableToolbar(props) {
       console.error('Lỗi khi thêm tỉnh/thành phố:', error);
     }
   };
+  //SEARCH
+  const handleChangeSearchTerm = (event) => {
+    setSearchTerm(event.target.value);
+  };
   return (
     <Toolbar
       sx={{
@@ -218,22 +215,19 @@ function EnhancedTableToolbar(props) {
         >      
           <h2> <AccountBalanceIcon /> &nbsp;&nbsp;Danh sách Trường học</h2>
         </Typography>
-        
-        {/* <Stack spacing={2} sx={{ width: 300 }} justifyContent={'center'}>
-          <Autocomplete
-            freeSolo
-            id="free-solo-2-demo"
-            disableClearable
-            options={rows.map((option) => option.name)}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Search input"
-                InputProps={{ ...params.InputProps, type: 'search' }}
-              />
-            )}
-          />
-        </Stack> */}
+        <FormGroup sx={{ mr : 1 }}>
+          <FormControl >
+            <TextField
+              name="name"
+              label="Nhập để tìm kiếm.."
+              type="text"
+              fullWidth
+              variant="outlined"
+              value={searchTerm}
+              onChange={handleChangeSearchTerm}
+            />
+          </FormControl>
+        </FormGroup>
       </>
       <React.Fragment>
         <Tooltip sx={{ mr : 5 }} title="Thêm Tỉnh/Thành phố">
@@ -329,6 +323,7 @@ export default function EnhancedTable() {
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false); 
   const [selectedRowId, setSelectedRowId] = useState(null);
   const [selectedRowData, setSelectedRowData] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
   //API LẤY DATA
   useEffect(() => {
     const fetchData = async () => {
@@ -398,12 +393,7 @@ export default function EnhancedTable() {
       [name]: value,
     }));
   };
-  // const handleSearch = (searchTerm) => {
-  //   const filtered = rows.filter((row) => {
-  //     return row.name.toLowerCase().includes(searchTerm.toLowerCase());
-  //   });
-  //   setFilterRows(filtered);
-  // };
+  
   const handleDelete = async () => {
     try {
       await axios.delete(`http://localhost:3004/schools/${selectedRowId}`);
@@ -598,6 +588,13 @@ const handleApplyFilter = () => {
   setFilterRows(filteredRows);
   setOpen(false); // Đóng box lọc khi áp dụng filter
 };
+//SEARCH
+useEffect(() => {
+  const filteredRows = rows.filter((row) =>
+    row.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  setFilterRows(filteredRows);
+}, [searchTerm, rows]);
   return (
     <Typography
       sx={{ flex: '1 1 100%', ml: 2, mt: 1 }}
@@ -607,7 +604,7 @@ const handleApplyFilter = () => {
     >
       <Box sx={{ width: '100%' }}>
         <Paper sx={{ width: '100%', mb: 2 }}>
-          <EnhancedTableToolbar rows={rows} setRows={setRows}/>
+          <EnhancedTableToolbar rows={rows} setRows={setRows} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           <div style={{ position: 'relative' }}>
         <Toolbar>
           <Button variant="contained" color="primary" size="big" onClick={handleToggle}>

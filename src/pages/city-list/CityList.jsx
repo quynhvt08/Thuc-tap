@@ -33,15 +33,6 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControl from '@mui/material/FormControl';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import LocationCityOutlinedIcon from '@mui/icons-material/LocationCityOutlined';
-import Stack from '@mui/material/Stack';
-import Autocomplete from '@mui/material/Autocomplete';
-const handleDetail = (event) => {
-  event.stopPropagation();
-};
-
-function createData(id, name, code, type) {
-  return { id, name, code, type, name_with_type };
-}
 
 //PHÂN TRANG
 function TablePaginationActions(props) {
@@ -166,7 +157,7 @@ EnhancedTableHead.propTypes = {
 };
 
 function EnhancedTableToolbar(props) {
-  const { rows, setRows } = props;
+  const { rows, setRows, searchTerm, setSearchTerm} = props;
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -214,24 +205,14 @@ function EnhancedTableToolbar(props) {
     }
   };
   //SEARCH
-  // const handleSearch = async () => {
-  //   try {
-  //     const response = await axios.get(`http://localhost:3001/data?name_like=${searchTerm}`);
-  //     setFilterRows(response.data);
-  //   } catch (error) {
-  //     console.error('Error searching data:', error);
-  //   }
-  // };
+  const handleChangeSearchTerm = (event) => {
+    setSearchTerm(event.target.value);
+  };
   return (
     <Toolbar
       sx={{
         pl: { sm: 2 },
         pr: { xs: 1, sm: 1 },
-        // pl: { sm: 2 },
-        // pr: { xs: 1, sm: 1 },
-        // display: 'flex',
-        // // justifyContent: 'space-between',
-        // alignItems: 'center',
       }}
     >
         <Typography
@@ -243,22 +224,19 @@ function EnhancedTableToolbar(props) {
           <h2> <LocationCityOutlinedIcon/>  &nbsp; Danh sách Tỉnh/Thành Phố</h2>
         </Typography>
         <FormGroup sx={{ mr: 1 }}>
-          <FormControl>
+          <FormControl >
             <TextField
-              autoFocus
-              required
-              margin="normal"
               name="name"
-              label="Tên Tỉnh/Thành Phố"
+              label="Nhập để tìm kiếm.."
               type="text"
               fullWidth
               variant="outlined"
-              value={formData.name}
-              onChange={handleChange}
+              value={searchTerm}
+              onChange={handleChangeSearchTerm}
             />
           </FormControl>
         </FormGroup>
-        <Button sx={{ mr: 4, mt: 1 }} variant="contained">Tìm</Button>
+        {/* <Button sx={{ mr: 4 }} variant="contained" onClick={handleSearch}>Tìm</Button> */}
       <React.Fragment>
         <Tooltip sx={{ mr : 5 }} title="Thêm Tỉnh/Thành phố">
           <IconButton>
@@ -332,7 +310,6 @@ EnhancedTableToolbar.propTypes = {
 export default function EnhancedTable() {
   const [order, setOrder] = useState('asc');
   const [orderBy, setOrderBy] = useState('name');
-  // const [selected] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [rows, setRows] = useState([]);
@@ -341,7 +318,7 @@ export default function EnhancedTable() {
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false); 
   const [selectedRowId, setSelectedRowId] = useState(null);
   const [selectedRowData, setSelectedRowData] = useState(null);
-
+  const [searchTerm, setSearchTerm] = useState('');
   //GET DATA
   useEffect(() => {
     const fetchData = async () => {
@@ -409,12 +386,7 @@ export default function EnhancedTable() {
     setPage(0);
   };
 
-  // const handleSearch = (searchTerm) => {
-  //   const filtered = rows.filter((row) => {
-  //     return row.name.toLowerCase().includes(searchTerm.toLowerCase());
-  //   });
-  //   setFilterRows(filtered);
-  // };
+  
   const handleChange = (event) => {
     const { name, value } = event.target;
     setSelectedRowData((prevData) => ({
@@ -422,7 +394,7 @@ export default function EnhancedTable() {
       [name]: value,
     }));
   };
-
+  
   const handleDelete = async () => {
     try {
       await axios.delete(`http://localhost:3001/data/${selectedRowId}`);
@@ -467,10 +439,17 @@ export default function EnhancedTable() {
   const handleCloseDeleteDialog = () => {
     setOpenDeleteDialog(false);
   };
+  //SEARCH
+  useEffect(() => {
+    const filteredRows = rows.filter((row) =>
+      row.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilterRows(filteredRows);
+  }, [searchTerm, rows]);
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <EnhancedTableToolbar rows={rows} setRows={setRows}/>
+        <EnhancedTableToolbar rows={rows} setRows={setRows} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         <TableContainer  sx={{ flex: '1 1 100%' , ml : 4, mt: 0}}>
           <Table
             sx={{ minWidth: 750 }}
@@ -585,7 +564,7 @@ export default function EnhancedTable() {
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={rows.length}
+          count={filterRows.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handlePageChange}

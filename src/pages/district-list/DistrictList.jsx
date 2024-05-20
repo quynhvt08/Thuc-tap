@@ -24,15 +24,6 @@ import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 
-const handleDetail = (event) => {
-  event.stopPropagation();
-};
-
-function createData(id, name, code, type, path_with_type) {
-  return { id, name, code, type, path_with_type };
-}
-
-
 //PHÂN TRANG
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -156,7 +147,7 @@ EnhancedTableHead.propTypes = {
 };
 
 function EnhancedTableToolbar(props) {
-  const { rows, setRows } = props;
+  const { rows, setRows, searchTerm, setSearchTerm} = props;
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -211,7 +202,10 @@ function EnhancedTableToolbar(props) {
       // Xử lý lỗi nếu có
     }
   };
-
+  //SEARCH
+  const handleChangeSearchTerm = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
   return (
     <Toolbar
@@ -229,6 +223,19 @@ function EnhancedTableToolbar(props) {
         >      
           <h2> <HomeWorkIcon /> &nbsp;&nbsp;Danh sách Quận/Huyện</h2>
         </Typography>
+        <FormGroup sx={{ mr : 1 }}>
+          <FormControl >
+            <TextField
+              name="name"
+              label="Nhập để tìm kiếm.."
+              type="text"
+              fullWidth
+              variant="outlined"
+              value={searchTerm}
+              onChange={handleChangeSearchTerm}
+            />
+          </FormControl>
+        </FormGroup>
       </>
       <React.Fragment>
         <Tooltip sx={{ mr : 5 }} title="Thêm Quận/Huyện">
@@ -323,6 +330,7 @@ export default function EnhancedTable() {
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false); 
   const [selectedRowId, setSelectedRowId] = useState(null);
   const [selectedRowData, setSelectedRowData] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
   // GỌI API LẤY DATA
   useEffect(() => {
     const fetchData = async () => {
@@ -401,12 +409,7 @@ export default function EnhancedTable() {
       [name]: value,
     }));
   };
-  // const handleSearch = (searchTerm) => {
-  //   const filtered = rows.filter((row) => {
-  //     return row.name.toLowerCase().includes(searchTerm.toLowerCase());
-  //   });
-  //   setFilterRows(filtered);
-  // };
+  
   const handleDelete = async () => {
     try {
       await axios.delete(`http://localhost:3002/districts/${selectedRowId}`);
@@ -599,7 +602,13 @@ export default function EnhancedTable() {
     setFilterRows(filteredRows);
     setOpen(false); // Đóng box lọc khi áp dụng filter
   };
-
+  //SEARCH
+  useEffect(() => {
+    const filteredRows = rows.filter((row) =>
+      row.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilterRows(filteredRows);
+  }, [searchTerm, rows]);
   return (
     <Typography
       sx={{ flex: '1 1 100%', ml: 2, mt: 1 }}
@@ -608,11 +617,11 @@ export default function EnhancedTable() {
       component="div"
     >
       <Box sx={{ width: '100%' }}>
-        <Paper sx={{ width: '100%', mb: 2 }}>
-          <EnhancedTableToolbar rows={rows} setRows={setRows}/>
+        <Paper sx={{ width: '100%', mb : 2 }}>
+          <EnhancedTableToolbar rows={rows} setRows={setRows} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           <div style={{ position: 'relative' }}>
         <Toolbar>
-          <Button variant="contained" color="primary" size="big" onClick={handleToggle}>
+          <Button variant="contained" color="primary" size="small" onClick={handleToggle}>
             <FilterAltIcon /> Lọc
           </Button>
         </Toolbar>
