@@ -14,17 +14,9 @@ import TableSortLabel from '@mui/material/TableSortLabel';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import DeleteIcon from '@mui/icons-material/Delete';
-import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
-import { visuallyHidden } from '@mui/utils';
 import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import Stack from '@mui/material/Stack';
 import axios from 'axios';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
@@ -39,14 +31,17 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import FormGroup from '@mui/material/FormGroup';
 import FormControl from '@mui/material/FormControl';
-import Filter from './Filter';
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
+import LocationCityOutlinedIcon from '@mui/icons-material/LocationCityOutlined';
 
 const handleDetail = (event) => {
   event.stopPropagation();
 };
+
 function createData(id, name, code, type) {
-  return { id, name, code, type };
+  return { id, name, code, type, name_with_type };
 }
+
 //PHÂN TRANG
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -110,28 +105,33 @@ TablePaginationActions.propTypes = {
 };
 
 const headCells = [
+  { id: '', numeric: false, disablePadding: true, label: 'STT' },
+  { id: 'code', numeric: false, disablePadding: true, label: 'Mã' },
   { id: 'name', numeric: false, disablePadding: true, label: 'Tên Tỉnh/Thành Phố' },
-  { id: 'code', numeric: false, disablePadding: true, label: 'Mã Tỉnh/Thành Phố' },
   { id: 'type', numeric: false, disablePadding: true, label: 'Loại' },
+  { id: 'name_with_type', numeric: false, disablePadding: true, label: 'Chi Tiết' },
   { id: 'action', numeric: false, disablePadding: true, label: 'Action' },
 ];
 
+const visuallyHidden = {
+  border: 0,
+  clip: 'rect(0 0 0 0)',
+  height: 1,
+  margin: -1,
+  overflow: 'hidden',
+  padding: 0,
+  position: 'absolute',
+  top: 20,
+  width: 1,
+};
+
 function EnhancedTableHead(props) {
-  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
+  const { order, orderBy, onRequestSort } = props;
   const createSortHandler = (property) => (event) => { onRequestSort(event, property); };
 
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding="checkbox">
-          <Checkbox
-            color="primary"
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={rowCount > 0 && numSelected === rowCount}
-            onChange={onSelectAllClick}
-            inputProps={{ 'aria-label': 'select all desserts' }}
-          />
-        </TableCell>
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
@@ -159,32 +159,30 @@ function EnhancedTableHead(props) {
 }
 
 EnhancedTableHead.propTypes = {
-  numSelected: PropTypes.number.isRequired,
   onRequestSort: PropTypes.func.isRequired,
-  onSelectAllClick: PropTypes.func.isRequired,
   order: PropTypes.oneOf(['asc', 'desc']).isRequired,
   orderBy: PropTypes.string.isRequired,
-  rowCount: PropTypes.number.isRequired,
 };
 
 function EnhancedTableToolbar(props) {
-  const { numSelected, rows } = props;
-  const [open, setOpen] = React.useState(false);
+  const { rows } = props;
+  const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     code: '',
     type: ''
   });
+
   //MỞ DIALOG
   const handleClickOpen = () => {
     setOpen(true);
   };
+
   //ĐÓNG DIALOG
   const handleClose = () => {
     setOpen(false);
   };
-  
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -192,6 +190,7 @@ function EnhancedTableToolbar(props) {
       [name]: value
     }));
   };
+
   //GỌI API ĐỂ ADD DATA SAU KHI SUBMIT FORM
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -204,157 +203,133 @@ function EnhancedTableToolbar(props) {
       // Xử lý lỗi nếu có
     }
   };
+
   return (
     <Toolbar
       sx={{
         pl: { sm: 2 },
         pr: { xs: 1, sm: 1 },
-        ...(numSelected > 0 && {
-          bgcolor: (theme) =>
-            alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity),
-        }),
       }}
     >
-      {numSelected > 0 ? (
+      <>
         <Typography
-          sx={{ flex: '1 1 100%' }}
-          color="inherit"
-          variant="subtitle1"
+          sx={{ flex: '1 1 100%' , ml : 2, mt: 1}}
+          variant="h6"
+          id="tableTitle"
           component="div"
         >
-          {numSelected} selected
+          <h2> <LocationCityOutlinedIcon/>  &nbsp; Danh sách Tỉnh/Thành Phố</h2>
         </Typography>
-      ) : (
-        <>
-          <Typography
-            sx={{ flex: '1 1 100%' }}
-            variant="h6"
-            id="tableTitle"
-            component="div"
-          >
-            Danh sách Tỉnh/Thành Phố
-            <Filter/>
-          </Typography>
-          <Stack spacing={2} sx={{ width: 300 }} justifyContent={'center'}>
-            <Autocomplete
-              freeSolo
-              id="free-solo-2-demo"
-              disableClearable
-              options={rows.map((option) => option.name)}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Search input"
-                  InputProps={{ ...params.InputProps, type: 'search' }}
-                />
-              )}
-            />
-          </Stack>
-        </>
-      )}
-
-      {numSelected > 0 ? (
-        <Tooltip title="Delete">
+        {/* <Stack spacing={2} sx={{ width: 300 }} justifyContent={'center'}>
+          <Autocomplete
+            freeSolo
+            id="free-solo-2-demo"
+            disableClearable
+            options={rows.map((option) => option.name)}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Search input"
+                InputProps={{ ...params.InputProps, type: 'search' }}
+              />
+            )}
+          />
+        </Stack> */}
+      </>
+      <React.Fragment>
+        <Tooltip sx={{ mr : 5 }} title="Thêm Tỉnh/Thành phố">
           <IconButton>
-            <DeleteIcon />
+            <AddLocationAltIcon  onClick={handleClickOpen}/>
           </IconButton>
         </Tooltip>
-      ) : (
-        <>
-          <React.Fragment>
-            <Tooltip title="Thêm Tỉnh/Thành phố">
-              <IconButton>
-                <AddLocationAltIcon onClick={handleClickOpen}/>
-              </IconButton>
-            </Tooltip>
-            {/* DIALOG VÀ FORM DÙNG ĐỂ ADD DATA */}
-            <Dialog open={open} onClose={handleClose}>
-              <DialogTitle>Thêm mới 1 Tỉnh/Thành Phố</DialogTitle>
-              <DialogContent>
-                <DialogContentText>
-                  Nhập đầy đủ các trường thông tin dưới đây để thêm mới 1 bản ghi.
-                </DialogContentText>
-                <FormGroup>
-                  <FormControl>
-                    <TextField
-                      autoFocus
-                      required
-                      margin="normal"
-                      name="name"
-                      label="Tên Tỉnh/Thành phố"
-                      type="text"
-                      fullWidth
-                      variant="standard"
-                      value={formData.name}
-                      onChange={handleChange}
-                    />
-                  </FormControl>
-                  <FormControl>
-                    <TextField
-                      required
-                      margin="normal"
-                      name="code"
-                      label="Mã Tỉnh/Thành phố"
-                      type="text"
-                      fullWidth
-                      variant="standard"
-                      value={formData.code}
-                      onChange={handleChange}
-                    />
-                  </FormControl>
-                  <FormControl>
-                    <TextField
-                      required
-                      margin="normal"
-                      name="type"
-                      label="Loại"
-                      type="text"
-                      fullWidth
-                      variant="standard"
-                      value={formData.type}
-                      onChange={handleChange}
-                    />
-                  </FormControl>
-                  <DialogActions>
-                    <Button variant="outlined" color="error" onClick={handleClose}>Thoát</Button>
-                    <Button variant="contained" onClick={handleSubmit}>Thêm</Button>
-                  </DialogActions>
-                </FormGroup>
-              </DialogContent>
-            </Dialog>
-          </React.Fragment>
-        </>
-      )}
+        {/* DIALOG VÀ FORM DÙNG ĐỂ ADD DATA */}
+        <Dialog open={open} onClose={handleClose}>
+          <DialogTitle>Thêm mới 1 Tỉnh/Thành Phố</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Nhập đầy đủ các trường thông tin dưới đây để thêm mới 1 bản ghi.
+            </DialogContentText>
+            <FormGroup>
+              <FormControl>
+                <TextField
+                  autoFocus
+                  required
+                  margin="normal"
+                  name="name"
+                  label="Tên Tỉnh/Thành Phố"
+                  type="text"
+                  fullWidth
+                  variant="outlined"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <FormControl>
+                <TextField
+                  required
+                  margin="normal"
+                  name="code"
+                  label="Mã Tỉnh/Thành Phố"
+                  type="text"
+                  fullWidth
+                  variant="outlined"
+                  value={formData.code}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <FormControl>
+                <TextField
+                  required
+                  margin="normal"
+                  name="type"
+                  label="Loại"
+                  type="text"
+                  fullWidth
+                  variant="outlined"
+                  value={formData.type}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <DialogActions>
+                <Button sx={{ mr: 1 }} variant="outlined" onClick={handleClose}>Hủy</Button>
+                <Button variant="contained" onClick={handleSubmit} type="submit">Thêm</Button>
+              </DialogActions>
+            </FormGroup>
+          </DialogContent>
+        </Dialog>
+      </React.Fragment>
     </Toolbar>
   );
 }
 
 EnhancedTableToolbar.propTypes = {
-  numSelected: PropTypes.number.isRequired,
   rows: PropTypes.array.isRequired,
 };
 
 export default function EnhancedTable() {
-  const [order, setOrder] = React.useState('asc');
-  const [orderBy, setOrderBy] = React.useState('name');
-  const [selected, setSelected] = React.useState([]);
-  const [page, setPage] = React.useState(0);
-  const [dense, setDense] = React.useState(false);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [rows, setRows] = React.useState([]);
-  //GỌI API ĐỂ LẤY DỮ LIỆU VÀ ĐỔ DỮ LIỆU VÀO MẢNG rows
+  const [order, setOrder] = useState('asc');
+  const [orderBy, setOrderBy] = useState('name');
+  const [selected] = useState([]);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rows, setRows] = useState([]);
+  const [filterRows, setFilterRows] = useState(rows);
+  const [openEditDialog, setOpenEditDialog] = useState(false);
+  const [openDeleteDialog, setOpenDeleteDialog] = useState(false); 
+  const [selectedRowId, setSelectedRowId] = useState(null);
+  const [selectedRowData, setSelectedRowData] = useState(null);
+
   useEffect(() => {
-    axios.get('http://localhost:3001/data')
-      .then(response => {
-        
-        const fetchedData = response.data.map((item) => createData(
-          item._id, item.name, item.code, item.type
-        ));
-        console.log('Fetched data:', fetchedData); // Kiểm tra dữ liệu nhận được từ API
-        setRows(fetchedData);
-      })
-      .catch(error => console.error('Error fetching data:', error));
+    const fetchData = async () => {
+      const result = await axios('http://localhost:3001/data');
+      setRows(result.data);
+    };
+    fetchData();
   }, []);
+
+  useEffect(() => {
+    setFilterRows(rows);
+  }, [rows]);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -362,177 +337,202 @@ export default function EnhancedTable() {
     setOrderBy(property);
   };
 
-  const handleSelectAllClick = (event) => {
-    if (event.target.checked) {
-      const newSelected = rows.map((n) => n.id);
-      setSelected(newSelected);
-      return;
-    }
-    setSelected([]);
-  };
-
-  const handleClick = (event, id) => {
-    const selectedIndex = selected.indexOf(id);
-    let newSelected = [];
-
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, id);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
-      );
-    }
-    setSelected(newSelected);
-  };
-
-  const handleChangePage = (event, newPage) => {
+  const handlePageChange = (event, newPage) => {
     setPage(newPage);
   };
 
-  const handleChangeRowsPerPage = (event) => {
+  const handleRowsPerPageChange = (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setSelectedRowData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  // const handleSearch = (searchTerm) => {
+  //   const filtered = rows.filter((row) => {
+  //     return row.name.toLowerCase().includes(searchTerm.toLowerCase());
+  //   });
+  //   setFilterRows(filtered);
+  // };
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`http://localhost:3001/data/${selectedRowId}`);
+      setRows(rows.filter((row) => row.id !== selectedRowId));
+      setFilterRows(filterRows.filter((row) => row.id !== selectedRowId));
+      handleCloseDeleteDialog();
+    } catch (error) {
+      console.error("Lỗi khi xoá dữ liệu:", error);
+    }
+  };
+  const handleEdit = async () => {
+    console.log("info: ", selectedRowData);
+    try {
 
-  const handleChangeDense = (event) => {
-    setDense(event.target.checked);
+      // Gửi request API cập nhật thông tin đến JSON server
+      await axios.put(`http://localhost:3001/data/${selectedRowId}`, selectedRowData);
+      
+      // Cập nhật thông tin trong rows và filterRows
+      const updatedRows = rows.map(row =>
+        row.id === selectedRowId ? selectedRowData : row
+      );
+      setRows(updatedRows);
+      setFilterRows(updatedRows);
+      setSelectedRowId(null);
+      // Đóng dialog
+      handleCloseEditDialog();
+    } catch (error) {
+      console.error("Lỗi khi cập nhật dữ liệu:", error);
+      // Xử lý lỗi (nếu cần)
+    }
+  };
+  const handleClickOpenEditDialog = (rowData) => {
+    setSelectedRowData(rowData);
+    setSelectedRowId(rowData.id);
+    setOpenEditDialog(true);
   };
 
-  const isSelected = (id) => selected.indexOf(id) !== -1;
+  const handleCloseEditDialog = () => {
+    setOpenEditDialog(false);
+  };
 
-  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+  const handleClickOpenDeleteDialog = (id) => {
+    setOpenDeleteDialog(true);
+    setSelectedRowId(id);
+  };
 
-  const visibleRows = React.useMemo(() =>
-    stableSort(rows, getComparator(order, orderBy)).slice(
-      page * rowsPerPage,
-      page * rowsPerPage + rowsPerPage,
-    ),
-    [rows, order, orderBy, page, rowsPerPage]
-  );
-
-  console.log('Visible rows:', visibleRows); // Kiểm tra visibleRows
-
+  const handleCloseDeleteDialog = () => {
+    setOpenDeleteDialog(false);
+  };
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <EnhancedTableToolbar numSelected={selected.length} rows={rows} />
-        <TableContainer>
+        <EnhancedTableToolbar rows={rows} />
+        <TableContainer  sx={{ flex: '1 1 100%' , ml : 4, mt: 0}}>
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
-            size={dense ? 'small' : 'medium'}
+            size={'medium'}
           >
             <EnhancedTableHead
-              numSelected={selected.length}
               order={order}
               orderBy={orderBy}
-              onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
-              rowCount={rows.length}
             />
             <TableBody>
-              {visibleRows.map((row, index) => {
-                const isItemSelected = isSelected(row.id);
-                const labelId = `enhanced-table-checkbox-${index}`;
-
-                return (
-                  <TableRow
-                    hover
-                    onClick={(event) => handleClick(event, row.id)}
-                    role="checkbox"
-                    aria-checked={isItemSelected}
-                    tabIndex={-1}
-                    key={row.id}
-                    selected={isItemSelected}
-                  >
-                    <TableCell padding="checkbox">
-                      <Checkbox
-                        color="primary"
-                        checked={isItemSelected}
-                        inputProps={{
-                          'aria-labelledby': labelId,
-                        }}
-                      />
-                    </TableCell>
-                    <TableCell component="th" id={labelId} scope="row" padding="none">
-                      {row.name}
-                    </TableCell>
-                    <TableCell align="left">{row.code}</TableCell>
-                    <TableCell align="left">{row.type}</TableCell>
-                    <TableCell align="left">
-                      <Stack direction="row" spacing={2}>
-                        <Button variant="contained" color="success" onClick={handleDetail}>
-                          Update
-                        </Button>
-                      </Stack>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-              {emptyRows > 0 && (
-                <TableRow style={{ height: (dense ? 33 : 53) * emptyRows }}>
-                  <TableCell colSpan={6} />
+              {filterRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((row, index) => {
+                  return (
+                    <TableRow
+                      hover
+                      tabIndex={-1}
+                      key={row.id}
+                    >
+                      <TableCell>{page * rowsPerPage + index + 1}</TableCell>
+                      <TableCell component="th" scope="row" padding="none">{row.code}</TableCell>
+                      <TableCell align="left">{row.name}</TableCell>
+                      <TableCell align="left">{row.type}</TableCell>
+                      <TableCell align="left">{row.name_with_type}</TableCell>
+                      <TableCell align="left">
+                        <Button sx={{ mr: 1 }} variant="contained" color="secondary" size="small" onClick={() => handleClickOpenEditDialog(row)}>Sửa</Button>
+                        <Button sx={{ mr: 1 }} onClick={() => handleClickOpenDeleteDialog(row.id)} variant="contained" color="error" size="small">Xoá</Button>
+                        {/* DIALOG XÁC NHẬN XOÁ */}
+                        <Dialog open={openDeleteDialog} onClose={handleCloseDeleteDialog}>
+                          <DialogTitle>Xác nhận xoá</DialogTitle>
+                          <DialogContent>
+                            <DialogContentText>
+                              Bạn có chắc chắn muốn xoá?
+                            </DialogContentText>
+                          </DialogContent>
+                          <DialogActions>
+                            <Button variant="outlined" onClick={handleCloseDeleteDialog}>Hủy</Button>
+                            <Button variant="contained" onClick={handleDelete}>Xoá</Button>
+                          </DialogActions>
+                        </Dialog>
+                        {/* DIALOG VÀ FORM DÙNG ĐỂ ADD DATA */}
+                        <Dialog open={openEditDialog} onClose={handleCloseEditDialog}>
+                          <DialogTitle>Cập nhật thông tin Tỉnh/Thành Phố</DialogTitle>
+                          <DialogContent>
+                            <DialogContentText>
+                              Nhập đầy đủ các trường thông tin dưới đây để thêm mới 1 bản ghi.
+                            </DialogContentText>
+                            <FormGroup>
+                              <FormControl>
+                                <TextField
+                                  autoFocus
+                                  required
+                                  margin="normal"
+                                  name="name"
+                                  label="Tên Tỉnh/Thành Phố"
+                                  type="text"
+                                  fullWidth
+                                  variant="outlined"
+                                  value={selectedRowData?.name || ''}
+                                  // value={formData.name}
+                                  onChange={handleChange}
+                                />
+                              </FormControl>
+                              <FormControl>
+                                <TextField
+                                  required
+                                  margin="normal"
+                                  name="code"
+                                  label="Mã Tỉnh/Thành Phố"
+                                  type="text"
+                                  fullWidth
+                                  variant="outlined"
+                                  // value={formData.code}
+                                  value={selectedRowData?.code || ''}
+                                  onChange={handleChange}
+                                />
+                              </FormControl>
+                              <FormControl>
+                                <TextField
+                                  required
+                                  margin="normal"
+                                  name="type"
+                                  label="Loại"
+                                  type="text"
+                                  fullWidth
+                                  variant="outlined"
+                                  // value={formData.type}
+                                  value={selectedRowData?.type || ''}
+                                  onChange={handleChange}
+                                />
+                              </FormControl>
+                              <DialogActions>
+                                <Button sx={{ mr: 1 }} variant="outlined" onClick={handleCloseEditDialog}>Hủy</Button>
+                                <Button variant="contained" onClick={handleEdit} type="submit">Cập nhật</Button>
+                              </DialogActions>
+                            </FormGroup>
+                          </DialogContent>
+                        </Dialog>
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+              {filterRows.length === 0 && (
+                <TableRow>
+                  <TableCell colSpan={6} align="center">No results found</TableCell>
                 </TableRow>
               )}
             </TableBody>
           </Table>
         </TableContainer>
         <TablePagination
-              sx={{ display: 'flex', justifyContent: 'flex-end' }}
-              rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-              colSpan={3}
-              count={rows.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              slotProps={{
-                select: {
-                  inputProps: {
-                    'aria-label': 'rows per page',
-                  },
-                  native: true,
-                },
-              }}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-              ActionsComponent={TablePaginationActions}
-            />
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={rows.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handlePageChange}
+          onRowsPerPageChange={handleRowsPerPageChange}
+          ActionsComponent={TablePaginationActions}
+        />
       </Paper>
-      <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      />
     </Box>
   );
 }
-
-function descendingComparator(a, b, orderBy) {
-  if (b[orderBy] < a[orderBy]) {
-    return -1;
-  }
-  if (b[orderBy] > a[orderBy]) {
-    return 1;
-  }
-  return 0;
-}
-
-function getComparator(order, orderBy) {
-  return order === 'desc'
-    ? (a, b) => descendingComparator(a, b, orderBy)
-    : (a, b) => -descendingComparator(a, b, orderBy);
-}
-
-function stableSort(array, comparator) {
-  const stabilizedThis = array.map((el, index) => [el, index]);
-  stabilizedThis.sort((a, b) => {
-    const order = comparator(a[0], b[0]);
-    if (order !== 0) return order;
-    return a[1] - b[1];
-  });
-  return stabilizedThis.map((el) => el[0]);
-}
-

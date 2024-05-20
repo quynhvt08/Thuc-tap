@@ -3,13 +3,15 @@ import { HomeOutlined, GlobalOutlined } from '@ant-design/icons';
 import LocationCityOutlinedIcon from '@mui/icons-material/LocationCityOutlined';
 import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 // icons
 const icons = {
   HomeOutlined,
   GlobalOutlined,
   LocationCityOutlinedIcon,
   CottageOutlinedIcon,
-  MapsHomeWorkOutlinedIcon
+  MapsHomeWorkOutlinedIcon,
+  AccountBalanceIcon
 };
 
 // ==============================|| MENU ITEMS - SAMPLE PAGE & DOCUMENTATION ||============================== //
@@ -41,6 +43,15 @@ const manage = {
       type: 'item',
       url: '/wardlist',
       icon: icons.CottageOutlinedIcon,
+      // external: true,
+      // target: true
+    },
+    {
+      id:'Truong',
+      title: 'Trường học',
+      type: 'item',
+      url: '/school',
+      icon: icons.AccountBalanceIcon ,
       // external: true,
       // target: true
     },

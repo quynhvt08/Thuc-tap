@@ -15,7 +15,7 @@ const FilterComponent = () => {
   const [selectedWard, setSelectedWard] = useState('');
   const [open, setOpen] = useState(false);
   const [filteredResults, setFilteredResults] = useState([]);
-  const [showFilteredResults, setShowFilteredResults] = useState(false); // State để kiểm soát việc hiển thị kết quả lọc
+
 
   const boxRef = useRef(null);
 
@@ -130,10 +130,6 @@ const FilterComponent = () => {
       setFilteredDistricts([]);
       setFilteredResults([]);
     }
-    // Xóa các giá trị đã chọn trước đó và hiển thị kết quả lọc
-    setSelectedDistrict('');
-    setSelectedWard('');
-    setShowFilteredResults(true);
   };
 
   return (
@@ -215,7 +211,7 @@ const FilterComponent = () => {
         </Box>
       </Collapse>
       {/* Hiển thị kết quả đã lọc */}
-      {showFilteredResults && (
+      {filteredResults.length > 0 && (
         <div style={{ marginTop: '20px' }}>
           <h3>Kết quả đã lọc:</h3>
           <TableContainer component={Paper}>

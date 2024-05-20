@@ -14,6 +14,7 @@ const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')))
 const CityList = Loadable(lazy(() => import('pages/city-list/CityList')));
 const DistrictList = Loadable(lazy(() => import('pages/district-list/DistrictList')));
 const WardList = Loadable(lazy(() => import('pages/ward-list/WardList')));
+const School = Loadable(lazy(() => import('pages/school/School')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -49,6 +50,10 @@ const MainRoutes = {
     {
       path: 'wardlist',
       element: <WardList />
+    },
+    {
+      path: 'school',
+      element: <School />
     },
     {
       path: 'sample-page',

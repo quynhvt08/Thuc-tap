@@ -23,14 +23,15 @@ import FormGroup from '@mui/material/FormGroup';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 
 
 const handleDetail = (event) => {
   event.stopPropagation();
 };
 
-function createData(id, name, code, type) {
-  return { id, name, code, type, path_with_type };
+function createData(id, name_with_type, code, type) {
+  return { id, name_with_type, code, type, path_with_type };
 }
 
 
@@ -99,7 +100,7 @@ TablePaginationActions.propTypes = {
 const headCells = [
   { id: '', numeric: false, disablePadding: true, label: 'STT' },
   { id: 'code', numeric: false, disablePadding: true, label: 'Mã' },
-  { id: 'name', numeric: false, disablePadding: true, label: 'Tên Quận/ Huyện' },
+  { id: 'name_with_type', numeric: false, disablePadding: true, label: 'Tên Phường/ Xã' },
   { id: 'type', numeric: false, disablePadding: true, label: 'Loại' },
   { id: 'path_with_type', numeric: false, disablePadding: true, label: 'Chi Tiết' },
   { id: 'action', numeric: false, disablePadding: true, label: 'Action' },
@@ -211,7 +212,7 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >      
-          <h2> <HomeWorkIcon /> &nbsp;&nbsp;Danh sách Quận/Huyện</h2>
+          <h2> <AccountBalanceIcon /> &nbsp;&nbsp;Danh sách Trường học</h2>
         </Typography>
         
         {/* <Stack spacing={2} sx={{ width: 300 }} justifyContent={'center'}>
@@ -315,7 +316,7 @@ export default function EnhancedTable() {
   const [selectedRowData, setSelectedRowData] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios('http://localhost:3002/districts');
+      const result = await axios('http://localhost:3003/wards');
       setRows(result.data);
     };
     fetchData();
@@ -467,6 +468,7 @@ useEffect(() => {
   }
 }, [selectedDistrict]);
 
+// Dựa vào city.code === district.parent_code  để lấy ra quận liên quan đến tỉnh thành đó
 useEffect(() => {
   if (selectedProvince) {
     const filtered = districts.filter(({ parent_code }) => parent_code === selectedProvince);
@@ -476,6 +478,7 @@ useEffect(() => {
   }
 }, [selectedProvince, districts]);
 
+// Dựa vào district.parent_code === ward.parent_code  để lấy ra phường xã quan đến quận đó
 useEffect(() => {
   if (selectedDistrict) {
     const filtered = wards.filter(({ parent_code }) => parent_code === selectedDistrict);
@@ -550,6 +553,7 @@ const handleApplyFilter = () => {
   setFilterRows(filteredRows);
   setOpen(false); // Đóng box lọc khi áp dụng filter
 };
+
 
 return (
   <Typography
@@ -656,7 +660,7 @@ return (
                   <TableRow hover tabIndex={-1} key={row.id}>
                     <TableCell>{page * rowsPerPage + index + 1}</TableCell>
                     <TableCell component="th" scope="row" padding="none">{row.code}</TableCell>
-                    <TableCell align="left">{row.name}</TableCell>
+                    <TableCell align="left">{row.name_with_type}</TableCell>
                     <TableCell align="left">{row.type}</TableCell>
                     <TableCell align="left">{row.path_with_type}</TableCell>
                     <TableCell align="left">
