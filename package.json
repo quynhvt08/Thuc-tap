@@ -14,7 +14,8 @@
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
-    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
+    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "start:json-server": "concurrently \"json-server --port 3001 db.json\" \"json-server --port 3002 DistrictList.json\" \"json-server --port 3003 ward.json\" \"json-server --port 3004 School.json\""
   },
   "dependencies": {
     "@ant-design/colors": "^7.0.2",
@@ -35,6 +36,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "apexcharts": "^3.49.0",
     "axios": "0.25.0",
+    "concurrently": "^7.0.0",
     "formik": "^2.4.5",
     "framer-motion": "^11.0.8",
     "json-server": "^1.0.0-beta.0",
