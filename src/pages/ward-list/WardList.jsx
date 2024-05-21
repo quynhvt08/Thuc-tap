@@ -579,7 +579,6 @@ export default function EnhancedTable() {
     };
   }, []);
 
-<<<<<<< HEAD
  // Lọc kết quả
   const handleApplyFilter = () => { 
     let filteredRows = rows;
@@ -599,32 +598,11 @@ export default function EnhancedTable() {
         }
       } else {
         filteredRows = rows.filter(row => filteredDistricts.some(district => district.code === row.parent_code));
-=======
-  const handleApplyFilter = () => { 
-    let filteredRows = rows;
-
-    if (selectedProvince) {
-      const filteredDistricts = districts.filter(({ parent_code }) => parent_code === selectedProvince);
-      setFilteredDistricts(filteredDistricts);
-
-      if (selectedDistrict) {
-        const filteredWards = wards.filter(({ parent_code }) => parent_code === selectedDistrict);
-        setFilteredWards(filteredWards);
-
-        if (selectedWard) {
-          filteredRows = rows.filter(row => row.parent_code === selectedWard);
-        } else {
-          filteredRows = rows.filter(row => filteredWards.some(ward => ward.parent_code === row.parent_code));
-        }
-      } else {
-        filteredRows = rows.filter(row => filteredDistricts.some(district => district.parent_code === row.parent_code));
->>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
       }
     } else {
       setFilteredDistricts([]);
       setFilteredWards([]);
     }
-<<<<<<< HEAD
   
     setFilteredResults(filteredRows);
     setFilterRows(filteredRows);
@@ -643,13 +621,6 @@ export default function EnhancedTable() {
     setOpen(false); // Đóng box lọc
   };
   
-=======
-
-    setFilteredResults(filteredRows);
-    setFilterRows(filteredRows);
-    setOpen(false); // Đóng box lọc khi áp dụng filter
-  };
->>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
   //SEARCH
   useEffect(() => {
     const filteredRows = rows.filter((row) =>
@@ -658,15 +629,6 @@ export default function EnhancedTable() {
     setFilterRows(filteredRows);
   }, [searchTerm, rows]);
   return (
-<<<<<<< HEAD
-=======
-    <Typography
-      sx={{ flex: '1 1 100%', ml: 2, mt: 1 }}
-      variant="h6"
-      id="tableTitle"
-      component="div"
-    >
->>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
       <Box sx={{ width: '100%' }}>
         <Paper sx={{ width: '100%', mb: 2 }}>
           <EnhancedTableToolbar rows={rows} setRows={setRows} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
@@ -739,11 +701,7 @@ export default function EnhancedTable() {
               <CardContent>
                 <Stack spacing={2} direction="column">
                   <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
-<<<<<<< HEAD
                     <Button variant="contained" color="secondary" size="big" onClick={handleClearFilter}>Xóa lọc</Button>
-=======
-                    <Button variant="contained" color="secondary" size="big" onClick={() =>  setFilterRows(rows)}>Xóa lọc</Button>
->>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
                     <Button variant="contained" color="primary" size="big" onClick={() => handleApplyFilter([])}>Áp dụng</Button>
                   </Stack>
                 </Stack>
@@ -752,11 +710,7 @@ export default function EnhancedTable() {
           </Box>
         </Collapse>
       </div>
-<<<<<<< HEAD
           <TableContainer sx={{ flex: '1 1 100%', ml: 2, mt: 0 }}>
-=======
-          <TableContainer sx={{ flex: '1 1 100%', ml: 3, mt: 0 }}>
->>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
             <Table
               sx={{ minWidth: 750 }}
               aria-labelledby="tableTitle"
@@ -883,9 +837,5 @@ export default function EnhancedTable() {
           />
         </Paper>
       </Box>
-<<<<<<< HEAD
-=======
-    </Typography>
->>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
   );
 }

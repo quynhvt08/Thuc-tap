@@ -574,7 +574,6 @@ export default function EnhancedTable() {
     };
   }, []);
 
-<<<<<<< HEAD
    // Lọc kết quả
    const handleApplyFilter = () => { 
     let filteredRows = rows;
@@ -587,19 +586,6 @@ export default function EnhancedTable() {
         const filteredWards = wards.filter(({ parent_code }) => parent_code === selectedDistrict);
         setFilteredWards(filteredWards);
   
-=======
-  const handleApplyFilter = () => { 
-    let filteredRows = rows;
-
-    if (selectedProvince) {
-      const filteredDistricts = districts.filter(({ parent_code }) => parent_code === selectedProvince);
-      setFilteredDistricts(filteredDistricts);
-
-      if (selectedDistrict) {
-        const filteredWards = wards.filter(({ parent_code }) => parent_code === selectedDistrict);
-        setFilteredWards(filteredWards);
-
->>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
         if (selectedWard) {
           filteredRows = rows.filter(row => row.parent_code === selectedWard);
         } else {
@@ -612,7 +598,6 @@ export default function EnhancedTable() {
       setFilteredDistricts([]);
       setFilteredWards([]);
     }
-<<<<<<< HEAD
   
     setFilteredResults(filteredRows);
     setFilterRows(filteredRows);
@@ -632,13 +617,6 @@ export default function EnhancedTable() {
   };
 
 
-=======
-
-    setFilteredResults(filteredRows);
-    setFilterRows(filteredRows);
-    setOpen(false); // Đóng box lọc khi áp dụng filter
-  };
->>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
   //SEARCH
   useEffect(() => {
     const filteredRows = rows.filter((row) =>
@@ -648,21 +626,13 @@ export default function EnhancedTable() {
   }, [searchTerm, rows]);
   return (
     <Typography
-<<<<<<< HEAD
       sx={{ flex: '1 1 100%', ml: 2, mt: 0 }}
-=======
-      sx={{ flex: '1 1 100%', ml: 2, mt: 1 }}
->>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
       variant="h6"
       id="tableTitle"
       component="div"
     >
       <Box sx={{ width: '100%' }}>
-<<<<<<< HEAD
         <Paper sx={{ width: '100%', mb : 0 }}>
-=======
-        <Paper sx={{ width: '100%', mb : 2 }}>
->>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
           <EnhancedTableToolbar rows={rows} setRows={setRows} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           <div style={{ position: 'relative' }}>
         <Toolbar>
@@ -733,11 +703,7 @@ export default function EnhancedTable() {
               <CardContent>
                 <Stack spacing={2} direction="column">
                   <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
-<<<<<<< HEAD
                     <Button variant="contained" color="secondary" size="big" onClick={handleClearFilter}>Xóa lọc</Button>
-=======
-                    <Button variant="contained" color="secondary" size="big" onClick={() =>  setFilterRows(rows)}>Xóa lọc</Button>
->>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
                     <Button variant="contained" color="primary" size="big" onClick={() => handleApplyFilter([])}>Áp dụng</Button>
                   </Stack>
                 </Stack>
