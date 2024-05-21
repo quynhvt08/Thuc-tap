@@ -625,6 +625,7 @@ useEffect(() => {
   setFilterRows(filteredRows);
   setFilterOpen(false); // Đóng box lọc khi áp dụng filter
 };
+<<<<<<< HEAD
 
 // Sử dụng nút "Xóa lọc"
 const handleClearFilter = () => {
@@ -638,6 +639,8 @@ const handleClearFilter = () => {
   setOpen(false); // Đóng box lọc
 };
 
+=======
+>>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
 //SEARCH
 useEffect(() => {
   const filteredRows = rows.filter((row) =>
@@ -724,7 +727,11 @@ useEffect(() => {
               <CardContent>
                 <Stack spacing={2} direction="column">
                   <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
+<<<<<<< HEAD
                     <Button variant="contained" color="secondary" size="big" onClick={handleClearFilter}>Xóa lọc</Button>
+=======
+                    <Button variant="contained" color="secondary" size="big" onClick={() =>  setFilterRows(rows)}>Xóa lọc</Button>
+>>>>>>> bbfb9497f8753c263a084d3938033f4e1f5de7e8
                     <Button variant="contained" color="primary" size="big" onClick={() => handleApplyFilter([])}>Áp dụng</Button>
                   </Stack>
                 </Stack>
