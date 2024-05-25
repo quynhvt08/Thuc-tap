@@ -4,6 +4,8 @@ import LocationCityOutlinedIcon from '@mui/icons-material/LocationCityOutlined';
 import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 // icons
 const icons = {
   HomeOutlined,
@@ -11,7 +13,9 @@ const icons = {
   LocationCityOutlinedIcon,
   CottageOutlinedIcon,
   MapsHomeWorkOutlinedIcon,
-  AccountBalanceIcon
+  AccountBalanceIcon,
+  WorkOutlineIcon,
+  MenuBookIcon
 };
 
 // ==============================|| MENU ITEMS - SAMPLE PAGE & DOCUMENTATION ||============================== //
@@ -50,12 +54,29 @@ const manage = {
       id:'Truong',
       title: 'Trường học',
       type: 'item',
-      url: '/school',
+      url: '/schoollist',
       icon: icons.AccountBalanceIcon ,
       // external: true,
       // target: true
     },
-    
+    {
+      id:'NganhHoc',
+      title: 'Ngành học',
+      type: 'item',
+      url: '/majorlist',
+      icon: icons.WorkOutlineIcon ,
+      // external: true,
+      // target: true
+    },
+    {
+      id:'ToHop',
+      title: 'Tổ hợp xét tuyển',
+      type: 'item',
+      url: '/entranceexamblocks',
+      icon: icons.MenuBookIcon ,
+      // external: true,
+      // target: true
+    },
   ]
 };
 

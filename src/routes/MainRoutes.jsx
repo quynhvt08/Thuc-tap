@@ -14,8 +14,9 @@ const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')))
 const CityList = Loadable(lazy(() => import('pages/city-list/CityList')));
 const DistrictList = Loadable(lazy(() => import('pages/district-list/DistrictList')));
 const WardList = Loadable(lazy(() => import('pages/ward-list/WardList')));
-const School = Loadable(lazy(() => import('pages/school/School')));
-
+const SchoolList = Loadable(lazy(() => import('pages/school-list/SchoolList')));
+const EntranceExamBlocks = Loadable(lazy(() => import('pages/entrance-exam-blocks/EntranceExamBlocks')));
+const MajorList = Loadable(lazy(() => import('pages/major-list/MajorList')));
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
@@ -52,21 +53,18 @@ const MainRoutes = {
       element: <WardList />
     },
     {
-      path: 'school',
-      element: <School />
+      path: 'schoollist',
+      element: <SchoolList />
     },
     {
-      path: 'sample-page',
-      element: <SamplePage />
+      path: 'entranceexamblocks',
+      element: <EntranceExamBlocks />
     },
     {
-      path: 'shadow',
-      element: <Shadow />
+      path: 'majorlist',
+      element: <MajorList />
     },
-    {
-      path: 'typography',
-      element: <Typography />
-    }
+    
   ]
 };
 

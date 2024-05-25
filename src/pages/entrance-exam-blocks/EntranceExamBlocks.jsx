@@ -23,8 +23,8 @@ import FormGroup from '@mui/material/FormGroup';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-
+import PublishIcon from '@mui/icons-material/Publish';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 //PHÂN TRANG
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -89,10 +89,10 @@ TablePaginationActions.propTypes = {
 
 const headCells = [
   { id: '', numeric: false, disablePadding: true, label: 'STT' },
-  { id: 'code', numeric: false, disablePadding: true, label: 'Mã' },
-  { id: 'name', numeric: false, disablePadding: true, label: 'Tên trường' },
-  { id: 'type', numeric: false, disablePadding: true, label: 'Loại' },
-  { id: 'address', numeric: false, disablePadding: true, label: 'Địa chỉ' },
+  // { id: 'code', numeric: false, disablePadding: true, label: 'Mã' },
+  { id: 'name', numeric: false, disablePadding: true, label: 'Tên tổ hợp' },
+  { id: 'block', numeric: false, disablePadding: true, label: 'Khối' },
+  { id: 'subject', numeric: false, disablePadding: true, label: 'Môn học' },
   { id: 'action', numeric: false, disablePadding: true, label: 'Action' },
 ];
 
@@ -152,9 +152,8 @@ function EnhancedTableToolbar(props) {
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    code: '',
-    type: '',
-    address: ''
+    block: '',
+    subject: ''
   });
 
   //MỞ DIALOG
@@ -179,26 +178,26 @@ function EnhancedTableToolbar(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3004/schools', formData);
+      const response = await axios.post('http://localhost:3005/entranceexamblocks', formData);
+      // Cập nhật state với mục nhập mới
       const newEntry = response.data;
       setRows(prevRows => {
         const updatedRows = [...prevRows, newEntry].map(item => {
-          if (item.type === 'thpt') {
-            return { ...item, type: 'Trung học phổ thông' };
-          } 
           return item;
         });
         return updatedRows;
       });
-      handleClose(); 
+      handleClose(); // Đóng dialog sau khi thêm thành công
     } catch (error) {
       console.error('Lỗi khi thêm tỉnh/thành phố:', error);
+      // Xử lý lỗi nếu có
     }
   };
   //SEARCH
   const handleChangeSearchTerm = (event) => {
     setSearchTerm(event.target.value);
   };
+
   return (
     <Toolbar
       sx={{
@@ -213,9 +212,9 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >      
-          <h2> <AccountBalanceIcon /> &nbsp;&nbsp;Danh sách Trường học</h2>
+          <h2> <MenuBookIcon /> &nbsp;&nbsp;Danh sách Tổ hợp xét tuyển</h2>
         </Typography>
-        <FormGroup sx={{ mr : 1 }}>
+        <FormGroup sx={{ mr : 5 }}>
           <FormControl >
             <TextField
               name="name"
@@ -230,14 +229,19 @@ function EnhancedTableToolbar(props) {
         </FormGroup>
       </>
       <React.Fragment>
-        <Tooltip sx={{ mr : 5 }} title="Thêm Tỉnh/Thành phố">
-          <IconButton>
-            <AddLocationAltIcon  onClick={handleClickOpen}/>
+        <Tooltip sx={{ mr : 1 }} title="Thêm Tổ hợp">
+          <IconButton  onClick={handleClickOpen}>
+            <AddLocationAltIcon/>
+          </IconButton>
+        </Tooltip>
+        <Tooltip sx={{ mr : 1 }} title="Import Excel">
+          <IconButton onClick={handleClickOpen}>
+            <PublishIcon/>
           </IconButton>
         </Tooltip>
         {/* DIALOG VÀ FORM DÙNG ĐỂ ADD DATA */}
         <Dialog open={open} onClose={handleClose}>
-          <DialogTitle>Thêm mới 1 Trường học</DialogTitle>
+          <DialogTitle>Thêm mới 1 Tổ hợp</DialogTitle>
           <DialogContent>
             <DialogContentText>
               Nhập đầy đủ các trường thông tin dưới đây để thêm mới 1 bản ghi.
@@ -249,7 +253,7 @@ function EnhancedTableToolbar(props) {
                   required
                   margin="normal"
                   name="name"
-                  label="Tên Trường học"
+                  label="Tên tổ hợp"
                   type="text"
                   fullWidth
                   variant="outlined"
@@ -261,12 +265,12 @@ function EnhancedTableToolbar(props) {
                 <TextField
                   required
                   margin="normal"
-                  name="code"
-                  label="Mã Trường học"
+                  name="block"
+                  label="Khối"
                   type="text"
                   fullWidth
                   variant="outlined"
-                  value={formData.code}
+                  value={formData.block}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -274,25 +278,12 @@ function EnhancedTableToolbar(props) {
                 <TextField
                   required
                   margin="normal"
-                  name="type"
-                  label="Loại"
+                  name="subject"
+                  label="Môn học"
                   type="text"
                   fullWidth
                   variant="outlined"
-                  value={formData.type}
-                  onChange={handleChange}
-                />
-              </FormControl>
-              <FormControl>
-                <TextField
-                  required
-                  margin="normal"
-                  name="address"
-                  label="Địa chỉ"
-                  type="text"
-                  fullWidth
-                  variant="outlined"
-                  value={formData.address}
+                  value={formData.subject}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -307,7 +298,6 @@ function EnhancedTableToolbar(props) {
     </Toolbar>
   );
 }
-
 EnhancedTableToolbar.propTypes = {
   rows: PropTypes.array.isRequired,
 };
@@ -324,15 +314,12 @@ export default function EnhancedTable() {
   const [selectedRowId, setSelectedRowId] = useState(null);
   const [selectedRowData, setSelectedRowData] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-  //API LẤY DATA
+  // GỌI API LẤY DATA
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get('http://localhost:3004/schools');
+        const result = await axios.get('http://localhost:3005/entranceexamblocks');
         const processedData = result.data.map(item => {
-          if (item.type === 'thpt') {
-            return { ...item, type: 'Trung học phổ thông' };
-          } 
           return item;
         });
         setRows(processedData);
@@ -346,6 +333,7 @@ export default function EnhancedTable() {
   useEffect(() => {
     setFilterRows(rows);
   }, [rows]);
+  //HANDLE SORT
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
@@ -377,6 +365,7 @@ export default function EnhancedTable() {
     });
     return stabilizedThis.map((el) => el[0]);
   }
+  //END OF HANDLE SORT
 
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
@@ -386,6 +375,7 @@ export default function EnhancedTable() {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setSelectedRowData((prevData) => ({
@@ -396,7 +386,7 @@ export default function EnhancedTable() {
   
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3004/schools/${selectedRowId}`);
+      await axios.delete(`http://localhost:3005/entranceexamblocks/${selectedRowId}`);
       setRows(rows.filter((row) => row.id !== selectedRowId));
       setFilterRows(filterRows.filter((row) => row.id !== selectedRowId));
       handleCloseDeleteDialog();
@@ -407,7 +397,7 @@ export default function EnhancedTable() {
   const handleEdit = async () => {
     // console.log("info: ", selectedRowData);
     try {
-      await axios.put(`http://localhost:3004/schools/${selectedRowId}`, selectedRowData);
+      await axios.put(`http://localhost:3005/entranceexamblocks/${selectedRowId}`, selectedRowData);
       const updatedRows = rows.map(row =>
         row.id === selectedRowId ? selectedRowData : row
       );
@@ -439,300 +429,263 @@ export default function EnhancedTable() {
   };
 
   // BỘ LỌC
-const [filterOpen, setFilterOpen] = useState(false);
-const [provinces, setProvinces] = useState([]);
-const [districts, setDistricts] = useState([]);
-const [wards, setWards] = useState([]);
-const [filteredDistricts, setFilteredDistricts] = useState([]);
-const [filteredWards, setFilteredWards] = useState([]);
-const [filteredSchools, setFilteredSchools] = useState([]);
-const [selectedProvince, setSelectedProvince] = useState('');
-const [selectedDistrict, setSelectedDistrict] = useState('');
-const [selectedWard, setSelectedWard] = useState('');
-const [selectedSchool, setSelectedSchool] = useState('');
-const [schools, setSchools] = useState([]);
-const [filteredResults, setFilteredResults] = useState([]);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [provinces, setProvinces] = useState([]);
+  const [districts, setDistricts] = useState([]);
+  const [wards, setWards] = useState([]);
+  const [filteredDistricts, setFilteredDistricts] = useState([]);
+  const [filteredWards, setFilteredWards] = useState([]);
+  const [selectedProvince, setSelectedProvince] = useState('');
+  const [selectedDistrict, setSelectedDistrict] = useState('');
+  const [selectedWard, setSelectedWard] = useState('');
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [filteredTableData, setFilteredTableData] = useState([]);
 
 
-const boxRef = useRef(null);
+  const boxRef = useRef(null);
 
-// LẤY KẾT QUẢ TỈNH/ THÀNH PHỐ CHO BỘ LỌC
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('http://localhost:3001/data');
-      setProvinces(response.data.map(({ _id, code, name_with_type }) => ({ id: _id, code, name: name_with_type })));
-    } catch (error) {
-      console.error('Error fetching provinces:', error);
+  // LẤY KẾT QUẢ TỈNH/ THÀNH PHỐ CHO BỘ LỌC
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/data');
+        setProvinces(response.data.map(({ _id, code, name_with_type }) => ({ id: _id, code, name: name_with_type })));
+      } catch (error) {
+        console.error('Error fetching provinces:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // LẤY KẾT QUẢ QUẬN HUYỆN CHO BỘ LỌC
+  useEffect(() => {
+    if (selectedProvince) {
+      const fetchDistricts = async () => {
+        try {
+          const response = await axios.get(`http://localhost:3002/districts?provinceCode=${selectedProvince}`);
+          setDistricts(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
+        } catch (error) {
+          console.error('Error fetching districts:', error);
+        }
+      };
+
+      fetchDistricts();
+    } else {
+      setDistricts([]);
     }
-  };
+  }, [selectedProvince]);
 
-  fetchData();
-}, []);
-
-// LẤY KẾT QUẢ QUẬN HUYỆN CHO BỘ LỌC
-useEffect(() => {
-  if (selectedProvince) {
-    const fetchDistricts = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3002/districts?provinceCode=${selectedProvince}`);
-        setDistricts(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
-      } catch (error) {
-        console.error('Error fetching districts:', error);
-      }
-    };
-    fetchDistricts();
-  } else {
-    setDistricts([]);
-  }
-}, [selectedProvince]);
-
-// LẤY KẾT QUẢ XÃ PHƯỜNG CHO BỘ LỌC
-useEffect(() => {
-  if (selectedDistrict) {
-    const fetchWards = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3003/wards?districtCode=${selectedDistrict}`);
-        setWards(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
-      } catch (error) {
-        console.error('Error fetching wards:', error);
-      }
-    };
-    fetchWards();
-  } else {
-    setWards([]);
-  }
-}, [selectedDistrict]);
-
-// LẤY KẾT QUẢ TRƯỜNG CHO BỘ LỌC
-useEffect(() => {
-  if (selectedWard) {
-    const fetchSchools = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3004/School?wardCode=${selectedWard}`);
-        setWards(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
-      } catch (error) {
-        console.error('Error fetching wards:', error);
-      }
-    };
-    fetchSchools();
-  } else {
-    setSchools([]);
-  }
-}, [selectedWard]);
-
-// Dựa vào city.code === district.parent_code  để lấy ra quận liên quan đến tỉnh thành đó
-useEffect(() => {
-  if (selectedProvince) {
-    const filtered = districts.filter(({ parent_code }) => parent_code === selectedProvince);
-    setFilteredDistricts(filtered);
-  } else {
-    setFilteredDistricts([]);
-  }
-}, [selectedProvince, districts]);
-
-// Dựa vào district.parent_code === ward.parent_code  để lấy ra phường xã quan đến quận đó
-useEffect(() => {
-  if (selectedDistrict) {
-    const filtered = wards.filter(({ parent_code }) => parent_code === selectedDistrict);
-    setFilteredWards(filtered);
-  } else {
-    setFilteredWards([]);
-  }
-}, [selectedDistrict, wards]);
-
-// Dựa vào ward.parent_code === school.parent_code  để lấy ra phường xã quan đến quận đó
-useEffect(() => {
-  if (selectedWard) {
-    const filtered = schools.filter(({ parent_code }) => parent_code === selectedWard);
-    setFilteredSchools(filtered);
-  } else {
-    setFilteredSchools([]);
-  }
-}, [selectedWard, schools]);
-
-const handleProvinceChange = (event) => {
-  const provinceCode = event.target.value;
-  setSelectedProvince(provinceCode);
-  setSelectedDistrict('');
-  setSelectedWard('');
-  setSelectedSchool('');
-};
-
-const handleDistrictChange = (event) => {
-  const districtCode = event.target.value;
-  setSelectedDistrict(districtCode);
-  setSelectedWard('');
-  setSelectedSchool('');
-};
-
-const handleWardChange = (event) => {
-  const wardCode = event.target.value;
-  setSelectedWard(wardCode);
-  setSelectedSchool('');
-};
-
-// const handleSchoolChange = (event) => {
-//   const schoolId = event.target.value;
-//   setSelectedSchool(schoolId);
-// };
-
-const handleToggle = () => {
-  setFilterOpen((prev) => !prev);
-};
-
-const handleClickOutside = (event) => {
-  if (boxRef.current && !boxRef.current.contains(event.target)) {
-    if (!event.target.closest('.MuiSelect-root') && !event.target.closest('.MuiMenu-list')) {
-      setFilterOpen(false);
-    }
-  }
-};
-
-useEffect(() => {
-  document.addEventListener("mousedown", handleClickOutside);
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, []);
-
- // Lọc kết quả
- const handleApplyFilter = () => { 
-  let filteredRows = rows;
-
-  if (selectedProvince) {
-    const filteredDistricts = districts.filter(({ parent_code }) => parent_code === selectedProvince);
-    setFilteredDistricts(filteredDistricts);
-
+  useEffect(() => {
     if (selectedDistrict) {
-      const filteredWards = wards.filter(({ parent_code }) => parent_code === selectedDistrict);
-      setFilteredWards(filteredWards);
+      const fetchWards = async () => {
+        try {
+          const response = await axios.get(`http://localhost:3003/wards?districtCode=${selectedDistrict}`);
+          setWards(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
+        } catch (error) {
+          console.error('Error fetching wards:', error);
+        }
+      };
 
-      if (selectedWard) {
-        filteredRows = rows.filter(row => filteredWards.some(selectedWard === row.parent_code2));
+      fetchWards();
+    } else {
+      setWards([]);
+    }
+  }, [selectedDistrict]);
+
+  useEffect(() => {
+    if (selectedProvince) {
+      const filtered = districts.filter(({ parent_code }) => parent_code === selectedProvince);
+      setFilteredDistricts(filtered);
+    } else {
+      setFilteredDistricts([]);
+    }
+  }, [selectedProvince, districts]);
+
+  useEffect(() => {
+    if (selectedDistrict) {
+      const filtered = wards.filter(({ parent_code }) => parent_code === selectedDistrict);
+      setFilteredWards(filtered);
+    } else {
+      setFilteredWards([]);
+    }
+  }, [selectedDistrict, wards]);
+
+  const handleProvinceChange = (event) => {
+    const provinceCode = event.target.value;
+    setSelectedProvince(provinceCode);
+    setSelectedDistrict('');
+    setSelectedWard('');
+  };
+
+  const handleDistrictChange = (event) => {
+    const districtCode = event.target.value;
+    setSelectedDistrict(districtCode);
+    setSelectedWard('');
+  };
+
+  const handleWardChange = (event) => {
+    const wardCode = event.target.value;
+    setSelectedWard(wardCode);
+  };
+
+  const handleToggle = () => {
+    setFilterOpen((prev) => !prev);
+  };
+
+  const handleClickOutside = (event) => {
+    if (boxRef.current && !boxRef.current.contains(event.target)) {
+      if (!event.target.closest('.MuiSelect-root') && !event.target.closest('.MuiMenu-list')) {
+        setFilterOpen(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+   // Lọc kết quả
+   const handleApplyFilter = () => { 
+    let filteredRows = rows;
+  
+    if (selectedProvince) {
+      const filteredDistricts = districts.filter(({ parent_code }) => parent_code === selectedProvince);
+      setFilteredDistricts(filteredDistricts);
+  
+      if (selectedDistrict) {
+        const filteredWards = wards.filter(({ parent_code }) => parent_code === selectedDistrict);
+        setFilteredWards(filteredWards);
+  
+        if (selectedWard) {
+          filteredRows = rows.filter(row => row.parent_code === selectedWard);
+        } else {
+          filteredRows = rows.filter(row => filteredWards.some(ward => ward.parent_code === row.parent_code));
+        }
       } else {
-        filteredRows = rows.filter(row => filteredWards.some(ward => ward.code === row.parent_code2));
+        filteredRows = rows.filter(row => filteredDistricts.some(district => district.parent_code === row.parent_code));
       }
     } else {
-        filteredRows = rows.filter(row => filteredDistricts.some(district => district.code === row.parent_code1));
+      setFilteredDistricts([]);
+      setFilteredWards([]);
     }
-  } else {
+  
+    setFilteredResults(filteredRows);
+    setFilterRows(filteredRows);
+    setFilterOpen(false); // Đóng box lọc khi áp dụng filter
+  };
+  
+  // Sử dụng nút "Xóa lọc"
+  const handleClearFilter = () => {
+    setSelectedProvince('');
+    setSelectedDistrict('');
+    setSelectedWard('');
     setFilteredDistricts([]);
     setFilteredWards([]);
-  }
+    setFilteredResults([]);
+    setFilterRows(rows); // Đưa filterRows về dữ liệu gốc
+    setOpen(false); // Đóng box lọc
+  };
 
-  setFilteredResults(filteredRows);
-  setFilterRows(filteredRows);
-  setFilterOpen(false); // Đóng box lọc khi áp dụng filter
-};
 
-// Sử dụng nút "Xóa lọc"
-const handleClearFilter = () => {
-  setSelectedProvince('');
-  setSelectedDistrict('');
-  setSelectedWard('');
-  setFilteredDistricts([]);
-  setFilteredWards([]);
-  setFilteredResults([]);
-  setFilterRows(rows); // Đưa filterRows về dữ liệu gốc
-  setOpen(false); // Đóng box lọc
-};
-
-//SEARCH
-useEffect(() => {
-  const filteredRows = rows.filter((row) =>
-    row.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-  setFilterRows(filteredRows);
-}, [searchTerm, rows]);
+  //SEARCH
+  useEffect(() => {
+    const filteredRows = rows.filter((row) =>
+      row.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilterRows(filteredRows);
+  }, [searchTerm, rows]);
   return (
     <Typography
-      sx={{ flex: '1 1 100%', ml: 2, mt: 1 }}
+      sx={{ flex: '1 1 100%', ml: 2, mt: 0 }}
       variant="h6"
       id="tableTitle"
       component="div"
     >
       <Box sx={{ width: '100%' }}>
-        <Paper sx={{ width: '100%', mb: 2 }}>
+        <Paper sx={{ width: '100%'}}>
           <EnhancedTableToolbar rows={rows} setRows={setRows} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           <div style={{ position: 'relative' }}>
-        <Toolbar>
-          <Button variant="contained" color="primary" size="big" onClick={handleToggle}>
-            <FilterAltIcon /> Lọc
-          </Button>
-        </Toolbar>
-        <Collapse in={filterOpen}>
-          <Box
-            ref={boxRef}
-            sx={{
-              position: 'absolute',
-              left: '5px',
-              zIndex: 1,
-              width: '350px',
-              padding: 0,
-              boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)',
-            }}
-          >
-            <Card>
-              <CardContent>
-                <Stack spacing={2} direction="column">
-                  <h3><HomeWorkIcon /> Lọc theo Khu vực </h3>
-                  <FormControl variant="outlined" size="big">
-                    <Select
-                      value={selectedProvince}
-                      onChange={handleProvinceChange}
-                      displayEmpty
-                    >
-                      <MenuItem value="">
-                        <span>Tất cả các tỉnh</span>
-                      </MenuItem>
-                      {provinces.map(({ id, code, name }) => (
-                        <MenuItem key={id} value={code}>{name}</MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                  <FormControl variant="outlined" size="big" disabled={!selectedProvince}>
-                    <Select
-                      value={selectedDistrict}
-                      onChange={handleDistrictChange}
-                      displayEmpty
-                    >
-                      <MenuItem value="">
-                        <span>Tất cả các quận/huyện</span>
-                      </MenuItem>
-                      {filteredDistricts.map(({ id, name, code }) => (
-                        <MenuItem key={id} value={code}>{name}</MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                  <FormControl variant="outlined" size="big" disabled={!selectedDistrict}>
-                    <Select
-                      value={selectedWard}
-                      onChange={handleWardChange}
-                      displayEmpty
-                    >
-                      <MenuItem value="">
-                        <span>Tất cả các xã/phường</span>
-                      </MenuItem>
-                      {filteredWards.map(({ id, name, code }) => (
-                        <MenuItem key={id} value={code}>{name}</MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                </Stack>
-              </CardContent>
-              <CardContent>
-                <Stack spacing={2} direction="column">
-                  <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
-                    <Button variant="contained" color="secondary" size="big" onClick={handleClearFilter}>Xóa lọc</Button>
-                    <Button variant="contained" color="primary" size="big" onClick={() => handleApplyFilter([])}>Áp dụng</Button>
-                  </Stack>
-                </Stack>
-              </CardContent>
-            </Card>
-          </Box>
-        </Collapse>
-      </div>
+            <Toolbar>
+              <Button variant="contained" color="primary" size="small" onClick={handleToggle}>
+                <FilterAltIcon /> Lọc
+              </Button>
+            </Toolbar>
+            <Collapse in={filterOpen}>
+              <Box
+                ref={boxRef}
+                sx={{
+                  position: 'absolute',
+                  left: '5px',
+                  zIndex: 1,
+                  width: '350px',
+                  padding: 0,
+                  boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)',
+                }}
+              >
+                <Card>
+                  <CardContent>
+                    <Stack spacing={2} direction="column">
+                      <h3><HomeWorkIcon /> Lọc theo Khu vực </h3>
+                      <FormControl variant="outlined" size="big">
+                        <Select
+                          value={selectedProvince}
+                          onChange={handleProvinceChange}
+                          displayEmpty
+                        >
+                          <MenuItem value="">
+                            <span>Tất cả các tỉnh</span>
+                          </MenuItem>
+                          {provinces.map(({ id, code, name }) => (
+                            <MenuItem key={id} value={code}>{name}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                      <FormControl variant="outlined" size="big" disabled={!selectedProvince}>
+                        <Select
+                          value={selectedDistrict}
+                          onChange={handleDistrictChange}
+                          displayEmpty
+                        >
+                          <MenuItem value="">
+                            <span>Tất cả các quận/huyện</span>
+                          </MenuItem>
+                          {filteredDistricts.map(({ id, name, code }) => (
+                            <MenuItem key={id} value={code}>{name}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                      <FormControl variant="outlined" size="big" disabled={!selectedDistrict}>
+                        <Select
+                          value={selectedWard}
+                          onChange={handleWardChange}
+                          displayEmpty
+                        >
+                          <MenuItem value="">
+                            <span>Tất cả các xã/phường</span>
+                          </MenuItem>
+                          {filteredWards.map(({ id, name, code }) => (
+                            <MenuItem key={id} value={code}>{name}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Stack>
+                  </CardContent>
+                  <CardContent>
+                    <Stack spacing={2} direction="column">
+                      <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
+                        <Button variant="contained" color="secondary" size="big" onClick={handleClearFilter}>Xóa lọc</Button>
+                        <Button variant="contained" color="primary" size="big" onClick={() => handleApplyFilter([])}>Áp dụng</Button>
+                      </Stack>
+                    </Stack>
+                  </CardContent>
+                </Card>
+              </Box>
+            </Collapse>
+          </div>
           <TableContainer sx={{ flex: '1 1 100%', ml: 3, mt: 0 }}>
             <Table
               sx={{ minWidth: 750 }}
@@ -749,10 +702,9 @@ useEffect(() => {
                   sortedRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => (
                     <TableRow hover tabIndex={-1} key={row.id}>
                       <TableCell>{page * rowsPerPage + index + 1}</TableCell>
-                      <TableCell component="th" scope="row" padding="none">{row.code}</TableCell>
                       <TableCell align="left">{row.name}</TableCell>
-                      <TableCell align="left">{row.type}</TableCell>
-                      <TableCell align="left">{row.address}</TableCell>
+                      <TableCell align="left">{row.block}</TableCell>
+                      <TableCell align="left">{row.subject}</TableCell>
                       <TableCell align="left">
                         <Button sx={{ mr: 1 }} variant="contained" color="secondary" size="small" onClick={() => handleClickOpenEditDialog(row)}>Sửa</Button>
                         <Button sx={{ mr: 1 }} onClick={() => handleClickOpenDeleteDialog(row.id)} variant="contained" color="error" size="small">Xoá</Button>
@@ -771,7 +723,7 @@ useEffect(() => {
                         </Dialog>
                         {/* DIALOG VÀ FORM DÙNG ĐỂ UPDATE DATA */}
                         <Dialog open={openEditDialog} onClose={handleCloseEditDialog}>
-                          <DialogTitle>Cập nhật thông tin Trường học</DialogTitle>
+                          <DialogTitle>Cập nhật thông tin Tổ hợp</DialogTitle>
                           <DialogContent>
                             <DialogContentText>
                               Sửa thông tin của trường bạn muốn thay đổi và nhấn nút cập nhật để cập nhật thông tin
@@ -783,7 +735,7 @@ useEffect(() => {
                                   required
                                   margin="normal"
                                   name="name"
-                                  label="Tên Trường học"
+                                  label="Tên tổ hợp"
                                   type="text"
                                   fullWidth
                                   variant="outlined"
@@ -795,12 +747,12 @@ useEffect(() => {
                                 <TextField
                                   required
                                   margin="normal"
-                                  name="code"
-                                  label="Mã Trường học"
+                                  name="block"
+                                  label="Khối"
                                   type="text"
                                   fullWidth
                                   variant="outlined"
-                                  value={selectedRowData?.code || ''}
+                                  value={selectedRowData?.block || ''}
                                   onChange={handleChange}
                                 />
                               </FormControl>
@@ -808,25 +760,12 @@ useEffect(() => {
                                 <TextField
                                   required
                                   margin="normal"
-                                  name="type"
-                                  label="Loại"
+                                  name="subject"
+                                  label="Môn học"
                                   type="text"
                                   fullWidth
                                   variant="outlined"
-                                  value={selectedRowData?.type || ''}
-                                  onChange={handleChange}
-                                />
-                              </FormControl>
-                              <FormControl>
-                                <TextField
-                                  required
-                                  margin="normal"
-                                  name="address"
-                                  label="Địa chỉ"
-                                  type="text"
-                                  fullWidth
-                                  variant="outlined"
-                                  value={selectedRowData?.address || ''}
+                                  value={selectedRowData?.subject || ''}
                                   onChange={handleChange}
                                 />
                               </FormControl>

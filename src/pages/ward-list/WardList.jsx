@@ -24,7 +24,7 @@ import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
-
+import PublishIcon from '@mui/icons-material/Publish';
 //PHÂN TRANG
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -224,7 +224,7 @@ function EnhancedTableToolbar(props) {
         >      
           <h2> <MapsHomeWorkOutlinedIcon /> &nbsp;&nbsp;Danh sách Phường/Xã</h2>
         </Typography>
-        <FormGroup sx={{ mr : 1 }}>
+        <FormGroup sx={{ mr : 5 }}>
           <FormControl >
             <TextField
               name="name"
@@ -239,9 +239,14 @@ function EnhancedTableToolbar(props) {
         </FormGroup>
       </>
       <React.Fragment>
-        <Tooltip sx={{ mr : 5 }} title="Thêm Tỉnh/Thành phố">
-          <IconButton>
-            <AddLocationAltIcon  onClick={handleClickOpen}/>
+        <Tooltip sx={{ mr : 1 }} title="Thêm Phường/Xã">
+          <IconButton  onClick={handleClickOpen}>
+            <AddLocationAltIcon/>
+          </IconButton>
+        </Tooltip>
+        <Tooltip sx={{ mr : 1 }} title="Import Excel">
+          <IconButton onClick={handleClickOpen}>
+            <PublishIcon/>
           </IconButton>
         </Tooltip>
         {/* DIALOG VÀ FORM DÙNG ĐỂ ADD DATA */}
@@ -630,7 +635,7 @@ export default function EnhancedTable() {
   }, [searchTerm, rows]);
   return (
       <Box sx={{ width: '100%' }}>
-        <Paper sx={{ width: '100%', mb: 2 }}>
+        <Paper sx={{ width: '100%'}}>
           <EnhancedTableToolbar rows={rows} setRows={setRows} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           <div style={{ position: 'relative' }}>
         <Toolbar>
