@@ -55,6 +55,12 @@
       "code": "7140231",
       "entranceexamblock": "D01",
       "id": "daa2"
+    },
+    {
+      "id": "6bb0",
+      "name": "excel",
+      "code": 40000,
+      "entranceexamblock": "A00, A01, D01"
     }
   ]
 }

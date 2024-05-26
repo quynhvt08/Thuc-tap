@@ -10,7 +10,8 @@
       "path_with_type": "Quận Ba Đình, Thành phố Hà Nội",
       "code": "001",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ad38"
     },
     {
       "_id": "60eaaa6f1173335842c3536b",
@@ -22,7 +23,8 @@
       "path_with_type": "Quận Hoàn Kiếm, Thành phố Hà Nội",
       "code": "002",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "cf28"
     },
     {
       "_id": "60eaaa6f1173335842c3536c",
@@ -34,7 +36,8 @@
       "path_with_type": "Quận Tây Hồ, Thành phố Hà Nội",
       "code": "003",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "cc6f"
     },
     {
       "_id": "60eaaa6f1173335842c3536d",
@@ -46,7 +49,8 @@
       "path_with_type": "Quận Long Biên, Thành phố Hà Nội",
       "code": "004",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f5ea"
     },
     {
       "_id": "60eaaa6f1173335842c3536e",
@@ -58,7 +62,8 @@
       "path_with_type": "Quận Cầu Giấy, Thành phố Hà Nội",
       "code": "005",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fcf1"
     },
     {
       "_id": "60eaaa6f1173335842c3536f",
@@ -70,7 +75,8 @@
       "path_with_type": "Quận Đống Đa, Thành phố Hà Nội",
       "code": "006",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5c10"
     },
     {
       "_id": "60eaaa6f1173335842c35370",
@@ -82,7 +88,8 @@
       "path_with_type": "Quận Hai Bà Trưng, Thành phố Hà Nội",
       "code": "007",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "49ec"
     },
     {
       "_id": "60eaaa6f1173335842c35371",
@@ -94,7 +101,8 @@
       "path_with_type": "Quận Hoàng Mai, Thành phố Hà Nội",
       "code": "008",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f8b6"
     },
     {
       "_id": "60eaaa6f1173335842c35372",
@@ -106,7 +114,8 @@
       "path_with_type": "Quận Thanh Xuân, Thành phố Hà Nội",
       "code": "009",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8741"
     },
     {
       "_id": "60eaaa6f1173335842c35373",
@@ -118,7 +127,8 @@
       "path_with_type": "Huyện Sóc Sơn, Thành phố Hà Nội",
       "code": "016",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "43ab"
     },
     {
       "_id": "60eaaa6f1173335842c35374",
@@ -130,7 +140,8 @@
       "path_with_type": "Huyện Đông Anh, Thành phố Hà Nội",
       "code": "017",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f374"
     },
     {
       "_id": "60eaaa6f1173335842c35375",
@@ -142,7 +153,8 @@
       "path_with_type": "Huyện Gia Lâm, Thành phố Hà Nội",
       "code": "018",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5481"
     },
     {
       "_id": "60eaaa6f1173335842c35376",
@@ -154,7 +166,8 @@
       "path_with_type": "Quận Nam Từ Liêm, Thành phố Hà Nội",
       "code": "019",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3bfe"
     },
     {
       "_id": "60eaaa6f1173335842c35377",
@@ -166,7 +179,8 @@
       "path_with_type": "Huyện Thanh Trì, Thành phố Hà Nội",
       "code": "020",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9694"
     },
     {
       "_id": "60eaaa6f1173335842c35378",
@@ -178,7 +192,8 @@
       "path_with_type": "Quận Bắc Từ Liêm, Thành phố Hà Nội",
       "code": "021",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0fe6"
     },
     {
       "_id": "60eaaa6f1173335842c35379",
@@ -190,7 +205,8 @@
       "path_with_type": "Huyện Mê Linh, Thành phố Hà Nội",
       "code": "250",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "508b"
     },
     {
       "_id": "60eaaa6f1173335842c3537a",
@@ -202,7 +218,8 @@
       "path_with_type": "Quận Hà Đông, Thành phố Hà Nội",
       "code": "268",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "abd8"
     },
     {
       "_id": "60eaaa6f1173335842c3537b",
@@ -214,7 +231,8 @@
       "path_with_type": "Thị xã Sơn Tây, Thành phố Hà Nội",
       "code": "269",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d4f6"
     },
     {
       "_id": "60eaaa6f1173335842c3537c",
@@ -226,7 +244,8 @@
       "path_with_type": "Huyện Ba Vì, Thành phố Hà Nội",
       "code": "271",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "af3e"
     },
     {
       "_id": "60eaaa6f1173335842c3537d",
@@ -238,7 +257,8 @@
       "path_with_type": "Huyện Phúc Thọ, Thành phố Hà Nội",
       "code": "272",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ae91"
     },
     {
       "_id": "60eaaa6f1173335842c3537e",
@@ -250,7 +270,8 @@
       "path_with_type": "Huyện Đan Phượng, Thành phố Hà Nội",
       "code": "273",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3602"
     },
     {
       "_id": "60eaaa6f1173335842c3537f",
@@ -262,7 +283,8 @@
       "path_with_type": "Huyện Hoài Đức, Thành phố Hà Nội",
       "code": "274",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "99ab"
     },
     {
       "_id": "60eaaa6f1173335842c35380",
@@ -274,7 +296,8 @@
       "path_with_type": "Huyện Quốc Oai, Thành phố Hà Nội",
       "code": "275",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9a38"
     },
     {
       "_id": "60eaaa6f1173335842c35381",
@@ -286,7 +309,8 @@
       "path_with_type": "Huyện Thạch Thất, Thành phố Hà Nội",
       "code": "276",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "69ff"
     },
     {
       "_id": "60eaaa6f1173335842c35382",
@@ -298,7 +322,8 @@
       "path_with_type": "Huyện Chương Mỹ, Thành phố Hà Nội",
       "code": "277",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "15af"
     },
     {
       "_id": "60eaaa6f1173335842c35383",
@@ -310,7 +335,8 @@
       "path_with_type": "Huyện Thanh Oai, Thành phố Hà Nội",
       "code": "278",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e5c4"
     },
     {
       "_id": "60eaaa6f1173335842c35384",
@@ -322,7 +348,8 @@
       "path_with_type": "Huyện Thường Tín, Thành phố Hà Nội",
       "code": "279",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d0b8"
     },
     {
       "_id": "60eaaa6f1173335842c35385",
@@ -334,7 +361,8 @@
       "path_with_type": "Huyện Phú Xuyên, Thành phố Hà Nội",
       "code": "280",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fd9e"
     },
     {
       "_id": "60eaaa6f1173335842c35386",
@@ -346,7 +374,8 @@
       "path_with_type": "Huyện Ứng Hòa, Thành phố Hà Nội",
       "code": "281",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "58ed"
     },
     {
       "_id": "60eaaa6f1173335842c35387",
@@ -358,7 +387,8 @@
       "path_with_type": "Huyện Mỹ Đức, Thành phố Hà Nội",
       "code": "282",
       "parent_code": "01",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d8f3"
     },
     {
       "_id": "60eaaa6f1173335842c35388",
@@ -370,7 +400,8 @@
       "path_with_type": "Thành phố Hà Giang, Tỉnh Hà Giang",
       "code": "024",
       "parent_code": "02",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "66cb"
     },
     {
       "_id": "60eaaa6f1173335842c35389",
@@ -382,7 +413,8 @@
       "path_with_type": "Huyện Đồng Văn, Tỉnh Hà Giang",
       "code": "026",
       "parent_code": "02",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e534"
     },
     {
       "_id": "60eaaa6f1173335842c3538a",
@@ -394,7 +426,8 @@
       "path_with_type": "Huyện Mèo Vạc, Tỉnh Hà Giang",
       "code": "027",
       "parent_code": "02",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2751"
     },
     {
       "_id": "60eaaa6f1173335842c3538b",
@@ -406,7 +439,8 @@
       "path_with_type": "Huyện Yên Minh, Tỉnh Hà Giang",
       "code": "028",
       "parent_code": "02",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fc13"
     },
     {
       "_id": "60eaaa6f1173335842c3538c",
@@ -418,7 +452,8 @@
       "path_with_type": "Huyện Quản Bạ, Tỉnh Hà Giang",
       "code": "029",
       "parent_code": "02",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8292"
     },
     {
       "_id": "60eaaa6f1173335842c3538d",
@@ -430,7 +465,8 @@
       "path_with_type": "Huyện Vị Xuyên, Tỉnh Hà Giang",
       "code": "030",
       "parent_code": "02",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a087"
     },
     {
       "_id": "60eaaa6f1173335842c3538e",
@@ -442,7 +478,8 @@
       "path_with_type": "Huyện Bắc Mê, Tỉnh Hà Giang",
       "code": "031",
       "parent_code": "02",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fec3"
     },
     {
       "_id": "60eaaa6f1173335842c3538f",
@@ -454,7 +491,8 @@
       "path_with_type": "Huyện Hoàng Su Phì, Tỉnh Hà Giang",
       "code": "032",
       "parent_code": "02",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "edf3"
     },
     {
       "_id": "60eaaa6f1173335842c35390",
@@ -466,7 +504,8 @@
       "path_with_type": "Huyện Xín Mần, Tỉnh Hà Giang",
       "code": "033",
       "parent_code": "02",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2eaf"
     },
     {
       "_id": "60eaaa6f1173335842c35391",
@@ -478,7 +517,8 @@
       "path_with_type": "Huyện Bắc Quang, Tỉnh Hà Giang",
       "code": "034",
       "parent_code": "02",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "679d"
     },
     {
       "_id": "60eaaa6f1173335842c35392",
@@ -490,7 +530,8 @@
       "path_with_type": "Huyện Quang Bình, Tỉnh Hà Giang",
       "code": "035",
       "parent_code": "02",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1d9a"
     },
     {
       "_id": "60eaaa6f1173335842c35393",
@@ -502,7 +543,8 @@
       "path_with_type": "Thành phố Cao Bằng, Tỉnh Cao Bằng",
       "code": "040",
       "parent_code": "04",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bdaf"
     },
     {
       "_id": "60eaaa6f1173335842c35394",
@@ -514,7 +556,8 @@
       "path_with_type": "Huyện Bảo Lâm, Tỉnh Cao Bằng",
       "code": "042",
       "parent_code": "04",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "658f"
     },
     {
       "_id": "60eaaa6f1173335842c35395",
@@ -526,7 +569,8 @@
       "path_with_type": "Huyện Bảo Lạc, Tỉnh Cao Bằng",
       "code": "043",
       "parent_code": "04",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1c61"
     },
     {
       "_id": "60eaaa6f1173335842c35396",
@@ -538,7 +582,8 @@
       "path_with_type": "Huyện Hà Quảng, Tỉnh Cao Bằng",
       "code": "045",
       "parent_code": "04",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "58a0"
     },
     {
       "_id": "60eaaa6f1173335842c35397",
@@ -550,7 +595,8 @@
       "path_with_type": "Huyện Trùng Khánh, Tỉnh Cao Bằng",
       "code": "047",
       "parent_code": "04",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e72d"
     },
     {
       "_id": "60eaaa6f1173335842c35398",
@@ -562,7 +608,8 @@
       "path_with_type": "Huyện Hạ Lang, Tỉnh Cao Bằng",
       "code": "048",
       "parent_code": "04",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3048"
     },
     {
       "_id": "60eaaa6f1173335842c35399",
@@ -574,7 +621,8 @@
       "path_with_type": "Huyện Quảng Hòa, Tỉnh Cao Bằng",
       "code": "049",
       "parent_code": "04",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "93ca"
     },
     {
       "_id": "60eaaa6f1173335842c3539a",
@@ -586,7 +634,8 @@
       "path_with_type": "Huyện Hoà An, Tỉnh Cao Bằng",
       "code": "051",
       "parent_code": "04",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f08d"
     },
     {
       "_id": "60eaaa6f1173335842c3539b",
@@ -598,7 +647,8 @@
       "path_with_type": "Huyện Nguyên Bình, Tỉnh Cao Bằng",
       "code": "052",
       "parent_code": "04",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c522"
     },
     {
       "_id": "60eaaa6f1173335842c3539c",
@@ -610,7 +660,8 @@
       "path_with_type": "Huyện Thạch An, Tỉnh Cao Bằng",
       "code": "053",
       "parent_code": "04",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bfb6"
     },
     {
       "_id": "60eaaa6f1173335842c3539d",
@@ -622,7 +673,8 @@
       "path_with_type": "Thành Phố Bắc Kạn, Tỉnh Bắc Kạn",
       "code": "058",
       "parent_code": "06",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7fd9"
     },
     {
       "_id": "60eaaa6f1173335842c3539e",
@@ -634,7 +686,8 @@
       "path_with_type": "Huyện Pác Nặm, Tỉnh Bắc Kạn",
       "code": "060",
       "parent_code": "06",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d180"
     },
     {
       "_id": "60eaaa6f1173335842c3539f",
@@ -646,7 +699,8 @@
       "path_with_type": "Huyện Ba Bể, Tỉnh Bắc Kạn",
       "code": "061",
       "parent_code": "06",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "711b"
     },
     {
       "_id": "60eaaa6f1173335842c353a0",
@@ -658,7 +712,8 @@
       "path_with_type": "Huyện Ngân Sơn, Tỉnh Bắc Kạn",
       "code": "062",
       "parent_code": "06",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f1df"
     },
     {
       "_id": "60eaaa6f1173335842c353a1",
@@ -670,7 +725,8 @@
       "path_with_type": "Huyện Bạch Thông, Tỉnh Bắc Kạn",
       "code": "063",
       "parent_code": "06",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e475"
     },
     {
       "_id": "60eaaa6f1173335842c353a2",
@@ -682,7 +738,8 @@
       "path_with_type": "Huyện Chợ Đồn, Tỉnh Bắc Kạn",
       "code": "064",
       "parent_code": "06",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bce7"
     },
     {
       "_id": "60eaaa6f1173335842c353a3",
@@ -694,7 +751,8 @@
       "path_with_type": "Huyện Chợ Mới, Tỉnh Bắc Kạn",
       "code": "065",
       "parent_code": "06",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7c6e"
     },
     {
       "_id": "60eaaa6f1173335842c353a4",
@@ -706,7 +764,8 @@
       "path_with_type": "Huyện Na Rì, Tỉnh Bắc Kạn",
       "code": "066",
       "parent_code": "06",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8e49"
     },
     {
       "_id": "60eaaa6f1173335842c353a5",
@@ -718,7 +777,8 @@
       "path_with_type": "Thành phố Tuyên Quang, Tỉnh Tuyên Quang",
       "code": "070",
       "parent_code": "08",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2e2b"
     },
     {
       "_id": "60eaaa6f1173335842c353a6",
@@ -730,7 +790,8 @@
       "path_with_type": "Huyện Lâm Bình, Tỉnh Tuyên Quang",
       "code": "071",
       "parent_code": "08",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bf29"
     },
     {
       "_id": "60eaaa6f1173335842c353a7",
@@ -742,7 +803,8 @@
       "path_with_type": "Huyện Na Hang, Tỉnh Tuyên Quang",
       "code": "072",
       "parent_code": "08",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b07e"
     },
     {
       "_id": "60eaaa6f1173335842c353a8",
@@ -754,7 +816,8 @@
       "path_with_type": "Huyện Chiêm Hóa, Tỉnh Tuyên Quang",
       "code": "073",
       "parent_code": "08",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7930"
     },
     {
       "_id": "60eaaa6f1173335842c353a9",
@@ -766,7 +829,8 @@
       "path_with_type": "Huyện Hàm Yên, Tỉnh Tuyên Quang",
       "code": "074",
       "parent_code": "08",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e00d"
     },
     {
       "_id": "60eaaa6f1173335842c353aa",
@@ -778,7 +842,8 @@
       "path_with_type": "Huyện Yên Sơn, Tỉnh Tuyên Quang",
       "code": "075",
       "parent_code": "08",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d050"
     },
     {
       "_id": "60eaaa6f1173335842c353ab",
@@ -790,7 +855,8 @@
       "path_with_type": "Huyện Sơn Dương, Tỉnh Tuyên Quang",
       "code": "076",
       "parent_code": "08",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "cf66"
     },
     {
       "_id": "60eaaa6f1173335842c353ac",
@@ -802,7 +868,8 @@
       "path_with_type": "Thành phố Lào Cai, Tỉnh Lào Cai",
       "code": "080",
       "parent_code": "10",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4130"
     },
     {
       "_id": "60eaaa6f1173335842c353ad",
@@ -814,7 +881,8 @@
       "path_with_type": "Huyện Bát Xát, Tỉnh Lào Cai",
       "code": "082",
       "parent_code": "10",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "524f"
     },
     {
       "_id": "60eaaa6f1173335842c353ae",
@@ -826,7 +894,8 @@
       "path_with_type": "Huyện Mường Khương, Tỉnh Lào Cai",
       "code": "083",
       "parent_code": "10",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1d71"
     },
     {
       "_id": "60eaaa6f1173335842c353af",
@@ -838,7 +907,8 @@
       "path_with_type": "Huyện Si Ma Cai, Tỉnh Lào Cai",
       "code": "084",
       "parent_code": "10",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8f28"
     },
     {
       "_id": "60eaaa6f1173335842c353b0",
@@ -850,7 +920,8 @@
       "path_with_type": "Huyện Bắc Hà, Tỉnh Lào Cai",
       "code": "085",
       "parent_code": "10",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b1fb"
     },
     {
       "_id": "60eaaa6f1173335842c353b1",
@@ -862,7 +933,8 @@
       "path_with_type": "Huyện Bảo Thắng, Tỉnh Lào Cai",
       "code": "086",
       "parent_code": "10",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6a8c"
     },
     {
       "_id": "60eaaa6f1173335842c353b2",
@@ -874,7 +946,8 @@
       "path_with_type": "Huyện Bảo Yên, Tỉnh Lào Cai",
       "code": "087",
       "parent_code": "10",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fbc0"
     },
     {
       "_id": "60eaaa6f1173335842c353b3",
@@ -886,7 +959,8 @@
       "path_with_type": "Thị xã Sa Pa, Tỉnh Lào Cai",
       "code": "088",
       "parent_code": "10",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7c74"
     },
     {
       "_id": "60eaaa6f1173335842c353b4",
@@ -898,7 +972,8 @@
       "path_with_type": "Huyện Văn Bàn, Tỉnh Lào Cai",
       "code": "089",
       "parent_code": "10",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1863"
     },
     {
       "_id": "60eaaa6f1173335842c353b5",
@@ -910,7 +985,8 @@
       "path_with_type": "Thành phố Điện Biên Phủ, Tỉnh Điện Biên",
       "code": "094",
       "parent_code": "11",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7eaa"
     },
     {
       "_id": "60eaaa6f1173335842c353b6",
@@ -922,7 +998,8 @@
       "path_with_type": "Thị Xã Mường Lay, Tỉnh Điện Biên",
       "code": "095",
       "parent_code": "11",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fa81"
     },
     {
       "_id": "60eaaa6f1173335842c353b7",
@@ -934,7 +1011,8 @@
       "path_with_type": "Huyện Mường Nhé, Tỉnh Điện Biên",
       "code": "096",
       "parent_code": "11",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8047"
     },
     {
       "_id": "60eaaa6f1173335842c353b8",
@@ -946,7 +1024,8 @@
       "path_with_type": "Huyện Mường Chà, Tỉnh Điện Biên",
       "code": "097",
       "parent_code": "11",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d797"
     },
     {
       "_id": "60eaaa6f1173335842c353b9",
@@ -958,7 +1037,8 @@
       "path_with_type": "Huyện Tủa Chùa, Tỉnh Điện Biên",
       "code": "098",
       "parent_code": "11",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ccde"
     },
     {
       "_id": "60eaaa6f1173335842c353ba",
@@ -970,7 +1050,8 @@
       "path_with_type": "Huyện Tuần Giáo, Tỉnh Điện Biên",
       "code": "099",
       "parent_code": "11",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "07a8"
     },
     {
       "_id": "60eaaa6f1173335842c353bb",
@@ -982,7 +1063,8 @@
       "path_with_type": "Huyện Điện Biên, Tỉnh Điện Biên",
       "code": "100",
       "parent_code": "11",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e476"
     },
     {
       "_id": "60eaaa6f1173335842c353bc",
@@ -994,7 +1076,8 @@
       "path_with_type": "Huyện Điện Biên Đông, Tỉnh Điện Biên",
       "code": "101",
       "parent_code": "11",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "83b6"
     },
     {
       "_id": "60eaaa6f1173335842c353bd",
@@ -1006,7 +1089,8 @@
       "path_with_type": "Huyện Mường Ảng, Tỉnh Điện Biên",
       "code": "102",
       "parent_code": "11",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8021"
     },
     {
       "_id": "60eaaa6f1173335842c353be",
@@ -1018,7 +1102,8 @@
       "path_with_type": "Huyện Nậm Pồ, Tỉnh Điện Biên",
       "code": "103",
       "parent_code": "11",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "af53"
     },
     {
       "_id": "60eaaa6f1173335842c353bf",
@@ -1030,7 +1115,8 @@
       "path_with_type": "Thành phố Lai Châu, Tỉnh Lai Châu",
       "code": "105",
       "parent_code": "12",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1a6c"
     },
     {
       "_id": "60eaaa6f1173335842c353c0",
@@ -1042,7 +1128,8 @@
       "path_with_type": "Huyện Tam Đường, Tỉnh Lai Châu",
       "code": "106",
       "parent_code": "12",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3887"
     },
     {
       "_id": "60eaaa6f1173335842c353c1",
@@ -1054,7 +1141,8 @@
       "path_with_type": "Huyện Mường Tè, Tỉnh Lai Châu",
       "code": "107",
       "parent_code": "12",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e632"
     },
     {
       "_id": "60eaaa6f1173335842c353c2",
@@ -1066,7 +1154,8 @@
       "path_with_type": "Huyện Sìn Hồ, Tỉnh Lai Châu",
       "code": "108",
       "parent_code": "12",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "cb59"
     },
     {
       "_id": "60eaaa6f1173335842c353c3",
@@ -1078,7 +1167,8 @@
       "path_with_type": "Huyện Phong Thổ, Tỉnh Lai Châu",
       "code": "109",
       "parent_code": "12",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "969e"
     },
     {
       "_id": "60eaaa6f1173335842c353c4",
@@ -1090,7 +1180,8 @@
       "path_with_type": "Huyện Than Uyên, Tỉnh Lai Châu",
       "code": "110",
       "parent_code": "12",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "efd7"
     },
     {
       "_id": "60eaaa6f1173335842c353c5",
@@ -1102,7 +1193,8 @@
       "path_with_type": "Huyện Tân Uyên, Tỉnh Lai Châu",
       "code": "111",
       "parent_code": "12",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d364"
     },
     {
       "_id": "60eaaa6f1173335842c353c6",
@@ -1114,7 +1206,8 @@
       "path_with_type": "Huyện Nậm Nhùn, Tỉnh Lai Châu",
       "code": "112",
       "parent_code": "12",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9ff2"
     },
     {
       "_id": "60eaaa6f1173335842c353c7",
@@ -1126,7 +1219,8 @@
       "path_with_type": "Thành phố Sơn La, Tỉnh Sơn La",
       "code": "116",
       "parent_code": "14",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "60e9"
     },
     {
       "_id": "60eaaa6f1173335842c353c8",
@@ -1138,7 +1232,8 @@
       "path_with_type": "Huyện Quỳnh Nhai, Tỉnh Sơn La",
       "code": "118",
       "parent_code": "14",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "18b5"
     },
     {
       "_id": "60eaaa6f1173335842c353c9",
@@ -1150,7 +1245,8 @@
       "path_with_type": "Huyện Thuận Châu, Tỉnh Sơn La",
       "code": "119",
       "parent_code": "14",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5c25"
     },
     {
       "_id": "60eaaa6f1173335842c353ca",
@@ -1162,7 +1258,8 @@
       "path_with_type": "Huyện Mường La, Tỉnh Sơn La",
       "code": "120",
       "parent_code": "14",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4bd6"
     },
     {
       "_id": "60eaaa6f1173335842c353cb",
@@ -1174,7 +1271,8 @@
       "path_with_type": "Huyện Bắc Yên, Tỉnh Sơn La",
       "code": "121",
       "parent_code": "14",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "46fd"
     },
     {
       "_id": "60eaaa6f1173335842c353cc",
@@ -1186,7 +1284,8 @@
       "path_with_type": "Huyện Phù Yên, Tỉnh Sơn La",
       "code": "122",
       "parent_code": "14",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5163"
     },
     {
       "_id": "60eaaa6f1173335842c353cd",
@@ -1198,7 +1297,8 @@
       "path_with_type": "Huyện Mộc Châu, Tỉnh Sơn La",
       "code": "123",
       "parent_code": "14",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5c93"
     },
     {
       "_id": "60eaaa6f1173335842c353ce",
@@ -1210,7 +1310,8 @@
       "path_with_type": "Huyện Yên Châu, Tỉnh Sơn La",
       "code": "124",
       "parent_code": "14",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "44e7"
     },
     {
       "_id": "60eaaa6f1173335842c353cf",
@@ -1222,7 +1323,8 @@
       "path_with_type": "Huyện Mai Sơn, Tỉnh Sơn La",
       "code": "125",
       "parent_code": "14",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c6c7"
     },
     {
       "_id": "60eaaa6f1173335842c353d0",
@@ -1234,7 +1336,8 @@
       "path_with_type": "Huyện Sông Mã, Tỉnh Sơn La",
       "code": "126",
       "parent_code": "14",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4833"
     },
     {
       "_id": "60eaaa6f1173335842c353d1",
@@ -1246,7 +1349,8 @@
       "path_with_type": "Huyện Sốp Cộp, Tỉnh Sơn La",
       "code": "127",
       "parent_code": "14",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5a47"
     },
     {
       "_id": "60eaaa6f1173335842c353d2",
@@ -1258,7 +1362,8 @@
       "path_with_type": "Huyện Vân Hồ, Tỉnh Sơn La",
       "code": "128",
       "parent_code": "14",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8702"
     },
     {
       "_id": "60eaaa6f1173335842c353d3",
@@ -1270,7 +1375,8 @@
       "path_with_type": "Thành phố Yên Bái, Tỉnh Yên Bái",
       "code": "132",
       "parent_code": "15",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "55db"
     },
     {
       "_id": "60eaaa6f1173335842c353d4",
@@ -1282,7 +1388,8 @@
       "path_with_type": "Thị xã Nghĩa Lộ, Tỉnh Yên Bái",
       "code": "133",
       "parent_code": "15",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7c27"
     },
     {
       "_id": "60eaaa6f1173335842c353d5",
@@ -1294,7 +1401,8 @@
       "path_with_type": "Huyện Lục Yên, Tỉnh Yên Bái",
       "code": "135",
       "parent_code": "15",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c222"
     },
     {
       "_id": "60eaaa6f1173335842c353d6",
@@ -1306,7 +1414,8 @@
       "path_with_type": "Huyện Văn Yên, Tỉnh Yên Bái",
       "code": "136",
       "parent_code": "15",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "455e"
     },
     {
       "_id": "60eaaa6f1173335842c353d7",
@@ -1318,7 +1427,8 @@
       "path_with_type": "Huyện Mù Căng Chải, Tỉnh Yên Bái",
       "code": "137",
       "parent_code": "15",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8180"
     },
     {
       "_id": "60eaaa6f1173335842c353d8",
@@ -1330,7 +1440,8 @@
       "path_with_type": "Huyện Trấn Yên, Tỉnh Yên Bái",
       "code": "138",
       "parent_code": "15",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "455f"
     },
     {
       "_id": "60eaaa6f1173335842c353d9",
@@ -1342,7 +1453,8 @@
       "path_with_type": "Huyện Trạm Tấu, Tỉnh Yên Bái",
       "code": "139",
       "parent_code": "15",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bcf0"
     },
     {
       "_id": "60eaaa6f1173335842c353da",
@@ -1354,7 +1466,8 @@
       "path_with_type": "Huyện Văn Chấn, Tỉnh Yên Bái",
       "code": "140",
       "parent_code": "15",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3bf2"
     },
     {
       "_id": "60eaaa6f1173335842c353db",
@@ -1366,7 +1479,8 @@
       "path_with_type": "Huyện Yên Bình, Tỉnh Yên Bái",
       "code": "141",
       "parent_code": "15",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "dde5"
     },
     {
       "_id": "60eaaa6f1173335842c353dc",
@@ -1378,7 +1492,8 @@
       "path_with_type": "Thành phố Hòa Bình, Tỉnh Hoà Bình",
       "code": "148",
       "parent_code": "17",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "28b0"
     },
     {
       "_id": "60eaaa6f1173335842c353dd",
@@ -1390,7 +1505,8 @@
       "path_with_type": "Huyện Đà Bắc, Tỉnh Hoà Bình",
       "code": "150",
       "parent_code": "17",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "693c"
     },
     {
       "_id": "60eaaa6f1173335842c353de",
@@ -1402,7 +1518,8 @@
       "path_with_type": "Huyện Lương Sơn, Tỉnh Hoà Bình",
       "code": "152",
       "parent_code": "17",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bec8"
     },
     {
       "_id": "60eaaa6f1173335842c353df",
@@ -1414,7 +1531,8 @@
       "path_with_type": "Huyện Kim Bôi, Tỉnh Hoà Bình",
       "code": "153",
       "parent_code": "17",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d76e"
     },
     {
       "_id": "60eaaa6f1173335842c353e0",
@@ -1426,7 +1544,8 @@
       "path_with_type": "Huyện Cao Phong, Tỉnh Hoà Bình",
       "code": "154",
       "parent_code": "17",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "974b"
     },
     {
       "_id": "60eaaa6f1173335842c353e1",
@@ -1438,7 +1557,8 @@
       "path_with_type": "Huyện Tân Lạc, Tỉnh Hoà Bình",
       "code": "155",
       "parent_code": "17",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b8bc"
     },
     {
       "_id": "60eaaa6f1173335842c353e2",
@@ -1450,7 +1570,8 @@
       "path_with_type": "Huyện Mai Châu, Tỉnh Hoà Bình",
       "code": "156",
       "parent_code": "17",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "da8c"
     },
     {
       "_id": "60eaaa6f1173335842c353e3",
@@ -1462,7 +1583,8 @@
       "path_with_type": "Huyện Lạc Sơn, Tỉnh Hoà Bình",
       "code": "157",
       "parent_code": "17",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "50ab"
     },
     {
       "_id": "60eaaa6f1173335842c353e4",
@@ -1474,7 +1596,8 @@
       "path_with_type": "Huyện Yên Thủy, Tỉnh Hoà Bình",
       "code": "158",
       "parent_code": "17",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "53e9"
     },
     {
       "_id": "60eaaa6f1173335842c353e5",
@@ -1486,7 +1609,8 @@
       "path_with_type": "Huyện Lạc Thủy, Tỉnh Hoà Bình",
       "code": "159",
       "parent_code": "17",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "279f"
     },
     {
       "_id": "60eaaa6f1173335842c353e6",
@@ -1498,7 +1622,8 @@
       "path_with_type": "Thành phố Thái Nguyên, Tỉnh Thái Nguyên",
       "code": "164",
       "parent_code": "19",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ebf4"
     },
     {
       "_id": "60eaaa6f1173335842c353e7",
@@ -1510,7 +1635,8 @@
       "path_with_type": "Thành phố Sông Công, Tỉnh Thái Nguyên",
       "code": "165",
       "parent_code": "19",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5d39"
     },
     {
       "_id": "60eaaa6f1173335842c353e8",
@@ -1522,7 +1648,8 @@
       "path_with_type": "Huyện Định Hóa, Tỉnh Thái Nguyên",
       "code": "167",
       "parent_code": "19",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "deda"
     },
     {
       "_id": "60eaaa6f1173335842c353e9",
@@ -1534,7 +1661,8 @@
       "path_with_type": "Huyện Phú Lương, Tỉnh Thái Nguyên",
       "code": "168",
       "parent_code": "19",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6d8a"
     },
     {
       "_id": "60eaaa6f1173335842c353ea",
@@ -1546,7 +1674,8 @@
       "path_with_type": "Huyện Đồng Hỷ, Tỉnh Thái Nguyên",
       "code": "169",
       "parent_code": "19",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "de3d"
     },
     {
       "_id": "60eaaa6f1173335842c353eb",
@@ -1558,7 +1687,8 @@
       "path_with_type": "Huyện Võ Nhai, Tỉnh Thái Nguyên",
       "code": "170",
       "parent_code": "19",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5854"
     },
     {
       "_id": "60eaaa6f1173335842c353ec",
@@ -1570,7 +1700,8 @@
       "path_with_type": "Huyện Đại Từ, Tỉnh Thái Nguyên",
       "code": "171",
       "parent_code": "19",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7679"
     },
     {
       "_id": "60eaaa6f1173335842c353ed",
@@ -1582,7 +1713,8 @@
       "path_with_type": "Thị xã Phổ Yên, Tỉnh Thái Nguyên",
       "code": "172",
       "parent_code": "19",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "72f0"
     },
     {
       "_id": "60eaaa6f1173335842c353ee",
@@ -1594,7 +1726,8 @@
       "path_with_type": "Huyện Phú Bình, Tỉnh Thái Nguyên",
       "code": "173",
       "parent_code": "19",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "dddf"
     },
     {
       "_id": "60eaaa6f1173335842c353ef",
@@ -1606,7 +1739,8 @@
       "path_with_type": "Thành phố Lạng Sơn, Tỉnh Lạng Sơn",
       "code": "178",
       "parent_code": "20",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8890"
     },
     {
       "_id": "60eaaa6f1173335842c353f0",
@@ -1618,7 +1752,8 @@
       "path_with_type": "Huyện Tràng Định, Tỉnh Lạng Sơn",
       "code": "180",
       "parent_code": "20",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "088b"
     },
     {
       "_id": "60eaaa6f1173335842c353f1",
@@ -1630,7 +1765,8 @@
       "path_with_type": "Huyện Bình Gia, Tỉnh Lạng Sơn",
       "code": "181",
       "parent_code": "20",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "568d"
     },
     {
       "_id": "60eaaa6f1173335842c353f2",
@@ -1642,7 +1778,8 @@
       "path_with_type": "Huyện Văn Lãng, Tỉnh Lạng Sơn",
       "code": "182",
       "parent_code": "20",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ae07"
     },
     {
       "_id": "60eaaa6f1173335842c353f3",
@@ -1654,7 +1791,8 @@
       "path_with_type": "Huyện Cao Lộc, Tỉnh Lạng Sơn",
       "code": "183",
       "parent_code": "20",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8c6f"
     },
     {
       "_id": "60eaaa6f1173335842c353f4",
@@ -1666,7 +1804,8 @@
       "path_with_type": "Huyện Văn Quan, Tỉnh Lạng Sơn",
       "code": "184",
       "parent_code": "20",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a7f8"
     },
     {
       "_id": "60eaaa6f1173335842c353f5",
@@ -1678,7 +1817,8 @@
       "path_with_type": "Huyện Bắc Sơn, Tỉnh Lạng Sơn",
       "code": "185",
       "parent_code": "20",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ae17"
     },
     {
       "_id": "60eaaa6f1173335842c353f6",
@@ -1690,7 +1830,8 @@
       "path_with_type": "Huyện Hữu Lũng, Tỉnh Lạng Sơn",
       "code": "186",
       "parent_code": "20",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "acfc"
     },
     {
       "_id": "60eaaa6f1173335842c353f7",
@@ -1702,7 +1843,8 @@
       "path_with_type": "Huyện Chi Lăng, Tỉnh Lạng Sơn",
       "code": "187",
       "parent_code": "20",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7b7f"
     },
     {
       "_id": "60eaaa6f1173335842c353f8",
@@ -1714,7 +1856,8 @@
       "path_with_type": "Huyện Lộc Bình, Tỉnh Lạng Sơn",
       "code": "188",
       "parent_code": "20",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9436"
     },
     {
       "_id": "60eaaa6f1173335842c353f9",
@@ -1726,7 +1869,8 @@
       "path_with_type": "Huyện Đình Lập, Tỉnh Lạng Sơn",
       "code": "189",
       "parent_code": "20",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6cdf"
     },
     {
       "_id": "60eaaa6f1173335842c353fa",
@@ -1738,7 +1882,8 @@
       "path_with_type": "Thành phố Hạ Long, Tỉnh Quảng Ninh",
       "code": "193",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9bcb"
     },
     {
       "_id": "60eaaa6f1173335842c353fb",
@@ -1750,7 +1895,8 @@
       "path_with_type": "Thành phố Móng Cái, Tỉnh Quảng Ninh",
       "code": "194",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0927"
     },
     {
       "_id": "60eaaa6f1173335842c353fc",
@@ -1762,7 +1908,8 @@
       "path_with_type": "Thành phố Cẩm Phả, Tỉnh Quảng Ninh",
       "code": "195",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4902"
     },
     {
       "_id": "60eaaa6f1173335842c353fd",
@@ -1774,7 +1921,8 @@
       "path_with_type": "Thành phố Uông Bí, Tỉnh Quảng Ninh",
       "code": "196",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4151"
     },
     {
       "_id": "60eaaa6f1173335842c353fe",
@@ -1786,7 +1934,8 @@
       "path_with_type": "Huyện Bình Liêu, Tỉnh Quảng Ninh",
       "code": "198",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d17e"
     },
     {
       "_id": "60eaaa6f1173335842c353ff",
@@ -1798,7 +1947,8 @@
       "path_with_type": "Huyện Tiên Yên, Tỉnh Quảng Ninh",
       "code": "199",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "26bb"
     },
     {
       "_id": "60eaaa6f1173335842c35400",
@@ -1810,7 +1960,8 @@
       "path_with_type": "Huyện Đầm Hà, Tỉnh Quảng Ninh",
       "code": "200",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e2e3"
     },
     {
       "_id": "60eaaa6f1173335842c35401",
@@ -1822,7 +1973,8 @@
       "path_with_type": "Huyện Hải Hà, Tỉnh Quảng Ninh",
       "code": "201",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4bb6"
     },
     {
       "_id": "60eaaa6f1173335842c35402",
@@ -1834,7 +1986,8 @@
       "path_with_type": "Huyện Ba Chẽ, Tỉnh Quảng Ninh",
       "code": "202",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3390"
     },
     {
       "_id": "60eaaa6f1173335842c35403",
@@ -1846,7 +1999,8 @@
       "path_with_type": "Huyện Vân Đồn, Tỉnh Quảng Ninh",
       "code": "203",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "348c"
     },
     {
       "_id": "60eaaa6f1173335842c35404",
@@ -1858,7 +2012,8 @@
       "path_with_type": "Thị xã Đông Triều, Tỉnh Quảng Ninh",
       "code": "205",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a9b6"
     },
     {
       "_id": "60eaaa6f1173335842c35405",
@@ -1870,7 +2025,8 @@
       "path_with_type": "Thị xã Quảng Yên, Tỉnh Quảng Ninh",
       "code": "206",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5d4e"
     },
     {
       "_id": "60eaaa6f1173335842c35406",
@@ -1882,7 +2038,8 @@
       "path_with_type": "Huyện Cô Tô, Tỉnh Quảng Ninh",
       "code": "207",
       "parent_code": "22",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c990"
     },
     {
       "_id": "60eaaa6f1173335842c35407",
@@ -1894,7 +2051,8 @@
       "path_with_type": "Thành phố Bắc Giang, Tỉnh Bắc Giang",
       "code": "213",
       "parent_code": "24",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9603"
     },
     {
       "_id": "60eaaa6f1173335842c35408",
@@ -1906,7 +2064,8 @@
       "path_with_type": "Huyện Yên Thế, Tỉnh Bắc Giang",
       "code": "215",
       "parent_code": "24",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2161"
     },
     {
       "_id": "60eaaa6f1173335842c35409",
@@ -1918,7 +2077,8 @@
       "path_with_type": "Huyện Tân Yên, Tỉnh Bắc Giang",
       "code": "216",
       "parent_code": "24",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6487"
     },
     {
       "_id": "60eaaa6f1173335842c3540a",
@@ -1930,7 +2090,8 @@
       "path_with_type": "Huyện Lạng Giang, Tỉnh Bắc Giang",
       "code": "217",
       "parent_code": "24",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4555"
     },
     {
       "_id": "60eaaa6f1173335842c3540b",
@@ -1942,7 +2103,8 @@
       "path_with_type": "Huyện Lục Nam, Tỉnh Bắc Giang",
       "code": "218",
       "parent_code": "24",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "844a"
     },
     {
       "_id": "60eaaa6f1173335842c3540c",
@@ -1954,7 +2116,8 @@
       "path_with_type": "Huyện Lục Ngạn, Tỉnh Bắc Giang",
       "code": "219",
       "parent_code": "24",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bc5d"
     },
     {
       "_id": "60eaaa6f1173335842c3540d",
@@ -1966,7 +2129,8 @@
       "path_with_type": "Huyện Sơn Động, Tỉnh Bắc Giang",
       "code": "220",
       "parent_code": "24",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "92c2"
     },
     {
       "_id": "60eaaa6f1173335842c3540e",
@@ -1978,7 +2142,8 @@
       "path_with_type": "Huyện Yên Dũng, Tỉnh Bắc Giang",
       "code": "221",
       "parent_code": "24",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6523"
     },
     {
       "_id": "60eaaa6f1173335842c3540f",
@@ -1990,7 +2155,8 @@
       "path_with_type": "Huyện Việt Yên, Tỉnh Bắc Giang",
       "code": "222",
       "parent_code": "24",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4a6f"
     },
     {
       "_id": "60eaaa6f1173335842c35410",
@@ -2002,7 +2168,8 @@
       "path_with_type": "Huyện Hiệp Hòa, Tỉnh Bắc Giang",
       "code": "223",
       "parent_code": "24",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f622"
     },
     {
       "_id": "60eaaa6f1173335842c35411",
@@ -2014,7 +2181,8 @@
       "path_with_type": "Thành phố Việt Trì, Tỉnh Phú Thọ",
       "code": "227",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "859b"
     },
     {
       "_id": "60eaaa6f1173335842c35412",
@@ -2026,7 +2194,8 @@
       "path_with_type": "Thị xã Phú Thọ, Tỉnh Phú Thọ",
       "code": "228",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9242"
     },
     {
       "_id": "60eaaa6f1173335842c35413",
@@ -2038,7 +2207,8 @@
       "path_with_type": "Huyện Đoan Hùng, Tỉnh Phú Thọ",
       "code": "230",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5548"
     },
     {
       "_id": "60eaaa6f1173335842c35414",
@@ -2050,7 +2220,8 @@
       "path_with_type": "Huyện Hạ Hoà, Tỉnh Phú Thọ",
       "code": "231",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7f34"
     },
     {
       "_id": "60eaaa6f1173335842c35415",
@@ -2062,7 +2233,8 @@
       "path_with_type": "Huyện Thanh Ba, Tỉnh Phú Thọ",
       "code": "232",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "885e"
     },
     {
       "_id": "60eaaa6f1173335842c35416",
@@ -2074,7 +2246,8 @@
       "path_with_type": "Huyện Phù Ninh, Tỉnh Phú Thọ",
       "code": "233",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8f2c"
     },
     {
       "_id": "60eaaa6f1173335842c35417",
@@ -2086,7 +2259,8 @@
       "path_with_type": "Huyện Yên Lập, Tỉnh Phú Thọ",
       "code": "234",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2233"
     },
     {
       "_id": "60eaaa6f1173335842c35418",
@@ -2098,7 +2272,8 @@
       "path_with_type": "Huyện Cẩm Khê, Tỉnh Phú Thọ",
       "code": "235",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3601"
     },
     {
       "_id": "60eaaa6f1173335842c35419",
@@ -2110,7 +2285,8 @@
       "path_with_type": "Huyện Tam Nông, Tỉnh Phú Thọ",
       "code": "236",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fbd5"
     },
     {
       "_id": "60eaaa6f1173335842c3541a",
@@ -2122,7 +2298,8 @@
       "path_with_type": "Huyện Lâm Thao, Tỉnh Phú Thọ",
       "code": "237",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b462"
     },
     {
       "_id": "60eaaa6f1173335842c3541b",
@@ -2134,7 +2311,8 @@
       "path_with_type": "Huyện Thanh Sơn, Tỉnh Phú Thọ",
       "code": "238",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f1d8"
     },
     {
       "_id": "60eaaa6f1173335842c3541c",
@@ -2146,7 +2324,8 @@
       "path_with_type": "Huyện Thanh Thuỷ, Tỉnh Phú Thọ",
       "code": "239",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "def4"
     },
     {
       "_id": "60eaaa6f1173335842c3541d",
@@ -2158,7 +2337,8 @@
       "path_with_type": "Huyện Tân Sơn, Tỉnh Phú Thọ",
       "code": "240",
       "parent_code": "25",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "17fe"
     },
     {
       "_id": "60eaaa6f1173335842c3541e",
@@ -2170,7 +2350,8 @@
       "path_with_type": "Thành phố Vĩnh Yên, Tỉnh Vĩnh Phúc",
       "code": "243",
       "parent_code": "26",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a001"
     },
     {
       "_id": "60eaaa6f1173335842c3541f",
@@ -2182,7 +2363,8 @@
       "path_with_type": "Thành phố Phúc Yên, Tỉnh Vĩnh Phúc",
       "code": "244",
       "parent_code": "26",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4d83"
     },
     {
       "_id": "60eaaa6f1173335842c35420",
@@ -2194,7 +2376,8 @@
       "path_with_type": "Huyện Lập Thạch, Tỉnh Vĩnh Phúc",
       "code": "246",
       "parent_code": "26",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9848"
     },
     {
       "_id": "60eaaa6f1173335842c35421",
@@ -2206,7 +2389,8 @@
       "path_with_type": "Huyện Tam Dương, Tỉnh Vĩnh Phúc",
       "code": "247",
       "parent_code": "26",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "397d"
     },
     {
       "_id": "60eaaa6f1173335842c35422",
@@ -2218,7 +2402,8 @@
       "path_with_type": "Huyện Tam Đảo, Tỉnh Vĩnh Phúc",
       "code": "248",
       "parent_code": "26",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "49fa"
     },
     {
       "_id": "60eaaa6f1173335842c35423",
@@ -2230,7 +2415,8 @@
       "path_with_type": "Huyện Bình Xuyên, Tỉnh Vĩnh Phúc",
       "code": "249",
       "parent_code": "26",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "34b9"
     },
     {
       "_id": "60eaaa6f1173335842c35424",
@@ -2242,7 +2428,8 @@
       "path_with_type": "Huyện Yên Lạc, Tỉnh Vĩnh Phúc",
       "code": "251",
       "parent_code": "26",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "aee4"
     },
     {
       "_id": "60eaaa6f1173335842c35425",
@@ -2254,7 +2441,8 @@
       "path_with_type": "Huyện Vĩnh Tường, Tỉnh Vĩnh Phúc",
       "code": "252",
       "parent_code": "26",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8dd5"
     },
     {
       "_id": "60eaaa6f1173335842c35426",
@@ -2266,7 +2454,8 @@
       "path_with_type": "Huyện Sông Lô, Tỉnh Vĩnh Phúc",
       "code": "253",
       "parent_code": "26",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3190"
     },
     {
       "_id": "60eaaa6f1173335842c35427",
@@ -2278,7 +2467,8 @@
       "path_with_type": "Thành phố Bắc Ninh, Tỉnh Bắc Ninh",
       "code": "256",
       "parent_code": "27",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5393"
     },
     {
       "_id": "60eaaa6f1173335842c35428",
@@ -2290,7 +2480,8 @@
       "path_with_type": "Huyện Yên Phong, Tỉnh Bắc Ninh",
       "code": "258",
       "parent_code": "27",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c217"
     },
     {
       "_id": "60eaaa6f1173335842c35429",
@@ -2302,7 +2493,8 @@
       "path_with_type": "Huyện Quế Võ, Tỉnh Bắc Ninh",
       "code": "259",
       "parent_code": "27",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "28e8"
     },
     {
       "_id": "60eaaa6f1173335842c3542a",
@@ -2314,7 +2506,8 @@
       "path_with_type": "Huyện Tiên Du, Tỉnh Bắc Ninh",
       "code": "260",
       "parent_code": "27",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "29de"
     },
     {
       "_id": "60eaaa6f1173335842c3542b",
@@ -2326,7 +2519,8 @@
       "path_with_type": "Thị xã Từ Sơn, Tỉnh Bắc Ninh",
       "code": "261",
       "parent_code": "27",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "beaa"
     },
     {
       "_id": "60eaaa6f1173335842c3542c",
@@ -2338,7 +2532,8 @@
       "path_with_type": "Huyện Thuận Thành, Tỉnh Bắc Ninh",
       "code": "262",
       "parent_code": "27",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5eb8"
     },
     {
       "_id": "60eaaa6f1173335842c3542d",
@@ -2350,7 +2545,8 @@
       "path_with_type": "Huyện Gia Bình, Tỉnh Bắc Ninh",
       "code": "263",
       "parent_code": "27",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8efc"
     },
     {
       "_id": "60eaaa6f1173335842c3542e",
@@ -2362,7 +2558,8 @@
       "path_with_type": "Huyện Lương Tài, Tỉnh Bắc Ninh",
       "code": "264",
       "parent_code": "27",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b75e"
     },
     {
       "_id": "60eaaa6f1173335842c3542f",
@@ -2374,7 +2571,8 @@
       "path_with_type": "Thành phố Hải Dương, Tỉnh Hải Dương",
       "code": "288",
       "parent_code": "30",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5ef1"
     },
     {
       "_id": "60eaaa6f1173335842c35430",
@@ -2386,7 +2584,8 @@
       "path_with_type": "Thành phố Chí Linh, Tỉnh Hải Dương",
       "code": "290",
       "parent_code": "30",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7f2a"
     },
     {
       "_id": "60eaaa6f1173335842c35431",
@@ -2398,7 +2597,8 @@
       "path_with_type": "Huyện Nam Sách, Tỉnh Hải Dương",
       "code": "291",
       "parent_code": "30",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5a17"
     },
     {
       "_id": "60eaaa6f1173335842c35432",
@@ -2410,7 +2610,8 @@
       "path_with_type": "Thị xã Kinh Môn, Tỉnh Hải Dương",
       "code": "292",
       "parent_code": "30",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3eca"
     },
     {
       "_id": "60eaaa6f1173335842c35433",
@@ -2422,7 +2623,8 @@
       "path_with_type": "Huyện Kim Thành, Tỉnh Hải Dương",
       "code": "293",
       "parent_code": "30",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4cce"
     },
     {
       "_id": "60eaaa6f1173335842c35434",
@@ -2434,7 +2636,8 @@
       "path_with_type": "Huyện Thanh Hà, Tỉnh Hải Dương",
       "code": "294",
       "parent_code": "30",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3085"
     },
     {
       "_id": "60eaaa6f1173335842c35435",
@@ -2446,7 +2649,8 @@
       "path_with_type": "Huyện Cẩm Giàng, Tỉnh Hải Dương",
       "code": "295",
       "parent_code": "30",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fcc3"
     },
     {
       "_id": "60eaaa6f1173335842c35436",
@@ -2458,7 +2662,8 @@
       "path_with_type": "Huyện Bình Giang, Tỉnh Hải Dương",
       "code": "296",
       "parent_code": "30",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c604"
     },
     {
       "_id": "60eaaa6f1173335842c35437",
@@ -2470,7 +2675,8 @@
       "path_with_type": "Huyện Gia Lộc, Tỉnh Hải Dương",
       "code": "297",
       "parent_code": "30",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "464d"
     },
     {
       "_id": "60eaaa6f1173335842c35438",
@@ -2482,7 +2688,8 @@
       "path_with_type": "Huyện Tứ Kỳ, Tỉnh Hải Dương",
       "code": "298",
       "parent_code": "30",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9218"
     },
     {
       "_id": "60eaaa6f1173335842c35439",
@@ -2494,7 +2701,8 @@
       "path_with_type": "Huyện Ninh Giang, Tỉnh Hải Dương",
       "code": "299",
       "parent_code": "30",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a0d1"
     },
     {
       "_id": "60eaaa6f1173335842c3543a",
@@ -2506,7 +2714,8 @@
       "path_with_type": "Huyện Thanh Miện, Tỉnh Hải Dương",
       "code": "300",
       "parent_code": "30",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "61d3"
     },
     {
       "_id": "60eaaa6f1173335842c3543b",
@@ -2518,7 +2727,8 @@
       "path_with_type": "Quận Hồng Bàng, Thành phố Hải Phòng",
       "code": "303",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c2c8"
     },
     {
       "_id": "60eaaa6f1173335842c3543c",
@@ -2530,7 +2740,8 @@
       "path_with_type": "Quận Ngô Quyền, Thành phố Hải Phòng",
       "code": "304",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b08d"
     },
     {
       "_id": "60eaaa6f1173335842c3543d",
@@ -2542,7 +2753,8 @@
       "path_with_type": "Quận Lê Chân, Thành phố Hải Phòng",
       "code": "305",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9817"
     },
     {
       "_id": "60eaaa6f1173335842c3543e",
@@ -2554,7 +2766,8 @@
       "path_with_type": "Quận Hải An, Thành phố Hải Phòng",
       "code": "306",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "750c"
     },
     {
       "_id": "60eaaa6f1173335842c3543f",
@@ -2566,7 +2779,8 @@
       "path_with_type": "Quận Kiến An, Thành phố Hải Phòng",
       "code": "307",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e784"
     },
     {
       "_id": "60eaaa6f1173335842c35440",
@@ -2578,7 +2792,8 @@
       "path_with_type": "Quận Đồ Sơn, Thành phố Hải Phòng",
       "code": "308",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6906"
     },
     {
       "_id": "60eaaa6f1173335842c35441",
@@ -2590,7 +2805,8 @@
       "path_with_type": "Quận Dương Kinh, Thành phố Hải Phòng",
       "code": "309",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ad0b"
     },
     {
       "_id": "60eaaa6f1173335842c35442",
@@ -2602,7 +2818,8 @@
       "path_with_type": "Huyện Thuỷ Nguyên, Thành phố Hải Phòng",
       "code": "311",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6652"
     },
     {
       "_id": "60eaaa6f1173335842c35443",
@@ -2614,7 +2831,8 @@
       "path_with_type": "Huyện An Dương, Thành phố Hải Phòng",
       "code": "312",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d315"
     },
     {
       "_id": "60eaaa6f1173335842c35444",
@@ -2626,7 +2844,8 @@
       "path_with_type": "Huyện An Lão, Thành phố Hải Phòng",
       "code": "313",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0e60"
     },
     {
       "_id": "60eaaa6f1173335842c35445",
@@ -2638,7 +2857,8 @@
       "path_with_type": "Huyện Kiến Thuỵ, Thành phố Hải Phòng",
       "code": "314",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2ccd"
     },
     {
       "_id": "60eaaa6f1173335842c35446",
@@ -2650,7 +2870,8 @@
       "path_with_type": "Huyện Tiên Lãng, Thành phố Hải Phòng",
       "code": "315",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4a9e"
     },
     {
       "_id": "60eaaa6f1173335842c35447",
@@ -2662,7 +2883,8 @@
       "path_with_type": "Huyện Vĩnh Bảo, Thành phố Hải Phòng",
       "code": "316",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8dc1"
     },
     {
       "_id": "60eaaa6f1173335842c35448",
@@ -2674,7 +2896,8 @@
       "path_with_type": "Huyện Cát Hải, Thành phố Hải Phòng",
       "code": "317",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "30e0"
     },
     {
       "_id": "60eaaa6f1173335842c35449",
@@ -2686,7 +2909,8 @@
       "path_with_type": "Huyện Bạch Long Vĩ, Thành phố Hải Phòng",
       "code": "318",
       "parent_code": "31",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b2dc"
     },
     {
       "_id": "60eaaa6f1173335842c3544a",
@@ -2698,7 +2922,8 @@
       "path_with_type": "Thành phố Hưng Yên, Tỉnh Hưng Yên",
       "code": "323",
       "parent_code": "33",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "53a8"
     },
     {
       "_id": "60eaaa6f1173335842c3544b",
@@ -2710,7 +2935,8 @@
       "path_with_type": "Huyện Văn Lâm, Tỉnh Hưng Yên",
       "code": "325",
       "parent_code": "33",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1186"
     },
     {
       "_id": "60eaaa6f1173335842c3544c",
@@ -2722,7 +2948,8 @@
       "path_with_type": "Huyện Văn Giang, Tỉnh Hưng Yên",
       "code": "326",
       "parent_code": "33",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2401"
     },
     {
       "_id": "60eaaa6f1173335842c3544d",
@@ -2734,7 +2961,8 @@
       "path_with_type": "Huyện Yên Mỹ, Tỉnh Hưng Yên",
       "code": "327",
       "parent_code": "33",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "cb25"
     },
     {
       "_id": "60eaaa6f1173335842c3544e",
@@ -2746,7 +2974,8 @@
       "path_with_type": "Thị xã Mỹ Hào, Tỉnh Hưng Yên",
       "code": "328",
       "parent_code": "33",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3715"
     },
     {
       "_id": "60eaaa6f1173335842c3544f",
@@ -2758,7 +2987,8 @@
       "path_with_type": "Huyện Ân Thi, Tỉnh Hưng Yên",
       "code": "329",
       "parent_code": "33",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0602"
     },
     {
       "_id": "60eaaa6f1173335842c35450",
@@ -2770,7 +3000,8 @@
       "path_with_type": "Huyện Khoái Châu, Tỉnh Hưng Yên",
       "code": "330",
       "parent_code": "33",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6e5f"
     },
     {
       "_id": "60eaaa6f1173335842c35451",
@@ -2782,7 +3013,8 @@
       "path_with_type": "Huyện Kim Động, Tỉnh Hưng Yên",
       "code": "331",
       "parent_code": "33",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3d99"
     },
     {
       "_id": "60eaaa6f1173335842c35452",
@@ -2794,7 +3026,8 @@
       "path_with_type": "Huyện Tiên Lữ, Tỉnh Hưng Yên",
       "code": "332",
       "parent_code": "33",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8da2"
     },
     {
       "_id": "60eaaa6f1173335842c35453",
@@ -2806,7 +3039,8 @@
       "path_with_type": "Huyện Phù Cừ, Tỉnh Hưng Yên",
       "code": "333",
       "parent_code": "33",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "acd5"
     },
     {
       "_id": "60eaaa6f1173335842c35454",
@@ -2818,7 +3052,8 @@
       "path_with_type": "Thành phố Thái Bình, Tỉnh Thái Bình",
       "code": "336",
       "parent_code": "34",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8b49"
     },
     {
       "_id": "60eaaa6f1173335842c35455",
@@ -2830,7 +3065,8 @@
       "path_with_type": "Huyện Quỳnh Phụ, Tỉnh Thái Bình",
       "code": "338",
       "parent_code": "34",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c443"
     },
     {
       "_id": "60eaaa6f1173335842c35456",
@@ -2842,7 +3078,8 @@
       "path_with_type": "Huyện Hưng Hà, Tỉnh Thái Bình",
       "code": "339",
       "parent_code": "34",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bd7e"
     },
     {
       "_id": "60eaaa6f1173335842c35457",
@@ -2854,7 +3091,8 @@
       "path_with_type": "Huyện Đông Hưng, Tỉnh Thái Bình",
       "code": "340",
       "parent_code": "34",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8bb9"
     },
     {
       "_id": "60eaaa6f1173335842c35458",
@@ -2866,7 +3104,8 @@
       "path_with_type": "Huyện Thái Thụy, Tỉnh Thái Bình",
       "code": "341",
       "parent_code": "34",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "079b"
     },
     {
       "_id": "60eaaa6f1173335842c35459",
@@ -2878,7 +3117,8 @@
       "path_with_type": "Huyện Tiền Hải, Tỉnh Thái Bình",
       "code": "342",
       "parent_code": "34",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "81ae"
     },
     {
       "_id": "60eaaa6f1173335842c3545a",
@@ -2890,7 +3130,8 @@
       "path_with_type": "Huyện Kiến Xương, Tỉnh Thái Bình",
       "code": "343",
       "parent_code": "34",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b91f"
     },
     {
       "_id": "60eaaa6f1173335842c3545b",
@@ -2902,7 +3143,8 @@
       "path_with_type": "Huyện Vũ Thư, Tỉnh Thái Bình",
       "code": "344",
       "parent_code": "34",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2240"
     },
     {
       "_id": "60eaaa6f1173335842c3545c",
@@ -2914,7 +3156,8 @@
       "path_with_type": "Thành phố Phủ Lý, Tỉnh Hà Nam",
       "code": "347",
       "parent_code": "35",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "63a7"
     },
     {
       "_id": "60eaaa6f1173335842c3545d",
@@ -2926,7 +3169,8 @@
       "path_with_type": "Thị xã Duy Tiên, Tỉnh Hà Nam",
       "code": "349",
       "parent_code": "35",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7677"
     },
     {
       "_id": "60eaaa6f1173335842c3545e",
@@ -2938,7 +3182,8 @@
       "path_with_type": "Huyện Kim Bảng, Tỉnh Hà Nam",
       "code": "350",
       "parent_code": "35",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "dd84"
     },
     {
       "_id": "60eaaa6f1173335842c3545f",
@@ -2950,7 +3195,8 @@
       "path_with_type": "Huyện Thanh Liêm, Tỉnh Hà Nam",
       "code": "351",
       "parent_code": "35",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "285a"
     },
     {
       "_id": "60eaaa6f1173335842c35460",
@@ -2962,7 +3208,8 @@
       "path_with_type": "Huyện Bình Lục, Tỉnh Hà Nam",
       "code": "352",
       "parent_code": "35",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c05e"
     },
     {
       "_id": "60eaaa6f1173335842c35461",
@@ -2974,7 +3221,8 @@
       "path_with_type": "Huyện Lý Nhân, Tỉnh Hà Nam",
       "code": "353",
       "parent_code": "35",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "355c"
     },
     {
       "_id": "60eaaa6f1173335842c35462",
@@ -2986,7 +3234,8 @@
       "path_with_type": "Thành phố Nam Định, Tỉnh Nam Định",
       "code": "356",
       "parent_code": "36",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "cae4"
     },
     {
       "_id": "60eaaa6f1173335842c35463",
@@ -2998,7 +3247,8 @@
       "path_with_type": "Huyện Mỹ Lộc, Tỉnh Nam Định",
       "code": "358",
       "parent_code": "36",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "59e1"
     },
     {
       "_id": "60eaaa6f1173335842c35464",
@@ -3010,7 +3260,8 @@
       "path_with_type": "Huyện Vụ Bản, Tỉnh Nam Định",
       "code": "359",
       "parent_code": "36",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "92eb"
     },
     {
       "_id": "60eaaa6f1173335842c35465",
@@ -3022,7 +3273,8 @@
       "path_with_type": "Huyện Ý Yên, Tỉnh Nam Định",
       "code": "360",
       "parent_code": "36",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "05a1"
     },
     {
       "_id": "60eaaa6f1173335842c35466",
@@ -3034,7 +3286,8 @@
       "path_with_type": "Huyện Nghĩa Hưng, Tỉnh Nam Định",
       "code": "361",
       "parent_code": "36",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "eb7b"
     },
     {
       "_id": "60eaaa6f1173335842c35467",
@@ -3046,7 +3299,8 @@
       "path_with_type": "Huyện Nam Trực, Tỉnh Nam Định",
       "code": "362",
       "parent_code": "36",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "76a6"
     },
     {
       "_id": "60eaaa6f1173335842c35468",
@@ -3058,7 +3312,8 @@
       "path_with_type": "Huyện Trực Ninh, Tỉnh Nam Định",
       "code": "363",
       "parent_code": "36",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "db73"
     },
     {
       "_id": "60eaaa6f1173335842c35469",
@@ -3070,7 +3325,8 @@
       "path_with_type": "Huyện Xuân Trường, Tỉnh Nam Định",
       "code": "364",
       "parent_code": "36",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e4c3"
     },
     {
       "_id": "60eaaa6f1173335842c3546a",
@@ -3082,7 +3338,8 @@
       "path_with_type": "Huyện Giao Thủy, Tỉnh Nam Định",
       "code": "365",
       "parent_code": "36",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "725b"
     },
     {
       "_id": "60eaaa6f1173335842c3546b",
@@ -3094,7 +3351,8 @@
       "path_with_type": "Huyện Hải Hậu, Tỉnh Nam Định",
       "code": "366",
       "parent_code": "36",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "49e3"
     },
     {
       "_id": "60eaaa6f1173335842c3546c",
@@ -3106,7 +3364,8 @@
       "path_with_type": "Thành phố Ninh Bình, Tỉnh Ninh Bình",
       "code": "369",
       "parent_code": "37",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "30ff"
     },
     {
       "_id": "60eaaa6f1173335842c3546d",
@@ -3118,7 +3377,8 @@
       "path_with_type": "Thành phố Tam Điệp, Tỉnh Ninh Bình",
       "code": "370",
       "parent_code": "37",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f039"
     },
     {
       "_id": "60eaaa6f1173335842c3546e",
@@ -3130,7 +3390,8 @@
       "path_with_type": "Huyện Nho Quan, Tỉnh Ninh Bình",
       "code": "372",
       "parent_code": "37",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3d57"
     },
     {
       "_id": "60eaaa6f1173335842c3546f",
@@ -3142,7 +3403,8 @@
       "path_with_type": "Huyện Gia Viễn, Tỉnh Ninh Bình",
       "code": "373",
       "parent_code": "37",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "da1a"
     },
     {
       "_id": "60eaaa6f1173335842c35470",
@@ -3154,7 +3416,8 @@
       "path_with_type": "Huyện Hoa Lư, Tỉnh Ninh Bình",
       "code": "374",
       "parent_code": "37",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "44a8"
     },
     {
       "_id": "60eaaa6f1173335842c35471",
@@ -3166,7 +3429,8 @@
       "path_with_type": "Huyện Yên Khánh, Tỉnh Ninh Bình",
       "code": "375",
       "parent_code": "37",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d532"
     },
     {
       "_id": "60eaaa6f1173335842c35472",
@@ -3178,7 +3442,8 @@
       "path_with_type": "Huyện Kim Sơn, Tỉnh Ninh Bình",
       "code": "376",
       "parent_code": "37",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4c36"
     },
     {
       "_id": "60eaaa6f1173335842c35473",
@@ -3190,7 +3455,8 @@
       "path_with_type": "Huyện Yên Mô, Tỉnh Ninh Bình",
       "code": "377",
       "parent_code": "37",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f8fa"
     },
     {
       "_id": "60eaaa6f1173335842c35474",
@@ -3202,7 +3468,8 @@
       "path_with_type": "Thành phố Thanh Hóa, Tỉnh Thanh Hóa",
       "code": "380",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9ca0"
     },
     {
       "_id": "60eaaa6f1173335842c35475",
@@ -3214,7 +3481,8 @@
       "path_with_type": "Thị xã Bỉm Sơn, Tỉnh Thanh Hóa",
       "code": "381",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ba53"
     },
     {
       "_id": "60eaaa6f1173335842c35476",
@@ -3226,7 +3494,8 @@
       "path_with_type": "Thành phố Sầm Sơn, Tỉnh Thanh Hóa",
       "code": "382",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c6ba"
     },
     {
       "_id": "60eaaa6f1173335842c35477",
@@ -3238,7 +3507,8 @@
       "path_with_type": "Huyện Mường Lát, Tỉnh Thanh Hóa",
       "code": "384",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fe28"
     },
     {
       "_id": "60eaaa6f1173335842c35478",
@@ -3250,7 +3520,8 @@
       "path_with_type": "Huyện Quan Hóa, Tỉnh Thanh Hóa",
       "code": "385",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4d3d"
     },
     {
       "_id": "60eaaa6f1173335842c35479",
@@ -3262,7 +3533,8 @@
       "path_with_type": "Huyện Bá Thước, Tỉnh Thanh Hóa",
       "code": "386",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "cc07"
     },
     {
       "_id": "60eaaa6f1173335842c3547a",
@@ -3274,7 +3546,8 @@
       "path_with_type": "Huyện Quan Sơn, Tỉnh Thanh Hóa",
       "code": "387",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2e92"
     },
     {
       "_id": "60eaaa6f1173335842c3547b",
@@ -3286,7 +3559,8 @@
       "path_with_type": "Huyện Lang Chánh, Tỉnh Thanh Hóa",
       "code": "388",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4358"
     },
     {
       "_id": "60eaaa6f1173335842c3547c",
@@ -3298,7 +3572,8 @@
       "path_with_type": "Huyện Ngọc Lặc, Tỉnh Thanh Hóa",
       "code": "389",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9c71"
     },
     {
       "_id": "60eaaa6f1173335842c3547d",
@@ -3310,7 +3585,8 @@
       "path_with_type": "Huyện Cẩm Thủy, Tỉnh Thanh Hóa",
       "code": "390",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9df7"
     },
     {
       "_id": "60eaaa6f1173335842c3547e",
@@ -3322,7 +3598,8 @@
       "path_with_type": "Huyện Thạch Thành, Tỉnh Thanh Hóa",
       "code": "391",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "30cd"
     },
     {
       "_id": "60eaaa6f1173335842c3547f",
@@ -3334,7 +3611,8 @@
       "path_with_type": "Huyện Hà Trung, Tỉnh Thanh Hóa",
       "code": "392",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "daae"
     },
     {
       "_id": "60eaaa6f1173335842c35480",
@@ -3346,7 +3624,8 @@
       "path_with_type": "Huyện Vĩnh Lộc, Tỉnh Thanh Hóa",
       "code": "393",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b6f4"
     },
     {
       "_id": "60eaaa6f1173335842c35481",
@@ -3358,7 +3637,8 @@
       "path_with_type": "Huyện Yên Định, Tỉnh Thanh Hóa",
       "code": "394",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bc3f"
     },
     {
       "_id": "60eaaa6f1173335842c35482",
@@ -3370,7 +3650,8 @@
       "path_with_type": "Huyện Thọ Xuân, Tỉnh Thanh Hóa",
       "code": "395",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f217"
     },
     {
       "_id": "60eaaa6f1173335842c35483",
@@ -3382,7 +3663,8 @@
       "path_with_type": "Huyện Thường Xuân, Tỉnh Thanh Hóa",
       "code": "396",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6b83"
     },
     {
       "_id": "60eaaa6f1173335842c35484",
@@ -3394,7 +3676,8 @@
       "path_with_type": "Huyện Triệu Sơn, Tỉnh Thanh Hóa",
       "code": "397",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "038b"
     },
     {
       "_id": "60eaaa6f1173335842c35485",
@@ -3406,7 +3689,8 @@
       "path_with_type": "Huyện Thiệu Hóa, Tỉnh Thanh Hóa",
       "code": "398",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0fad"
     },
     {
       "_id": "60eaaa6f1173335842c35486",
@@ -3418,7 +3702,8 @@
       "path_with_type": "Huyện Hoằng Hóa, Tỉnh Thanh Hóa",
       "code": "399",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "67b1"
     },
     {
       "_id": "60eaaa6f1173335842c35487",
@@ -3430,7 +3715,8 @@
       "path_with_type": "Huyện Hậu Lộc, Tỉnh Thanh Hóa",
       "code": "400",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e839"
     },
     {
       "_id": "60eaaa6f1173335842c35488",
@@ -3442,7 +3728,8 @@
       "path_with_type": "Huyện Nga Sơn, Tỉnh Thanh Hóa",
       "code": "401",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8cce"
     },
     {
       "_id": "60eaaa6f1173335842c35489",
@@ -3454,7 +3741,8 @@
       "path_with_type": "Huyện Như Xuân, Tỉnh Thanh Hóa",
       "code": "402",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a061"
     },
     {
       "_id": "60eaaa6f1173335842c3548a",
@@ -3466,7 +3754,8 @@
       "path_with_type": "Huyện Như Thanh, Tỉnh Thanh Hóa",
       "code": "403",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9c53"
     },
     {
       "_id": "60eaaa6f1173335842c3548b",
@@ -3478,7 +3767,8 @@
       "path_with_type": "Huyện Nông Cống, Tỉnh Thanh Hóa",
       "code": "404",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "10f1"
     },
     {
       "_id": "60eaaa6f1173335842c3548c",
@@ -3490,7 +3780,8 @@
       "path_with_type": "Huyện Đông Sơn, Tỉnh Thanh Hóa",
       "code": "405",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1268"
     },
     {
       "_id": "60eaaa6f1173335842c3548d",
@@ -3502,7 +3793,8 @@
       "path_with_type": "Huyện Quảng Xương, Tỉnh Thanh Hóa",
       "code": "406",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d2ff"
     },
     {
       "_id": "60eaaa6f1173335842c3548e",
@@ -3514,7 +3806,8 @@
       "path_with_type": "Thị xã Nghi Sơn, Tỉnh Thanh Hóa",
       "code": "407",
       "parent_code": "38",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1bf6"
     },
     {
       "_id": "60eaaa6f1173335842c3548f",
@@ -3526,7 +3819,8 @@
       "path_with_type": "Thành phố Vinh, Tỉnh Nghệ An",
       "code": "412",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6634"
     },
     {
       "_id": "60eaaa6f1173335842c35490",
@@ -3538,7 +3832,8 @@
       "path_with_type": "Thị xã Cửa Lò, Tỉnh Nghệ An",
       "code": "413",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "762d"
     },
     {
       "_id": "60eaaa6f1173335842c35491",
@@ -3550,7 +3845,8 @@
       "path_with_type": "Thị xã Thái Hoà, Tỉnh Nghệ An",
       "code": "414",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a431"
     },
     {
       "_id": "60eaaa6f1173335842c35492",
@@ -3562,7 +3858,8 @@
       "path_with_type": "Huyện Quế Phong, Tỉnh Nghệ An",
       "code": "415",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "dceb"
     },
     {
       "_id": "60eaaa6f1173335842c35493",
@@ -3574,7 +3871,8 @@
       "path_with_type": "Huyện Quỳ Châu, Tỉnh Nghệ An",
       "code": "416",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d9b1"
     },
     {
       "_id": "60eaaa6f1173335842c35494",
@@ -3586,7 +3884,8 @@
       "path_with_type": "Huyện Kỳ Sơn, Tỉnh Nghệ An",
       "code": "417",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "621c"
     },
     {
       "_id": "60eaaa6f1173335842c35495",
@@ -3598,7 +3897,8 @@
       "path_with_type": "Huyện Tương Dương, Tỉnh Nghệ An",
       "code": "418",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a3e2"
     },
     {
       "_id": "60eaaa6f1173335842c35496",
@@ -3610,7 +3910,8 @@
       "path_with_type": "Huyện Nghĩa Đàn, Tỉnh Nghệ An",
       "code": "419",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "14c5"
     },
     {
       "_id": "60eaaa6f1173335842c35497",
@@ -3622,7 +3923,8 @@
       "path_with_type": "Huyện Quỳ Hợp, Tỉnh Nghệ An",
       "code": "420",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fbfb"
     },
     {
       "_id": "60eaaa6f1173335842c35498",
@@ -3634,7 +3936,8 @@
       "path_with_type": "Huyện Quỳnh Lưu, Tỉnh Nghệ An",
       "code": "421",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "738c"
     },
     {
       "_id": "60eaaa6f1173335842c35499",
@@ -3646,7 +3949,8 @@
       "path_with_type": "Huyện Con Cuông, Tỉnh Nghệ An",
       "code": "422",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "19f0"
     },
     {
       "_id": "60eaaa6f1173335842c3549a",
@@ -3658,7 +3962,8 @@
       "path_with_type": "Huyện Tân Kỳ, Tỉnh Nghệ An",
       "code": "423",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a70f"
     },
     {
       "_id": "60eaaa6f1173335842c3549b",
@@ -3670,7 +3975,8 @@
       "path_with_type": "Huyện Anh Sơn, Tỉnh Nghệ An",
       "code": "424",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "91cb"
     },
     {
       "_id": "60eaaa6f1173335842c3549c",
@@ -3682,7 +3988,8 @@
       "path_with_type": "Huyện Diễn Châu, Tỉnh Nghệ An",
       "code": "425",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d89b"
     },
     {
       "_id": "60eaaa6f1173335842c3549d",
@@ -3694,7 +4001,8 @@
       "path_with_type": "Huyện Yên Thành, Tỉnh Nghệ An",
       "code": "426",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7f40"
     },
     {
       "_id": "60eaaa6f1173335842c3549e",
@@ -3706,7 +4014,8 @@
       "path_with_type": "Huyện Đô Lương, Tỉnh Nghệ An",
       "code": "427",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6fd1"
     },
     {
       "_id": "60eaaa6f1173335842c3549f",
@@ -3718,7 +4027,8 @@
       "path_with_type": "Huyện Thanh Chương, Tỉnh Nghệ An",
       "code": "428",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c86d"
     },
     {
       "_id": "60eaaa6f1173335842c354a0",
@@ -3730,7 +4040,8 @@
       "path_with_type": "Huyện Nghi Lộc, Tỉnh Nghệ An",
       "code": "429",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "07de"
     },
     {
       "_id": "60eaaa6f1173335842c354a1",
@@ -3742,7 +4053,8 @@
       "path_with_type": "Huyện Nam Đàn, Tỉnh Nghệ An",
       "code": "430",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2b1d"
     },
     {
       "_id": "60eaaa6f1173335842c354a2",
@@ -3754,7 +4066,8 @@
       "path_with_type": "Huyện Hưng Nguyên, Tỉnh Nghệ An",
       "code": "431",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1670"
     },
     {
       "_id": "60eaaa6f1173335842c354a3",
@@ -3766,7 +4079,8 @@
       "path_with_type": "Thị xã Hoàng Mai, Tỉnh Nghệ An",
       "code": "432",
       "parent_code": "40",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "93e9"
     },
     {
       "_id": "60eaaa6f1173335842c354a4",
@@ -3778,7 +4092,8 @@
       "path_with_type": "Thành phố Hà Tĩnh, Tỉnh Hà Tĩnh",
       "code": "436",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "072c"
     },
     {
       "_id": "60eaaa6f1173335842c354a5",
@@ -3790,7 +4105,8 @@
       "path_with_type": "Thị xã Hồng Lĩnh, Tỉnh Hà Tĩnh",
       "code": "437",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "21cd"
     },
     {
       "_id": "60eaaa6f1173335842c354a6",
@@ -3802,7 +4118,8 @@
       "path_with_type": "Huyện Hương Sơn, Tỉnh Hà Tĩnh",
       "code": "439",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3d31"
     },
     {
       "_id": "60eaaa6f1173335842c354a7",
@@ -3814,7 +4131,8 @@
       "path_with_type": "Huyện Đức Thọ, Tỉnh Hà Tĩnh",
       "code": "440",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "64b7"
     },
     {
       "_id": "60eaaa6f1173335842c354a8",
@@ -3826,7 +4144,8 @@
       "path_with_type": "Huyện Vũ Quang, Tỉnh Hà Tĩnh",
       "code": "441",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "245f"
     },
     {
       "_id": "60eaaa6f1173335842c354a9",
@@ -3838,7 +4157,8 @@
       "path_with_type": "Huyện Nghi Xuân, Tỉnh Hà Tĩnh",
       "code": "442",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "66b6"
     },
     {
       "_id": "60eaaa6f1173335842c354aa",
@@ -3850,7 +4170,8 @@
       "path_with_type": "Huyện Can Lộc, Tỉnh Hà Tĩnh",
       "code": "443",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5bc1"
     },
     {
       "_id": "60eaaa6f1173335842c354ab",
@@ -3862,7 +4183,8 @@
       "path_with_type": "Huyện Hương Khê, Tỉnh Hà Tĩnh",
       "code": "444",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2f7f"
     },
     {
       "_id": "60eaaa6f1173335842c354ac",
@@ -3874,7 +4196,8 @@
       "path_with_type": "Huyện Thạch Hà, Tỉnh Hà Tĩnh",
       "code": "445",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e066"
     },
     {
       "_id": "60eaaa6f1173335842c354ad",
@@ -3886,7 +4209,8 @@
       "path_with_type": "Huyện Cẩm Xuyên, Tỉnh Hà Tĩnh",
       "code": "446",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "04ee"
     },
     {
       "_id": "60eaaa6f1173335842c354ae",
@@ -3898,7 +4222,8 @@
       "path_with_type": "Huyện Kỳ Anh, Tỉnh Hà Tĩnh",
       "code": "447",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3b5e"
     },
     {
       "_id": "60eaaa6f1173335842c354af",
@@ -3910,7 +4235,8 @@
       "path_with_type": "Huyện Lộc Hà, Tỉnh Hà Tĩnh",
       "code": "448",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bdc1"
     },
     {
       "_id": "60eaaa6f1173335842c354b0",
@@ -3922,7 +4248,8 @@
       "path_with_type": "Thị xã Kỳ Anh, Tỉnh Hà Tĩnh",
       "code": "449",
       "parent_code": "42",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c7fc"
     },
     {
       "_id": "60eaaa6f1173335842c354b1",
@@ -3934,7 +4261,8 @@
       "path_with_type": "Thành Phố Đồng Hới, Tỉnh Quảng Bình",
       "code": "450",
       "parent_code": "44",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "cdb3"
     },
     {
       "_id": "60eaaa6f1173335842c354b2",
@@ -3946,7 +4274,8 @@
       "path_with_type": "Huyện Minh Hóa, Tỉnh Quảng Bình",
       "code": "452",
       "parent_code": "44",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "eefb"
     },
     {
       "_id": "60eaaa6f1173335842c354b3",
@@ -3958,7 +4287,8 @@
       "path_with_type": "Huyện Tuyên Hóa, Tỉnh Quảng Bình",
       "code": "453",
       "parent_code": "44",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a0ae"
     },
     {
       "_id": "60eaaa6f1173335842c354b4",
@@ -3970,7 +4300,8 @@
       "path_with_type": "Huyện Quảng Trạch, Tỉnh Quảng Bình",
       "code": "454",
       "parent_code": "44",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d1e9"
     },
     {
       "_id": "60eaaa6f1173335842c354b5",
@@ -3982,7 +4313,8 @@
       "path_with_type": "Huyện Bố Trạch, Tỉnh Quảng Bình",
       "code": "455",
       "parent_code": "44",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "af5c"
     },
     {
       "_id": "60eaaa6f1173335842c354b6",
@@ -3994,7 +4326,8 @@
       "path_with_type": "Huyện Quảng Ninh, Tỉnh Quảng Bình",
       "code": "456",
       "parent_code": "44",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "041b"
     },
     {
       "_id": "60eaaa6f1173335842c354b7",
@@ -4006,7 +4339,8 @@
       "path_with_type": "Huyện Lệ Thủy, Tỉnh Quảng Bình",
       "code": "457",
       "parent_code": "44",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "dae8"
     },
     {
       "_id": "60eaaa6f1173335842c354b8",
@@ -4018,7 +4352,8 @@
       "path_with_type": "Thị xã Ba Đồn, Tỉnh Quảng Bình",
       "code": "458",
       "parent_code": "44",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "31d1"
     },
     {
       "_id": "60eaaa6f1173335842c354b9",
@@ -4030,7 +4365,8 @@
       "path_with_type": "Thành phố Đông Hà, Tỉnh Quảng Trị",
       "code": "461",
       "parent_code": "45",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "089d"
     },
     {
       "_id": "60eaaa6f1173335842c354ba",
@@ -4042,7 +4378,8 @@
       "path_with_type": "Thị xã Quảng Trị, Tỉnh Quảng Trị",
       "code": "462",
       "parent_code": "45",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c4d1"
     },
     {
       "_id": "60eaaa6f1173335842c354bb",
@@ -4054,7 +4391,8 @@
       "path_with_type": "Huyện Vĩnh Linh, Tỉnh Quảng Trị",
       "code": "464",
       "parent_code": "45",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6a62"
     },
     {
       "_id": "60eaaa6f1173335842c354bc",
@@ -4066,7 +4404,8 @@
       "path_with_type": "Huyện Hướng Hóa, Tỉnh Quảng Trị",
       "code": "465",
       "parent_code": "45",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3c3f"
     },
     {
       "_id": "60eaaa6f1173335842c354bd",
@@ -4078,7 +4417,8 @@
       "path_with_type": "Huyện Gio Linh, Tỉnh Quảng Trị",
       "code": "466",
       "parent_code": "45",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fa86"
     },
     {
       "_id": "60eaaa6f1173335842c354be",
@@ -4090,7 +4430,8 @@
       "path_with_type": "Huyện Đa Krông, Tỉnh Quảng Trị",
       "code": "467",
       "parent_code": "45",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3a1f"
     },
     {
       "_id": "60eaaa6f1173335842c354bf",
@@ -4102,7 +4443,8 @@
       "path_with_type": "Huyện Cam Lộ, Tỉnh Quảng Trị",
       "code": "468",
       "parent_code": "45",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fe59"
     },
     {
       "_id": "60eaaa6f1173335842c354c0",
@@ -4114,7 +4456,8 @@
       "path_with_type": "Huyện Triệu Phong, Tỉnh Quảng Trị",
       "code": "469",
       "parent_code": "45",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4e31"
     },
     {
       "_id": "60eaaa6f1173335842c354c1",
@@ -4126,7 +4469,8 @@
       "path_with_type": "Huyện Hải Lăng, Tỉnh Quảng Trị",
       "code": "470",
       "parent_code": "45",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d7a6"
     },
     {
       "_id": "60eaaa6f1173335842c354c2",
@@ -4138,7 +4482,8 @@
       "path_with_type": "Huyện Cồn Cỏ, Tỉnh Quảng Trị",
       "code": "471",
       "parent_code": "45",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9d08"
     },
     {
       "_id": "60eaaa6f1173335842c354c3",
@@ -4150,7 +4495,8 @@
       "path_with_type": "Thành phố Huế, Tỉnh Thừa Thiên Huế",
       "code": "474",
       "parent_code": "46",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6a29"
     },
     {
       "_id": "60eaaa6f1173335842c354c4",
@@ -4162,7 +4508,8 @@
       "path_with_type": "Huyện Phong Điền, Tỉnh Thừa Thiên Huế",
       "code": "476",
       "parent_code": "46",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b29b"
     },
     {
       "_id": "60eaaa6f1173335842c354c5",
@@ -4174,7 +4521,8 @@
       "path_with_type": "Huyện Quảng Điền, Tỉnh Thừa Thiên Huế",
       "code": "477",
       "parent_code": "46",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8c3e"
     },
     {
       "_id": "60eaaa6f1173335842c354c6",
@@ -4186,7 +4534,8 @@
       "path_with_type": "Huyện Phú Vang, Tỉnh Thừa Thiên Huế",
       "code": "478",
       "parent_code": "46",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3bdd"
     },
     {
       "_id": "60eaaa6f1173335842c354c7",
@@ -4198,7 +4547,8 @@
       "path_with_type": "Thị xã Hương Thủy, Tỉnh Thừa Thiên Huế",
       "code": "479",
       "parent_code": "46",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3713"
     },
     {
       "_id": "60eaaa6f1173335842c354c8",
@@ -4210,7 +4560,8 @@
       "path_with_type": "Thị xã Hương Trà, Tỉnh Thừa Thiên Huế",
       "code": "480",
       "parent_code": "46",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b72a"
     },
     {
       "_id": "60eaaa6f1173335842c354c9",
@@ -4222,7 +4573,8 @@
       "path_with_type": "Huyện A Lưới, Tỉnh Thừa Thiên Huế",
       "code": "481",
       "parent_code": "46",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b81f"
     },
     {
       "_id": "60eaaa6f1173335842c354ca",
@@ -4234,7 +4586,8 @@
       "path_with_type": "Huyện Phú Lộc, Tỉnh Thừa Thiên Huế",
       "code": "482",
       "parent_code": "46",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fe87"
     },
     {
       "_id": "60eaaa6f1173335842c354cb",
@@ -4246,7 +4599,8 @@
       "path_with_type": "Huyện Nam Đông, Tỉnh Thừa Thiên Huế",
       "code": "483",
       "parent_code": "46",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a174"
     },
     {
       "_id": "60eaaa6f1173335842c354cc",
@@ -4258,7 +4612,8 @@
       "path_with_type": "Quận Liên Chiểu, Thành phố Đà Nẵng",
       "code": "490",
       "parent_code": "48",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a8f2"
     },
     {
       "_id": "60eaaa6f1173335842c354cd",
@@ -4270,7 +4625,8 @@
       "path_with_type": "Quận Thanh Khê, Thành phố Đà Nẵng",
       "code": "491",
       "parent_code": "48",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ff2a"
     },
     {
       "_id": "60eaaa6f1173335842c354ce",
@@ -4282,7 +4638,8 @@
       "path_with_type": "Quận Hải Châu, Thành phố Đà Nẵng",
       "code": "492",
       "parent_code": "48",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2b1b"
     },
     {
       "_id": "60eaaa6f1173335842c354cf",
@@ -4294,7 +4651,8 @@
       "path_with_type": "Quận Sơn Trà, Thành phố Đà Nẵng",
       "code": "493",
       "parent_code": "48",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "997c"
     },
     {
       "_id": "60eaaa6f1173335842c354d0",
@@ -4306,7 +4664,8 @@
       "path_with_type": "Quận Ngũ Hành Sơn, Thành phố Đà Nẵng",
       "code": "494",
       "parent_code": "48",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "328b"
     },
     {
       "_id": "60eaaa6f1173335842c354d1",
@@ -4318,7 +4677,8 @@
       "path_with_type": "Quận Cẩm Lệ, Thành phố Đà Nẵng",
       "code": "495",
       "parent_code": "48",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0ada"
     },
     {
       "_id": "60eaaa6f1173335842c354d2",
@@ -4330,7 +4690,8 @@
       "path_with_type": "Huyện Hòa Vang, Thành phố Đà Nẵng",
       "code": "497",
       "parent_code": "48",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5958"
     },
     {
       "_id": "60eaaa6f1173335842c354d3",
@@ -4342,7 +4703,8 @@
       "path_with_type": "Huyện Hoàng Sa, Thành phố Đà Nẵng",
       "code": "498",
       "parent_code": "48",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a672"
     },
     {
       "_id": "60eaaa6f1173335842c354d4",
@@ -4354,7 +4716,8 @@
       "path_with_type": "Thành phố Tam Kỳ, Tỉnh Quảng Nam",
       "code": "502",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6b14"
     },
     {
       "_id": "60eaaa6f1173335842c354d5",
@@ -4366,7 +4729,8 @@
       "path_with_type": "Thành phố Hội An, Tỉnh Quảng Nam",
       "code": "503",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e43c"
     },
     {
       "_id": "60eaaa6f1173335842c354d6",
@@ -4378,7 +4742,8 @@
       "path_with_type": "Huyện Tây Giang, Tỉnh Quảng Nam",
       "code": "504",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5365"
     },
     {
       "_id": "60eaaa6f1173335842c354d7",
@@ -4390,7 +4755,8 @@
       "path_with_type": "Huyện Đông Giang, Tỉnh Quảng Nam",
       "code": "505",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9be3"
     },
     {
       "_id": "60eaaa6f1173335842c354d8",
@@ -4402,7 +4768,8 @@
       "path_with_type": "Huyện Đại Lộc, Tỉnh Quảng Nam",
       "code": "506",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7d45"
     },
     {
       "_id": "60eaaa6f1173335842c354d9",
@@ -4414,7 +4781,8 @@
       "path_with_type": "Thị xã Điện Bàn, Tỉnh Quảng Nam",
       "code": "507",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e47e"
     },
     {
       "_id": "60eaaa6f1173335842c354da",
@@ -4426,7 +4794,8 @@
       "path_with_type": "Huyện Duy Xuyên, Tỉnh Quảng Nam",
       "code": "508",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "65d7"
     },
     {
       "_id": "60eaaa6f1173335842c354db",
@@ -4438,7 +4807,8 @@
       "path_with_type": "Huyện Quế Sơn, Tỉnh Quảng Nam",
       "code": "509",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7e0b"
     },
     {
       "_id": "60eaaa6f1173335842c354dc",
@@ -4450,7 +4820,8 @@
       "path_with_type": "Huyện Nam Giang, Tỉnh Quảng Nam",
       "code": "510",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "69cf"
     },
     {
       "_id": "60eaaa6f1173335842c354dd",
@@ -4462,7 +4833,8 @@
       "path_with_type": "Huyện Phước Sơn, Tỉnh Quảng Nam",
       "code": "511",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d96c"
     },
     {
       "_id": "60eaaa6f1173335842c354de",
@@ -4474,7 +4846,8 @@
       "path_with_type": "Huyện Hiệp Đức, Tỉnh Quảng Nam",
       "code": "512",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d149"
     },
     {
       "_id": "60eaaa6f1173335842c354df",
@@ -4486,7 +4859,8 @@
       "path_with_type": "Huyện Thăng Bình, Tỉnh Quảng Nam",
       "code": "513",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b5c9"
     },
     {
       "_id": "60eaaa6f1173335842c354e0",
@@ -4498,7 +4872,8 @@
       "path_with_type": "Huyện Tiên Phước, Tỉnh Quảng Nam",
       "code": "514",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "63c5"
     },
     {
       "_id": "60eaaa6f1173335842c354e1",
@@ -4510,7 +4885,8 @@
       "path_with_type": "Huyện Bắc Trà My, Tỉnh Quảng Nam",
       "code": "515",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "19dc"
     },
     {
       "_id": "60eaaa6f1173335842c354e2",
@@ -4522,7 +4898,8 @@
       "path_with_type": "Huyện Nam Trà My, Tỉnh Quảng Nam",
       "code": "516",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c0fb"
     },
     {
       "_id": "60eaaa6f1173335842c354e3",
@@ -4534,7 +4911,8 @@
       "path_with_type": "Huyện Núi Thành, Tỉnh Quảng Nam",
       "code": "517",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "31d2"
     },
     {
       "_id": "60eaaa6f1173335842c354e4",
@@ -4546,7 +4924,8 @@
       "path_with_type": "Huyện Phú Ninh, Tỉnh Quảng Nam",
       "code": "518",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0708"
     },
     {
       "_id": "60eaaa6f1173335842c354e5",
@@ -4558,7 +4937,8 @@
       "path_with_type": "Huyện Nông Sơn, Tỉnh Quảng Nam",
       "code": "519",
       "parent_code": "49",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ed40"
     },
     {
       "_id": "60eaaa6f1173335842c354e6",
@@ -4570,7 +4950,8 @@
       "path_with_type": "Thành phố Quảng Ngãi, Tỉnh Quảng Ngãi",
       "code": "522",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "feed"
     },
     {
       "_id": "60eaaa6f1173335842c354e7",
@@ -4582,7 +4963,8 @@
       "path_with_type": "Huyện Bình Sơn, Tỉnh Quảng Ngãi",
       "code": "524",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bb95"
     },
     {
       "_id": "60eaaa6f1173335842c354e8",
@@ -4594,7 +4976,8 @@
       "path_with_type": "Huyện Trà Bồng, Tỉnh Quảng Ngãi",
       "code": "525",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9dae"
     },
     {
       "_id": "60eaaa6f1173335842c354e9",
@@ -4606,7 +4989,8 @@
       "path_with_type": "Huyện Sơn Tịnh, Tỉnh Quảng Ngãi",
       "code": "527",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c89f"
     },
     {
       "_id": "60eaaa6f1173335842c354ea",
@@ -4618,7 +5002,8 @@
       "path_with_type": "Huyện Tư Nghĩa, Tỉnh Quảng Ngãi",
       "code": "528",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3ca9"
     },
     {
       "_id": "60eaaa6f1173335842c354eb",
@@ -4630,7 +5015,8 @@
       "path_with_type": "Huyện Sơn Hà, Tỉnh Quảng Ngãi",
       "code": "529",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b9f9"
     },
     {
       "_id": "60eaaa6f1173335842c354ec",
@@ -4642,7 +5028,8 @@
       "path_with_type": "Huyện Sơn Tây, Tỉnh Quảng Ngãi",
       "code": "530",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9a0c"
     },
     {
       "_id": "60eaaa6f1173335842c354ed",
@@ -4654,7 +5041,8 @@
       "path_with_type": "Huyện Minh Long, Tỉnh Quảng Ngãi",
       "code": "531",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a118"
     },
     {
       "_id": "60eaaa6f1173335842c354ee",
@@ -4666,7 +5054,8 @@
       "path_with_type": "Huyện Nghĩa Hành, Tỉnh Quảng Ngãi",
       "code": "532",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8e06"
     },
     {
       "_id": "60eaaa6f1173335842c354ef",
@@ -4678,7 +5067,8 @@
       "path_with_type": "Huyện Mộ Đức, Tỉnh Quảng Ngãi",
       "code": "533",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "db02"
     },
     {
       "_id": "60eaaa6f1173335842c354f0",
@@ -4690,7 +5080,8 @@
       "path_with_type": "Thị xã Đức Phổ, Tỉnh Quảng Ngãi",
       "code": "534",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6d33"
     },
     {
       "_id": "60eaaa6f1173335842c354f1",
@@ -4702,7 +5093,8 @@
       "path_with_type": "Huyện Ba Tơ, Tỉnh Quảng Ngãi",
       "code": "535",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9829"
     },
     {
       "_id": "60eaaa6f1173335842c354f2",
@@ -4714,7 +5106,8 @@
       "path_with_type": "Huyện Lý Sơn, Tỉnh Quảng Ngãi",
       "code": "536",
       "parent_code": "51",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "44ed"
     },
     {
       "_id": "60eaaa6f1173335842c354f3",
@@ -4726,7 +5119,8 @@
       "path_with_type": "Thành phố Quy Nhơn, Tỉnh Bình Định",
       "code": "540",
       "parent_code": "52",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ffef"
     },
     {
       "_id": "60eaaa6f1173335842c354f4",
@@ -4738,7 +5132,8 @@
       "path_with_type": "Huyện An Lão, Tỉnh Bình Định",
       "code": "542",
       "parent_code": "52",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "981d"
     },
     {
       "_id": "60eaaa6f1173335842c354f5",
@@ -4750,7 +5145,8 @@
       "path_with_type": "Thị xã Hoài Nhơn, Tỉnh Bình Định",
       "code": "543",
       "parent_code": "52",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7d34"
     },
     {
       "_id": "60eaaa6f1173335842c354f6",
@@ -4762,7 +5158,8 @@
       "path_with_type": "Huyện Hoài Ân, Tỉnh Bình Định",
       "code": "544",
       "parent_code": "52",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b602"
     },
     {
       "_id": "60eaaa6f1173335842c354f7",
@@ -4774,7 +5171,8 @@
       "path_with_type": "Huyện Phù Mỹ, Tỉnh Bình Định",
       "code": "545",
       "parent_code": "52",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3f8b"
     },
     {
       "_id": "60eaaa6f1173335842c354f8",
@@ -4786,7 +5184,8 @@
       "path_with_type": "Huyện Vĩnh Thạnh, Tỉnh Bình Định",
       "code": "546",
       "parent_code": "52",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "692c"
     },
     {
       "_id": "60eaaa6f1173335842c354f9",
@@ -4798,7 +5197,8 @@
       "path_with_type": "Huyện Tây Sơn, Tỉnh Bình Định",
       "code": "547",
       "parent_code": "52",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5ed5"
     },
     {
       "_id": "60eaaa6f1173335842c354fa",
@@ -4810,7 +5210,8 @@
       "path_with_type": "Huyện Phù Cát, Tỉnh Bình Định",
       "code": "548",
       "parent_code": "52",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a0bd"
     },
     {
       "_id": "60eaaa6f1173335842c354fb",
@@ -4822,7 +5223,8 @@
       "path_with_type": "Thị xã An Nhơn, Tỉnh Bình Định",
       "code": "549",
       "parent_code": "52",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c2ef"
     },
     {
       "_id": "60eaaa6f1173335842c354fc",
@@ -4834,7 +5236,8 @@
       "path_with_type": "Huyện Tuy Phước, Tỉnh Bình Định",
       "code": "550",
       "parent_code": "52",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a7e2"
     },
     {
       "_id": "60eaaa6f1173335842c354fd",
@@ -4846,7 +5249,8 @@
       "path_with_type": "Huyện Vân Canh, Tỉnh Bình Định",
       "code": "551",
       "parent_code": "52",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5c21"
     },
     {
       "_id": "60eaaa6f1173335842c354fe",
@@ -4858,7 +5262,8 @@
       "path_with_type": "Thành phố Tuy Hoà, Tỉnh Phú Yên",
       "code": "555",
       "parent_code": "54",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5ed1"
     },
     {
       "_id": "60eaaa6f1173335842c354ff",
@@ -4870,7 +5275,8 @@
       "path_with_type": "Thị xã Sông Cầu, Tỉnh Phú Yên",
       "code": "557",
       "parent_code": "54",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c998"
     },
     {
       "_id": "60eaaa6f1173335842c35500",
@@ -4882,7 +5288,8 @@
       "path_with_type": "Huyện Đồng Xuân, Tỉnh Phú Yên",
       "code": "558",
       "parent_code": "54",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0326"
     },
     {
       "_id": "60eaaa6f1173335842c35501",
@@ -4894,7 +5301,8 @@
       "path_with_type": "Huyện Tuy An, Tỉnh Phú Yên",
       "code": "559",
       "parent_code": "54",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9d21"
     },
     {
       "_id": "60eaaa6f1173335842c35502",
@@ -4906,7 +5314,8 @@
       "path_with_type": "Huyện Sơn Hòa, Tỉnh Phú Yên",
       "code": "560",
       "parent_code": "54",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5ebb"
     },
     {
       "_id": "60eaaa6f1173335842c35503",
@@ -4918,7 +5327,8 @@
       "path_with_type": "Huyện Sông Hinh, Tỉnh Phú Yên",
       "code": "561",
       "parent_code": "54",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7f8f"
     },
     {
       "_id": "60eaaa6f1173335842c35504",
@@ -4930,7 +5340,8 @@
       "path_with_type": "Huyện Tây Hoà, Tỉnh Phú Yên",
       "code": "562",
       "parent_code": "54",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f37b"
     },
     {
       "_id": "60eaaa6f1173335842c35505",
@@ -4942,7 +5353,8 @@
       "path_with_type": "Huyện Phú Hoà, Tỉnh Phú Yên",
       "code": "563",
       "parent_code": "54",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "13b3"
     },
     {
       "_id": "60eaaa6f1173335842c35506",
@@ -4954,7 +5366,8 @@
       "path_with_type": "Thị xã Đông Hòa, Tỉnh Phú Yên",
       "code": "564",
       "parent_code": "54",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6155"
     },
     {
       "_id": "60eaaa6f1173335842c35507",
@@ -4966,7 +5379,8 @@
       "path_with_type": "Thành phố Nha Trang, Tỉnh Khánh Hòa",
       "code": "568",
       "parent_code": "56",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "469e"
     },
     {
       "_id": "60eaaa6f1173335842c35508",
@@ -4978,7 +5392,8 @@
       "path_with_type": "Thành phố Cam Ranh, Tỉnh Khánh Hòa",
       "code": "569",
       "parent_code": "56",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "514b"
     },
     {
       "_id": "60eaaa6f1173335842c35509",
@@ -4990,7 +5405,8 @@
       "path_with_type": "Huyện Cam Lâm, Tỉnh Khánh Hòa",
       "code": "570",
       "parent_code": "56",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b8c2"
     },
     {
       "_id": "60eaaa6f1173335842c3550a",
@@ -5002,7 +5418,8 @@
       "path_with_type": "Huyện Vạn Ninh, Tỉnh Khánh Hòa",
       "code": "571",
       "parent_code": "56",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b188"
     },
     {
       "_id": "60eaaa6f1173335842c3550b",
@@ -5014,7 +5431,8 @@
       "path_with_type": "Thị xã Ninh Hòa, Tỉnh Khánh Hòa",
       "code": "572",
       "parent_code": "56",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8eb0"
     },
     {
       "_id": "60eaaa6f1173335842c3550c",
@@ -5026,7 +5444,8 @@
       "path_with_type": "Huyện Khánh Vĩnh, Tỉnh Khánh Hòa",
       "code": "573",
       "parent_code": "56",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e935"
     },
     {
       "_id": "60eaaa6f1173335842c3550d",
@@ -5038,7 +5457,8 @@
       "path_with_type": "Huyện Diên Khánh, Tỉnh Khánh Hòa",
       "code": "574",
       "parent_code": "56",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fb2c"
     },
     {
       "_id": "60eaaa6f1173335842c3550e",
@@ -5050,7 +5470,8 @@
       "path_with_type": "Huyện Khánh Sơn, Tỉnh Khánh Hòa",
       "code": "575",
       "parent_code": "56",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1c3d"
     },
     {
       "_id": "60eaaa6f1173335842c3550f",
@@ -5062,7 +5483,8 @@
       "path_with_type": "Huyện Trường Sa, Tỉnh Khánh Hòa",
       "code": "576",
       "parent_code": "56",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "dc16"
     },
     {
       "_id": "60eaaa6f1173335842c35510",
@@ -5074,7 +5496,8 @@
       "path_with_type": "Thành phố Phan Rang-Tháp Chàm, Tỉnh Ninh Thuận",
       "code": "582",
       "parent_code": "58",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e5e1"
     },
     {
       "_id": "60eaaa6f1173335842c35511",
@@ -5086,7 +5509,8 @@
       "path_with_type": "Huyện Bác Ái, Tỉnh Ninh Thuận",
       "code": "584",
       "parent_code": "58",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2a27"
     },
     {
       "_id": "60eaaa6f1173335842c35512",
@@ -5098,7 +5522,8 @@
       "path_with_type": "Huyện Ninh Sơn, Tỉnh Ninh Thuận",
       "code": "585",
       "parent_code": "58",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "34c5"
     },
     {
       "_id": "60eaaa6f1173335842c35513",
@@ -5110,7 +5535,8 @@
       "path_with_type": "Huyện Ninh Hải, Tỉnh Ninh Thuận",
       "code": "586",
       "parent_code": "58",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c858"
     },
     {
       "_id": "60eaaa6f1173335842c35514",
@@ -5122,7 +5548,8 @@
       "path_with_type": "Huyện Ninh Phước, Tỉnh Ninh Thuận",
       "code": "587",
       "parent_code": "58",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7e69"
     },
     {
       "_id": "60eaaa6f1173335842c35515",
@@ -5134,7 +5561,8 @@
       "path_with_type": "Huyện Thuận Bắc, Tỉnh Ninh Thuận",
       "code": "588",
       "parent_code": "58",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6ac1"
     },
     {
       "_id": "60eaaa6f1173335842c35516",
@@ -5146,7 +5574,8 @@
       "path_with_type": "Huyện Thuận Nam, Tỉnh Ninh Thuận",
       "code": "589",
       "parent_code": "58",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6bc1"
     },
     {
       "_id": "60eaaa6f1173335842c35517",
@@ -5158,7 +5587,8 @@
       "path_with_type": "Thành phố Phan Thiết, Tỉnh Bình Thuận",
       "code": "593",
       "parent_code": "60",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "078d"
     },
     {
       "_id": "60eaaa6f1173335842c35518",
@@ -5170,7 +5600,8 @@
       "path_with_type": "Thị xã La Gi, Tỉnh Bình Thuận",
       "code": "594",
       "parent_code": "60",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9360"
     },
     {
       "_id": "60eaaa6f1173335842c35519",
@@ -5182,7 +5613,8 @@
       "path_with_type": "Huyện Tuy Phong, Tỉnh Bình Thuận",
       "code": "595",
       "parent_code": "60",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a725"
     },
     {
       "_id": "60eaaa6f1173335842c3551a",
@@ -5194,7 +5626,8 @@
       "path_with_type": "Huyện Bắc Bình, Tỉnh Bình Thuận",
       "code": "596",
       "parent_code": "60",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e1dd"
     },
     {
       "_id": "60eaaa6f1173335842c3551b",
@@ -5206,7 +5639,8 @@
       "path_with_type": "Huyện Hàm Thuận Bắc, Tỉnh Bình Thuận",
       "code": "597",
       "parent_code": "60",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3dc2"
     },
     {
       "_id": "60eaaa6f1173335842c3551c",
@@ -5218,7 +5652,8 @@
       "path_with_type": "Huyện Hàm Thuận Nam, Tỉnh Bình Thuận",
       "code": "598",
       "parent_code": "60",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "cfc4"
     },
     {
       "_id": "60eaaa6f1173335842c3551d",
@@ -5230,7 +5665,8 @@
       "path_with_type": "Huyện Tánh Linh, Tỉnh Bình Thuận",
       "code": "599",
       "parent_code": "60",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1190"
     },
     {
       "_id": "60eaaa6f1173335842c3551e",
@@ -5242,7 +5678,8 @@
       "path_with_type": "Huyện Đức Linh, Tỉnh Bình Thuận",
       "code": "600",
       "parent_code": "60",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7c1f"
     },
     {
       "_id": "60eaaa6f1173335842c3551f",
@@ -5254,7 +5691,8 @@
       "path_with_type": "Huyện Hàm Tân, Tỉnh Bình Thuận",
       "code": "601",
       "parent_code": "60",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9b0b"
     },
     {
       "_id": "60eaaa6f1173335842c35520",
@@ -5266,7 +5704,8 @@
       "path_with_type": "Huyện Phú Quí, Tỉnh Bình Thuận",
       "code": "602",
       "parent_code": "60",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4a68"
     },
     {
       "_id": "60eaaa6f1173335842c35521",
@@ -5278,7 +5717,8 @@
       "path_with_type": "Thành phố Kon Tum, Tỉnh Kon Tum",
       "code": "608",
       "parent_code": "62",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "73fa"
     },
     {
       "_id": "60eaaa6f1173335842c35522",
@@ -5290,7 +5730,8 @@
       "path_with_type": "Huyện Đắk Glei, Tỉnh Kon Tum",
       "code": "610",
       "parent_code": "62",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3978"
     },
     {
       "_id": "60eaaa6f1173335842c35523",
@@ -5302,7 +5743,8 @@
       "path_with_type": "Huyện Ngọc Hồi, Tỉnh Kon Tum",
       "code": "611",
       "parent_code": "62",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2204"
     },
     {
       "_id": "60eaaa6f1173335842c35524",
@@ -5314,7 +5756,8 @@
       "path_with_type": "Huyện Đắk Tô, Tỉnh Kon Tum",
       "code": "612",
       "parent_code": "62",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a11a"
     },
     {
       "_id": "60eaaa6f1173335842c35525",
@@ -5326,7 +5769,8 @@
       "path_with_type": "Huyện Kon Plông, Tỉnh Kon Tum",
       "code": "613",
       "parent_code": "62",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4d04"
     },
     {
       "_id": "60eaaa6f1173335842c35526",
@@ -5338,7 +5782,8 @@
       "path_with_type": "Huyện Kon Rẫy, Tỉnh Kon Tum",
       "code": "614",
       "parent_code": "62",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "84d4"
     },
     {
       "_id": "60eaaa6f1173335842c35527",
@@ -5350,7 +5795,8 @@
       "path_with_type": "Huyện Đắk Hà, Tỉnh Kon Tum",
       "code": "615",
       "parent_code": "62",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8996"
     },
     {
       "_id": "60eaaa6f1173335842c35528",
@@ -5362,7 +5808,8 @@
       "path_with_type": "Huyện Sa Thầy, Tỉnh Kon Tum",
       "code": "616",
       "parent_code": "62",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a390"
     },
     {
       "_id": "60eaaa6f1173335842c35529",
@@ -5374,7 +5821,8 @@
       "path_with_type": "Huyện Tu Mơ Rông, Tỉnh Kon Tum",
       "code": "617",
       "parent_code": "62",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3fa1"
     },
     {
       "_id": "60eaaa6f1173335842c3552a",
@@ -5386,7 +5834,8 @@
       "path_with_type": "Huyện Ia H' Drai, Tỉnh Kon Tum",
       "code": "618",
       "parent_code": "62",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3e30"
     },
     {
       "_id": "60eaaa6f1173335842c3552b",
@@ -5398,7 +5847,8 @@
       "path_with_type": "Thành phố Pleiku, Tỉnh Gia Lai",
       "code": "622",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2acf"
     },
     {
       "_id": "60eaaa6f1173335842c3552c",
@@ -5410,7 +5860,8 @@
       "path_with_type": "Thị xã An Khê, Tỉnh Gia Lai",
       "code": "623",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8247"
     },
     {
       "_id": "60eaaa6f1173335842c3552d",
@@ -5422,7 +5873,8 @@
       "path_with_type": "Thị xã Ayun Pa, Tỉnh Gia Lai",
       "code": "624",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b098"
     },
     {
       "_id": "60eaaa6f1173335842c3552e",
@@ -5434,7 +5886,8 @@
       "path_with_type": "Huyện KBang, Tỉnh Gia Lai",
       "code": "625",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "50f2"
     },
     {
       "_id": "60eaaa6f1173335842c3552f",
@@ -5446,7 +5899,8 @@
       "path_with_type": "Huyện Đăk Đoa, Tỉnh Gia Lai",
       "code": "626",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "edb3"
     },
     {
       "_id": "60eaaa6f1173335842c35530",
@@ -5458,7 +5912,8 @@
       "path_with_type": "Huyện Chư Păh, Tỉnh Gia Lai",
       "code": "627",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "29d3"
     },
     {
       "_id": "60eaaa6f1173335842c35531",
@@ -5470,7 +5925,8 @@
       "path_with_type": "Huyện Ia Grai, Tỉnh Gia Lai",
       "code": "628",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7a90"
     },
     {
       "_id": "60eaaa6f1173335842c35532",
@@ -5482,7 +5938,8 @@
       "path_with_type": "Huyện Mang Yang, Tỉnh Gia Lai",
       "code": "629",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b55f"
     },
     {
       "_id": "60eaaa6f1173335842c35533",
@@ -5494,7 +5951,8 @@
       "path_with_type": "Huyện Kông Chro, Tỉnh Gia Lai",
       "code": "630",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "baa6"
     },
     {
       "_id": "60eaaa6f1173335842c35534",
@@ -5506,7 +5964,8 @@
       "path_with_type": "Huyện Đức Cơ, Tỉnh Gia Lai",
       "code": "631",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "469b"
     },
     {
       "_id": "60eaaa6f1173335842c35535",
@@ -5518,7 +5977,8 @@
       "path_with_type": "Huyện Chư Prông, Tỉnh Gia Lai",
       "code": "632",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6d6e"
     },
     {
       "_id": "60eaaa6f1173335842c35536",
@@ -5530,7 +5990,8 @@
       "path_with_type": "Huyện Chư Sê, Tỉnh Gia Lai",
       "code": "633",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fcf3"
     },
     {
       "_id": "60eaaa6f1173335842c35537",
@@ -5542,7 +6003,8 @@
       "path_with_type": "Huyện Đăk Pơ, Tỉnh Gia Lai",
       "code": "634",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a136"
     },
     {
       "_id": "60eaaa6f1173335842c35538",
@@ -5554,7 +6016,8 @@
       "path_with_type": "Huyện Ia Pa, Tỉnh Gia Lai",
       "code": "635",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ce0c"
     },
     {
       "_id": "60eaaa6f1173335842c35539",
@@ -5566,7 +6029,8 @@
       "path_with_type": "Huyện Krông Pa, Tỉnh Gia Lai",
       "code": "637",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9fc2"
     },
     {
       "_id": "60eaaa6f1173335842c3553a",
@@ -5578,7 +6042,8 @@
       "path_with_type": "Huyện Phú Thiện, Tỉnh Gia Lai",
       "code": "638",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e66f"
     },
     {
       "_id": "60eaaa6f1173335842c3553b",
@@ -5590,7 +6055,8 @@
       "path_with_type": "Huyện Chư Pưh, Tỉnh Gia Lai",
       "code": "639",
       "parent_code": "64",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3396"
     },
     {
       "_id": "60eaaa6f1173335842c3553c",
@@ -5602,7 +6068,8 @@
       "path_with_type": "Thành phố Buôn Ma Thuột, Tỉnh Đắk Lắk",
       "code": "643",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "271b"
     },
     {
       "_id": "60eaaa6f1173335842c3553d",
@@ -5614,7 +6081,8 @@
       "path_with_type": "Thị Xã Buôn Hồ, Tỉnh Đắk Lắk",
       "code": "644",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "314c"
     },
     {
       "_id": "60eaaa6f1173335842c3553e",
@@ -5626,7 +6094,8 @@
       "path_with_type": "Huyện Ea H'leo, Tỉnh Đắk Lắk",
       "code": "645",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "02b8"
     },
     {
       "_id": "60eaaa6f1173335842c3553f",
@@ -5638,7 +6107,8 @@
       "path_with_type": "Huyện Ea Súp, Tỉnh Đắk Lắk",
       "code": "646",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f026"
     },
     {
       "_id": "60eaaa6f1173335842c35540",
@@ -5650,7 +6120,8 @@
       "path_with_type": "Huyện Buôn Đôn, Tỉnh Đắk Lắk",
       "code": "647",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7480"
     },
     {
       "_id": "60eaaa6f1173335842c35541",
@@ -5662,7 +6133,8 @@
       "path_with_type": "Huyện Cư M'gar, Tỉnh Đắk Lắk",
       "code": "648",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2b7d"
     },
     {
       "_id": "60eaaa6f1173335842c35542",
@@ -5674,7 +6146,8 @@
       "path_with_type": "Huyện Krông Búk, Tỉnh Đắk Lắk",
       "code": "649",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bab9"
     },
     {
       "_id": "60eaaa6f1173335842c35543",
@@ -5686,7 +6159,8 @@
       "path_with_type": "Huyện Krông Năng, Tỉnh Đắk Lắk",
       "code": "650",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1fd0"
     },
     {
       "_id": "60eaaa6f1173335842c35544",
@@ -5698,7 +6172,8 @@
       "path_with_type": "Huyện Ea Kar, Tỉnh Đắk Lắk",
       "code": "651",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6eb0"
     },
     {
       "_id": "60eaaa6f1173335842c35545",
@@ -5710,7 +6185,8 @@
       "path_with_type": "Huyện M'Đrắk, Tỉnh Đắk Lắk",
       "code": "652",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a1ff"
     },
     {
       "_id": "60eaaa6f1173335842c35546",
@@ -5722,7 +6198,8 @@
       "path_with_type": "Huyện Krông Bông, Tỉnh Đắk Lắk",
       "code": "653",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5478"
     },
     {
       "_id": "60eaaa6f1173335842c35547",
@@ -5734,7 +6211,8 @@
       "path_with_type": "Huyện Krông Pắc, Tỉnh Đắk Lắk",
       "code": "654",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3b03"
     },
     {
       "_id": "60eaaa6f1173335842c35548",
@@ -5746,7 +6224,8 @@
       "path_with_type": "Huyện Krông A Na, Tỉnh Đắk Lắk",
       "code": "655",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e2be"
     },
     {
       "_id": "60eaaa6f1173335842c35549",
@@ -5758,7 +6237,8 @@
       "path_with_type": "Huyện Lắk, Tỉnh Đắk Lắk",
       "code": "656",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9373"
     },
     {
       "_id": "60eaaa6f1173335842c3554a",
@@ -5770,7 +6250,8 @@
       "path_with_type": "Huyện Cư Kuin, Tỉnh Đắk Lắk",
       "code": "657",
       "parent_code": "66",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0ecb"
     },
     {
       "_id": "60eaaa6f1173335842c3554b",
@@ -5782,7 +6263,8 @@
       "path_with_type": "Thành phố Gia Nghĩa, Tỉnh Đắk Nông",
       "code": "660",
       "parent_code": "67",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a80b"
     },
     {
       "_id": "60eaaa6f1173335842c3554c",
@@ -5794,7 +6276,8 @@
       "path_with_type": "Huyện Đăk Glong, Tỉnh Đắk Nông",
       "code": "661",
       "parent_code": "67",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bf7f"
     },
     {
       "_id": "60eaaa6f1173335842c3554d",
@@ -5806,7 +6289,8 @@
       "path_with_type": "Huyện Cư Jút, Tỉnh Đắk Nông",
       "code": "662",
       "parent_code": "67",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3841"
     },
     {
       "_id": "60eaaa6f1173335842c3554e",
@@ -5818,7 +6302,8 @@
       "path_with_type": "Huyện Đắk Mil, Tỉnh Đắk Nông",
       "code": "663",
       "parent_code": "67",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8ad7"
     },
     {
       "_id": "60eaaa6f1173335842c3554f",
@@ -5830,7 +6315,8 @@
       "path_with_type": "Huyện Krông Nô, Tỉnh Đắk Nông",
       "code": "664",
       "parent_code": "67",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e487"
     },
     {
       "_id": "60eaaa6f1173335842c35550",
@@ -5842,7 +6328,8 @@
       "path_with_type": "Huyện Đắk Song, Tỉnh Đắk Nông",
       "code": "665",
       "parent_code": "67",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ca71"
     },
     {
       "_id": "60eaaa6f1173335842c35551",
@@ -5854,7 +6341,8 @@
       "path_with_type": "Huyện Đắk R'Lấp, Tỉnh Đắk Nông",
       "code": "666",
       "parent_code": "67",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "24cd"
     },
     {
       "_id": "60eaaa6f1173335842c35552",
@@ -5866,7 +6354,8 @@
       "path_with_type": "Huyện Tuy Đức, Tỉnh Đắk Nông",
       "code": "667",
       "parent_code": "67",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a6ef"
     },
     {
       "_id": "60eaaa6f1173335842c35553",
@@ -5878,7 +6367,8 @@
       "path_with_type": "Thành phố Đà Lạt, Tỉnh Lâm Đồng",
       "code": "672",
       "parent_code": "68",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "dac3"
     },
     {
       "_id": "60eaaa6f1173335842c35554",
@@ -5890,7 +6380,8 @@
       "path_with_type": "Thành phố Bảo Lộc, Tỉnh Lâm Đồng",
       "code": "673",
       "parent_code": "68",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a1ff"
     },
     {
       "_id": "60eaaa6f1173335842c35555",
@@ -5902,7 +6393,8 @@
       "path_with_type": "Huyện Đam Rông, Tỉnh Lâm Đồng",
       "code": "674",
       "parent_code": "68",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "132e"
     },
     {
       "_id": "60eaaa6f1173335842c35556",
@@ -5914,7 +6406,8 @@
       "path_with_type": "Huyện Lạc Dương, Tỉnh Lâm Đồng",
       "code": "675",
       "parent_code": "68",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0a33"
     },
     {
       "_id": "60eaaa6f1173335842c35557",
@@ -5926,7 +6419,8 @@
       "path_with_type": "Huyện Lâm Hà, Tỉnh Lâm Đồng",
       "code": "676",
       "parent_code": "68",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "58e1"
     },
     {
       "_id": "60eaaa6f1173335842c35558",
@@ -5938,7 +6432,8 @@
       "path_with_type": "Huyện Đơn Dương, Tỉnh Lâm Đồng",
       "code": "677",
       "parent_code": "68",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4b85"
     },
     {
       "_id": "60eaaa6f1173335842c35559",
@@ -5950,7 +6445,8 @@
       "path_with_type": "Huyện Đức Trọng, Tỉnh Lâm Đồng",
       "code": "678",
       "parent_code": "68",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6c0e"
     },
     {
       "_id": "60eaaa6f1173335842c3555a",
@@ -5962,7 +6458,8 @@
       "path_with_type": "Huyện Di Linh, Tỉnh Lâm Đồng",
       "code": "679",
       "parent_code": "68",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6311"
     },
     {
       "_id": "60eaaa6f1173335842c3555b",
@@ -5974,7 +6471,8 @@
       "path_with_type": "Huyện Bảo Lâm, Tỉnh Lâm Đồng",
       "code": "680",
       "parent_code": "68",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5422"
     },
     {
       "_id": "60eaaa6f1173335842c3555c",
@@ -5986,7 +6484,8 @@
       "path_with_type": "Huyện Đạ Huoai, Tỉnh Lâm Đồng",
       "code": "681",
       "parent_code": "68",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "97f5"
     },
     {
       "_id": "60eaaa6f1173335842c3555d",
@@ -5998,7 +6497,8 @@
       "path_with_type": "Huyện Đạ Tẻh, Tỉnh Lâm Đồng",
       "code": "682",
       "parent_code": "68",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "dad9"
     },
     {
       "_id": "60eaaa6f1173335842c3555e",
@@ -6010,7 +6510,8 @@
       "path_with_type": "Huyện Cát Tiên, Tỉnh Lâm Đồng",
       "code": "683",
       "parent_code": "68",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1702"
     },
     {
       "_id": "60eaaa6f1173335842c3555f",
@@ -6022,7 +6523,8 @@
       "path_with_type": "Thị xã Phước Long, Tỉnh Bình Phước",
       "code": "688",
       "parent_code": "70",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fa00"
     },
     {
       "_id": "60eaaa6f1173335842c35560",
@@ -6034,7 +6536,8 @@
       "path_with_type": "Thành phố Đồng Xoài, Tỉnh Bình Phước",
       "code": "689",
       "parent_code": "70",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e2a5"
     },
     {
       "_id": "60eaaa6f1173335842c35561",
@@ -6046,7 +6549,8 @@
       "path_with_type": "Thị xã Bình Long, Tỉnh Bình Phước",
       "code": "690",
       "parent_code": "70",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "51d6"
     },
     {
       "_id": "60eaaa6f1173335842c35562",
@@ -6058,7 +6562,8 @@
       "path_with_type": "Huyện Bù Gia Mập, Tỉnh Bình Phước",
       "code": "691",
       "parent_code": "70",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "dd81"
     },
     {
       "_id": "60eaaa6f1173335842c35563",
@@ -6070,7 +6575,8 @@
       "path_with_type": "Huyện Lộc Ninh, Tỉnh Bình Phước",
       "code": "692",
       "parent_code": "70",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a2c7"
     },
     {
       "_id": "60eaaa6f1173335842c35564",
@@ -6082,7 +6588,8 @@
       "path_with_type": "Huyện Bù Đốp, Tỉnh Bình Phước",
       "code": "693",
       "parent_code": "70",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6c7b"
     },
     {
       "_id": "60eaaa6f1173335842c35565",
@@ -6094,7 +6601,8 @@
       "path_with_type": "Huyện Hớn Quản, Tỉnh Bình Phước",
       "code": "694",
       "parent_code": "70",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bb53"
     },
     {
       "_id": "60eaaa6f1173335842c35566",
@@ -6106,7 +6614,8 @@
       "path_with_type": "Huyện Đồng Phú, Tỉnh Bình Phước",
       "code": "695",
       "parent_code": "70",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f7dc"
     },
     {
       "_id": "60eaaa6f1173335842c35567",
@@ -6118,7 +6627,8 @@
       "path_with_type": "Huyện Bù Đăng, Tỉnh Bình Phước",
       "code": "696",
       "parent_code": "70",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d7ca"
     },
     {
       "_id": "60eaaa6f1173335842c35568",
@@ -6130,7 +6640,8 @@
       "path_with_type": "Huyện Chơn Thành, Tỉnh Bình Phước",
       "code": "697",
       "parent_code": "70",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "568e"
     },
     {
       "_id": "60eaaa6f1173335842c35569",
@@ -6142,7 +6653,8 @@
       "path_with_type": "Huyện Phú Riềng, Tỉnh Bình Phước",
       "code": "698",
       "parent_code": "70",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f0ab"
     },
     {
       "_id": "60eaaa6f1173335842c3556a",
@@ -6154,7 +6666,8 @@
       "path_with_type": "Thành phố Tây Ninh, Tỉnh Tây Ninh",
       "code": "703",
       "parent_code": "72",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "627b"
     },
     {
       "_id": "60eaaa6f1173335842c3556b",
@@ -6166,7 +6679,8 @@
       "path_with_type": "Huyện Tân Biên, Tỉnh Tây Ninh",
       "code": "705",
       "parent_code": "72",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8b46"
     },
     {
       "_id": "60eaaa6f1173335842c3556c",
@@ -6178,7 +6692,8 @@
       "path_with_type": "Huyện Tân Châu, Tỉnh Tây Ninh",
       "code": "706",
       "parent_code": "72",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c0b0"
     },
     {
       "_id": "60eaaa6f1173335842c3556d",
@@ -6190,7 +6705,8 @@
       "path_with_type": "Huyện Dương Minh Châu, Tỉnh Tây Ninh",
       "code": "707",
       "parent_code": "72",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4bf3"
     },
     {
       "_id": "60eaaa6f1173335842c3556e",
@@ -6202,7 +6718,8 @@
       "path_with_type": "Huyện Châu Thành, Tỉnh Tây Ninh",
       "code": "708",
       "parent_code": "72",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c69b"
     },
     {
       "_id": "60eaaa6f1173335842c3556f",
@@ -6214,7 +6731,8 @@
       "path_with_type": "Thị xã Hòa Thành, Tỉnh Tây Ninh",
       "code": "709",
       "parent_code": "72",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6963"
     },
     {
       "_id": "60eaaa6f1173335842c35570",
@@ -6226,7 +6744,8 @@
       "path_with_type": "Huyện Gò Dầu, Tỉnh Tây Ninh",
       "code": "710",
       "parent_code": "72",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "883c"
     },
     {
       "_id": "60eaaa6f1173335842c35571",
@@ -6238,7 +6757,8 @@
       "path_with_type": "Huyện Bến Cầu, Tỉnh Tây Ninh",
       "code": "711",
       "parent_code": "72",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bd05"
     },
     {
       "_id": "60eaaa6f1173335842c35572",
@@ -6250,7 +6770,8 @@
       "path_with_type": "Thị xã Trảng Bàng, Tỉnh Tây Ninh",
       "code": "712",
       "parent_code": "72",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8281"
     },
     {
       "_id": "60eaaa6f1173335842c35573",
@@ -6262,7 +6783,8 @@
       "path_with_type": "Thành phố Thủ Dầu Một, Tỉnh Bình Dương",
       "code": "718",
       "parent_code": "74",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4597"
     },
     {
       "_id": "60eaaa6f1173335842c35574",
@@ -6274,7 +6796,8 @@
       "path_with_type": "Huyện Bàu Bàng, Tỉnh Bình Dương",
       "code": "719",
       "parent_code": "74",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6bb2"
     },
     {
       "_id": "60eaaa6f1173335842c35575",
@@ -6286,7 +6809,8 @@
       "path_with_type": "Huyện Dầu Tiếng, Tỉnh Bình Dương",
       "code": "720",
       "parent_code": "74",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c209"
     },
     {
       "_id": "60eaaa6f1173335842c35576",
@@ -6298,7 +6822,8 @@
       "path_with_type": "Thị xã Bến Cát, Tỉnh Bình Dương",
       "code": "721",
       "parent_code": "74",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6695"
     },
     {
       "_id": "60eaaa6f1173335842c35577",
@@ -6310,7 +6835,8 @@
       "path_with_type": "Huyện Phú Giáo, Tỉnh Bình Dương",
       "code": "722",
       "parent_code": "74",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "51fb"
     },
     {
       "_id": "60eaaa6f1173335842c35578",
@@ -6322,7 +6848,8 @@
       "path_with_type": "Thị xã Tân Uyên, Tỉnh Bình Dương",
       "code": "723",
       "parent_code": "74",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2e7d"
     },
     {
       "_id": "60eaaa6f1173335842c35579",
@@ -6334,7 +6861,8 @@
       "path_with_type": "Thành phố Dĩ An, Tỉnh Bình Dương",
       "code": "724",
       "parent_code": "74",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "56ff"
     },
     {
       "_id": "60eaaa6f1173335842c3557a",
@@ -6346,7 +6874,8 @@
       "path_with_type": "Thành phố Thuận An, Tỉnh Bình Dương",
       "code": "725",
       "parent_code": "74",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6c9b"
     },
     {
       "_id": "60eaaa6f1173335842c3557b",
@@ -6358,7 +6887,8 @@
       "path_with_type": "Huyện Bắc Tân Uyên, Tỉnh Bình Dương",
       "code": "726",
       "parent_code": "74",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b739"
     },
     {
       "_id": "60eaaa6f1173335842c3557c",
@@ -6370,7 +6900,8 @@
       "path_with_type": "Thành phố Biên Hòa, Tỉnh Đồng Nai",
       "code": "731",
       "parent_code": "75",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7ded"
     },
     {
       "_id": "60eaaa6f1173335842c3557d",
@@ -6382,7 +6913,8 @@
       "path_with_type": "Thành phố Long Khánh, Tỉnh Đồng Nai",
       "code": "732",
       "parent_code": "75",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "575c"
     },
     {
       "_id": "60eaaa6f1173335842c3557e",
@@ -6394,7 +6926,8 @@
       "path_with_type": "Huyện Tân Phú, Tỉnh Đồng Nai",
       "code": "734",
       "parent_code": "75",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "012e"
     },
     {
       "_id": "60eaaa6f1173335842c3557f",
@@ -6406,7 +6939,8 @@
       "path_with_type": "Huyện Vĩnh Cửu, Tỉnh Đồng Nai",
       "code": "735",
       "parent_code": "75",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b0f0"
     },
     {
       "_id": "60eaaa6f1173335842c35580",
@@ -6418,7 +6952,8 @@
       "path_with_type": "Huyện Định Quán, Tỉnh Đồng Nai",
       "code": "736",
       "parent_code": "75",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "994d"
     },
     {
       "_id": "60eaaa6f1173335842c35581",
@@ -6430,7 +6965,8 @@
       "path_with_type": "Huyện Trảng Bom, Tỉnh Đồng Nai",
       "code": "737",
       "parent_code": "75",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7aa0"
     },
     {
       "_id": "60eaaa6f1173335842c35582",
@@ -6442,7 +6978,8 @@
       "path_with_type": "Huyện Thống Nhất, Tỉnh Đồng Nai",
       "code": "738",
       "parent_code": "75",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ec6c"
     },
     {
       "_id": "60eaaa6f1173335842c35583",
@@ -6454,7 +6991,8 @@
       "path_with_type": "Huyện Cẩm Mỹ, Tỉnh Đồng Nai",
       "code": "739",
       "parent_code": "75",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b467"
     },
     {
       "_id": "60eaaa6f1173335842c35584",
@@ -6466,7 +7004,8 @@
       "path_with_type": "Huyện Long Thành, Tỉnh Đồng Nai",
       "code": "740",
       "parent_code": "75",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c567"
     },
     {
       "_id": "60eaaa6f1173335842c35585",
@@ -6478,7 +7017,8 @@
       "path_with_type": "Huyện Xuân Lộc, Tỉnh Đồng Nai",
       "code": "741",
       "parent_code": "75",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8e3d"
     },
     {
       "_id": "60eaaa6f1173335842c35586",
@@ -6490,7 +7030,8 @@
       "path_with_type": "Huyện Nhơn Trạch, Tỉnh Đồng Nai",
       "code": "742",
       "parent_code": "75",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "983f"
     },
     {
       "_id": "60eaaa6f1173335842c35587",
@@ -6502,7 +7043,8 @@
       "path_with_type": "Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu",
       "code": "747",
       "parent_code": "77",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6f2f"
     },
     {
       "_id": "60eaaa6f1173335842c35588",
@@ -6514,7 +7056,8 @@
       "path_with_type": "Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu",
       "code": "748",
       "parent_code": "77",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f6b4"
     },
     {
       "_id": "60eaaa6f1173335842c35589",
@@ -6526,7 +7069,8 @@
       "path_with_type": "Huyện Châu Đức, Tỉnh Bà Rịa - Vũng Tàu",
       "code": "750",
       "parent_code": "77",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3f0d"
     },
     {
       "_id": "60eaaa6f1173335842c3558a",
@@ -6538,7 +7082,8 @@
       "path_with_type": "Huyện Xuyên Mộc, Tỉnh Bà Rịa - Vũng Tàu",
       "code": "751",
       "parent_code": "77",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ddc5"
     },
     {
       "_id": "60eaaa6f1173335842c3558b",
@@ -6550,7 +7095,8 @@
       "path_with_type": "Huyện Long Điền, Tỉnh Bà Rịa - Vũng Tàu",
       "code": "752",
       "parent_code": "77",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f12f"
     },
     {
       "_id": "60eaaa6f1173335842c3558c",
@@ -6562,7 +7108,8 @@
       "path_with_type": "Huyện Đất Đỏ, Tỉnh Bà Rịa - Vũng Tàu",
       "code": "753",
       "parent_code": "77",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "14b4"
     },
     {
       "_id": "60eaaa6f1173335842c3558d",
@@ -6574,7 +7121,8 @@
       "path_with_type": "Thị xã Phú Mỹ, Tỉnh Bà Rịa - Vũng Tàu",
       "code": "754",
       "parent_code": "77",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f764"
     },
     {
       "_id": "60eaaa6f1173335842c3558e",
@@ -6586,7 +7134,8 @@
       "path_with_type": "Huyện Côn Đảo, Tỉnh Bà Rịa - Vũng Tàu",
       "code": "755",
       "parent_code": "77",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5967"
     },
     {
       "_id": "60eaaa6f1173335842c3558f",
@@ -6598,7 +7147,8 @@
       "path_with_type": "Quận 1, Thành phố Hồ Chí Minh",
       "code": "760",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7394"
     },
     {
       "_id": "60eaaa6f1173335842c35590",
@@ -6610,7 +7160,8 @@
       "path_with_type": "Quận 12, Thành phố Hồ Chí Minh",
       "code": "761",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e4ca"
     },
     {
       "_id": "60eaaa6f1173335842c35591",
@@ -6622,7 +7173,8 @@
       "path_with_type": "Quận Gò Vấp, Thành phố Hồ Chí Minh",
       "code": "764",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "15ff"
     },
     {
       "_id": "60eaaa6f1173335842c35592",
@@ -6634,7 +7186,8 @@
       "path_with_type": "Quận Bình Thạnh, Thành phố Hồ Chí Minh",
       "code": "765",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1430"
     },
     {
       "_id": "60eaaa6f1173335842c35593",
@@ -6646,7 +7199,8 @@
       "path_with_type": "Quận Tân Bình, Thành phố Hồ Chí Minh",
       "code": "766",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "195c"
     },
     {
       "_id": "60eaaa6f1173335842c35594",
@@ -6658,7 +7212,8 @@
       "path_with_type": "Quận Tân Phú, Thành phố Hồ Chí Minh",
       "code": "767",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2026"
     },
     {
       "_id": "60eaaa6f1173335842c35595",
@@ -6670,7 +7225,8 @@
       "path_with_type": "Quận Phú Nhuận, Thành phố Hồ Chí Minh",
       "code": "768",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3f43"
     },
     {
       "_id": "60eaaa6f1173335842c35596",
@@ -6682,7 +7238,8 @@
       "path_with_type": "Thành phố Thủ Đức, Thành phố Hồ Chí Minh",
       "code": "769",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "61a6"
     },
     {
       "_id": "60eaaa6f1173335842c35597",
@@ -6694,7 +7251,8 @@
       "path_with_type": "Quận 3, Thành phố Hồ Chí Minh",
       "code": "770",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "db9c"
     },
     {
       "_id": "60eaaa6f1173335842c35598",
@@ -6706,7 +7264,8 @@
       "path_with_type": "Quận 10, Thành phố Hồ Chí Minh",
       "code": "771",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e0e1"
     },
     {
       "_id": "60eaaa6f1173335842c35599",
@@ -6718,7 +7277,8 @@
       "path_with_type": "Quận 11, Thành phố Hồ Chí Minh",
       "code": "772",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "af2b"
     },
     {
       "_id": "60eaaa6f1173335842c3559a",
@@ -6730,7 +7290,8 @@
       "path_with_type": "Quận 4, Thành phố Hồ Chí Minh",
       "code": "773",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a7c0"
     },
     {
       "_id": "60eaaa6f1173335842c3559b",
@@ -6742,7 +7303,8 @@
       "path_with_type": "Quận 5, Thành phố Hồ Chí Minh",
       "code": "774",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2fe5"
     },
     {
       "_id": "60eaaa6f1173335842c3559c",
@@ -6754,7 +7316,8 @@
       "path_with_type": "Quận 6, Thành phố Hồ Chí Minh",
       "code": "775",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "95b7"
     },
     {
       "_id": "60eaaa6f1173335842c3559d",
@@ -6766,7 +7329,8 @@
       "path_with_type": "Quận 8, Thành phố Hồ Chí Minh",
       "code": "776",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5b6d"
     },
     {
       "_id": "60eaaa6f1173335842c3559e",
@@ -6778,7 +7342,8 @@
       "path_with_type": "Quận Bình Tân, Thành phố Hồ Chí Minh",
       "code": "777",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "578a"
     },
     {
       "_id": "60eaaa6f1173335842c3559f",
@@ -6790,7 +7355,8 @@
       "path_with_type": "Quận 7, Thành phố Hồ Chí Minh",
       "code": "778",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e8f8"
     },
     {
       "_id": "60eaaa6f1173335842c355a0",
@@ -6802,7 +7368,8 @@
       "path_with_type": "Huyện Củ Chi, Thành phố Hồ Chí Minh",
       "code": "783",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "28f4"
     },
     {
       "_id": "60eaaa6f1173335842c355a1",
@@ -6814,7 +7381,8 @@
       "path_with_type": "Huyện Hóc Môn, Thành phố Hồ Chí Minh",
       "code": "784",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b44a"
     },
     {
       "_id": "60eaaa6f1173335842c355a2",
@@ -6826,7 +7394,8 @@
       "path_with_type": "Huyện Bình Chánh, Thành phố Hồ Chí Minh",
       "code": "785",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "14dc"
     },
     {
       "_id": "60eaaa6f1173335842c355a3",
@@ -6838,7 +7407,8 @@
       "path_with_type": "Huyện Nhà Bè, Thành phố Hồ Chí Minh",
       "code": "786",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "862d"
     },
     {
       "_id": "60eaaa6f1173335842c355a4",
@@ -6850,7 +7420,8 @@
       "path_with_type": "Huyện Cần Giờ, Thành phố Hồ Chí Minh",
       "code": "787",
       "parent_code": "79",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "94d3"
     },
     {
       "_id": "60eaaa6f1173335842c355a5",
@@ -6862,7 +7433,8 @@
       "path_with_type": "Thành phố Tân An, Tỉnh Long An",
       "code": "794",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "02a0"
     },
     {
       "_id": "60eaaa6f1173335842c355a6",
@@ -6874,7 +7446,8 @@
       "path_with_type": "Thị xã Kiến Tường, Tỉnh Long An",
       "code": "795",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e2fc"
     },
     {
       "_id": "60eaaa6f1173335842c355a7",
@@ -6886,7 +7459,8 @@
       "path_with_type": "Huyện Tân Hưng, Tỉnh Long An",
       "code": "796",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4334"
     },
     {
       "_id": "60eaaa6f1173335842c355a8",
@@ -6898,7 +7472,8 @@
       "path_with_type": "Huyện Vĩnh Hưng, Tỉnh Long An",
       "code": "797",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bc3b"
     },
     {
       "_id": "60eaaa6f1173335842c355a9",
@@ -6910,7 +7485,8 @@
       "path_with_type": "Huyện Mộc Hóa, Tỉnh Long An",
       "code": "798",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "321c"
     },
     {
       "_id": "60eaaa6f1173335842c355aa",
@@ -6922,19 +7498,8 @@
       "path_with_type": "Huyện Tân Thạnh, Tỉnh Long An",
       "code": "799",
       "parent_code": "80",
-      "isDeleted": false
-    },
-    {
-      "_id": "60eaaa6f1173335842c355ab",
-      "name": "Thạnh Hóa",
-      "type": "huyen",
-      "slug": "thanh-hoa",
-      "name_with_type": "Huyện Thạnh Hóa",
-      "path": "Thạnh Hóa, Long An",
-      "path_with_type": "Huyện Thạnh Hóa, Tỉnh Long An",
-      "code": "800",
-      "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b7dd"
     },
     {
       "_id": "60eaaa6f1173335842c355ac",
@@ -6946,7 +7511,8 @@
       "path_with_type": "Huyện Đức Huệ, Tỉnh Long An",
       "code": "801",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8869"
     },
     {
       "_id": "60eaaa6f1173335842c355ad",
@@ -6958,7 +7524,8 @@
       "path_with_type": "Huyện Đức Hòa, Tỉnh Long An",
       "code": "802",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b1fa"
     },
     {
       "_id": "60eaaa6f1173335842c355ae",
@@ -6970,7 +7537,8 @@
       "path_with_type": "Huyện Bến Lức, Tỉnh Long An",
       "code": "803",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6a22"
     },
     {
       "_id": "60eaaa6f1173335842c355af",
@@ -6982,7 +7550,8 @@
       "path_with_type": "Huyện Thủ Thừa, Tỉnh Long An",
       "code": "804",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "063b"
     },
     {
       "_id": "60eaaa6f1173335842c355b0",
@@ -6994,7 +7563,8 @@
       "path_with_type": "Huyện Tân Trụ, Tỉnh Long An",
       "code": "805",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6704"
     },
     {
       "_id": "60eaaa6f1173335842c355b1",
@@ -7006,7 +7576,8 @@
       "path_with_type": "Huyện Cần Đước, Tỉnh Long An",
       "code": "806",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2a8b"
     },
     {
       "_id": "60eaaa6f1173335842c355b2",
@@ -7018,7 +7589,8 @@
       "path_with_type": "Huyện Cần Giuộc, Tỉnh Long An",
       "code": "807",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f310"
     },
     {
       "_id": "60eaaa6f1173335842c355b3",
@@ -7030,7 +7602,8 @@
       "path_with_type": "Huyện Châu Thành, Tỉnh Long An",
       "code": "808",
       "parent_code": "80",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "52e0"
     },
     {
       "_id": "60eaaa6f1173335842c355b4",
@@ -7042,7 +7615,8 @@
       "path_with_type": "Thành phố Mỹ Tho, Tỉnh Tiền Giang",
       "code": "815",
       "parent_code": "82",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "dc9a"
     },
     {
       "_id": "60eaaa6f1173335842c355b5",
@@ -7054,7 +7628,8 @@
       "path_with_type": "Thị xã Gò Công, Tỉnh Tiền Giang",
       "code": "816",
       "parent_code": "82",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7468"
     },
     {
       "_id": "60eaaa6f1173335842c355b6",
@@ -7066,7 +7641,8 @@
       "path_with_type": "Thị xã Cai Lậy, Tỉnh Tiền Giang",
       "code": "817",
       "parent_code": "82",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e39a"
     },
     {
       "_id": "60eaaa6f1173335842c355b7",
@@ -7078,7 +7654,8 @@
       "path_with_type": "Huyện Tân Phước, Tỉnh Tiền Giang",
       "code": "818",
       "parent_code": "82",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fb19"
     },
     {
       "_id": "60eaaa6f1173335842c355b8",
@@ -7090,7 +7667,8 @@
       "path_with_type": "Huyện Cái Bè, Tỉnh Tiền Giang",
       "code": "819",
       "parent_code": "82",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "df71"
     },
     {
       "_id": "60eaaa6f1173335842c355b9",
@@ -7102,7 +7680,8 @@
       "path_with_type": "Huyện Cai Lậy, Tỉnh Tiền Giang",
       "code": "820",
       "parent_code": "82",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a164"
     },
     {
       "_id": "60eaaa6f1173335842c355ba",
@@ -7114,7 +7693,8 @@
       "path_with_type": "Huyện Châu Thành, Tỉnh Tiền Giang",
       "code": "821",
       "parent_code": "82",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5a63"
     },
     {
       "_id": "60eaaa6f1173335842c355bb",
@@ -7126,7 +7706,8 @@
       "path_with_type": "Huyện Chợ Gạo, Tỉnh Tiền Giang",
       "code": "822",
       "parent_code": "82",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4266"
     },
     {
       "_id": "60eaaa6f1173335842c355bc",
@@ -7138,7 +7719,8 @@
       "path_with_type": "Huyện Gò Công Tây, Tỉnh Tiền Giang",
       "code": "823",
       "parent_code": "82",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "dd02"
     },
     {
       "_id": "60eaaa6f1173335842c355bd",
@@ -7150,7 +7732,8 @@
       "path_with_type": "Huyện Gò Công Đông, Tỉnh Tiền Giang",
       "code": "824",
       "parent_code": "82",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7820"
     },
     {
       "_id": "60eaaa6f1173335842c355be",
@@ -7162,7 +7745,8 @@
       "path_with_type": "Huyện Tân Phú Đông, Tỉnh Tiền Giang",
       "code": "825",
       "parent_code": "82",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7b2a"
     },
     {
       "_id": "60eaaa6f1173335842c355bf",
@@ -7174,7 +7758,8 @@
       "path_with_type": "Thành phố Bến Tre, Tỉnh Bến Tre",
       "code": "829",
       "parent_code": "83",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0e71"
     },
     {
       "_id": "60eaaa6f1173335842c355c0",
@@ -7186,7 +7771,8 @@
       "path_with_type": "Huyện Châu Thành, Tỉnh Bến Tre",
       "code": "831",
       "parent_code": "83",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "913a"
     },
     {
       "_id": "60eaaa6f1173335842c355c1",
@@ -7198,7 +7784,8 @@
       "path_with_type": "Huyện Chợ Lách, Tỉnh Bến Tre",
       "code": "832",
       "parent_code": "83",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0833"
     },
     {
       "_id": "60eaaa6f1173335842c355c2",
@@ -7210,7 +7797,8 @@
       "path_with_type": "Huyện Mỏ Cày Nam, Tỉnh Bến Tre",
       "code": "833",
       "parent_code": "83",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "12b4"
     },
     {
       "_id": "60eaaa6f1173335842c355c3",
@@ -7222,7 +7810,8 @@
       "path_with_type": "Huyện Giồng Trôm, Tỉnh Bến Tre",
       "code": "834",
       "parent_code": "83",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "276d"
     },
     {
       "_id": "60eaaa6f1173335842c355c4",
@@ -7234,7 +7823,8 @@
       "path_with_type": "Huyện Bình Đại, Tỉnh Bến Tre",
       "code": "835",
       "parent_code": "83",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4a33"
     },
     {
       "_id": "60eaaa6f1173335842c355c5",
@@ -7246,7 +7836,8 @@
       "path_with_type": "Huyện Ba Tri, Tỉnh Bến Tre",
       "code": "836",
       "parent_code": "83",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9753"
     },
     {
       "_id": "60eaaa6f1173335842c355c6",
@@ -7258,7 +7849,8 @@
       "path_with_type": "Huyện Thạnh Phú, Tỉnh Bến Tre",
       "code": "837",
       "parent_code": "83",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "68fb"
     },
     {
       "_id": "60eaaa6f1173335842c355c7",
@@ -7270,7 +7862,8 @@
       "path_with_type": "Huyện Mỏ Cày Bắc, Tỉnh Bến Tre",
       "code": "838",
       "parent_code": "83",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "691a"
     },
     {
       "_id": "60eaaa6f1173335842c355c8",
@@ -7282,7 +7875,8 @@
       "path_with_type": "Thành phố Trà Vinh, Tỉnh Trà Vinh",
       "code": "842",
       "parent_code": "84",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f7a5"
     },
     {
       "_id": "60eaaa6f1173335842c355c9",
@@ -7294,7 +7888,8 @@
       "path_with_type": "Huyện Càng Long, Tỉnh Trà Vinh",
       "code": "844",
       "parent_code": "84",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ee14"
     },
     {
       "_id": "60eaaa6f1173335842c355ca",
@@ -7306,7 +7901,8 @@
       "path_with_type": "Huyện Cầu Kè, Tỉnh Trà Vinh",
       "code": "845",
       "parent_code": "84",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "cc1d"
     },
     {
       "_id": "60eaaa6f1173335842c355cb",
@@ -7318,7 +7914,8 @@
       "path_with_type": "Huyện Tiểu Cần, Tỉnh Trà Vinh",
       "code": "846",
       "parent_code": "84",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "f1f7"
     },
     {
       "_id": "60eaaa6f1173335842c355cc",
@@ -7330,7 +7927,8 @@
       "path_with_type": "Huyện Châu Thành, Tỉnh Trà Vinh",
       "code": "847",
       "parent_code": "84",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5c65"
     },
     {
       "_id": "60eaaa6f1173335842c355cd",
@@ -7342,7 +7940,8 @@
       "path_with_type": "Huyện Cầu Ngang, Tỉnh Trà Vinh",
       "code": "848",
       "parent_code": "84",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0e8d"
     },
     {
       "_id": "60eaaa6f1173335842c355ce",
@@ -7354,7 +7953,8 @@
       "path_with_type": "Huyện Trà Cú, Tỉnh Trà Vinh",
       "code": "849",
       "parent_code": "84",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "53a4"
     },
     {
       "_id": "60eaaa6f1173335842c355cf",
@@ -7366,7 +7966,8 @@
       "path_with_type": "Huyện Duyên Hải, Tỉnh Trà Vinh",
       "code": "850",
       "parent_code": "84",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e7ad"
     },
     {
       "_id": "60eaaa6f1173335842c355d0",
@@ -7378,7 +7979,8 @@
       "path_with_type": "Thị xã Duyên Hải, Tỉnh Trà Vinh",
       "code": "851",
       "parent_code": "84",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6045"
     },
     {
       "_id": "60eaaa6f1173335842c355d1",
@@ -7390,7 +7992,8 @@
       "path_with_type": "Thành phố Vĩnh Long, Tỉnh Vĩnh Long",
       "code": "855",
       "parent_code": "86",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a8d3"
     },
     {
       "_id": "60eaaa6f1173335842c355d2",
@@ -7402,7 +8005,8 @@
       "path_with_type": "Huyện Long Hồ, Tỉnh Vĩnh Long",
       "code": "857",
       "parent_code": "86",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "0b59"
     },
     {
       "_id": "60eaaa6f1173335842c355d3",
@@ -7414,7 +8018,8 @@
       "path_with_type": "Huyện Mang Thít, Tỉnh Vĩnh Long",
       "code": "858",
       "parent_code": "86",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "632e"
     },
     {
       "_id": "60eaaa6f1173335842c355d4",
@@ -7426,7 +8031,8 @@
       "path_with_type": "Huyện  Vũng Liêm, Tỉnh Vĩnh Long",
       "code": "859",
       "parent_code": "86",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "76fd"
     },
     {
       "_id": "60eaaa6f1173335842c355d5",
@@ -7438,7 +8044,8 @@
       "path_with_type": "Huyện Tam Bình, Tỉnh Vĩnh Long",
       "code": "860",
       "parent_code": "86",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "13d8"
     },
     {
       "_id": "60eaaa6f1173335842c355d6",
@@ -7450,7 +8057,8 @@
       "path_with_type": "Thị xã Bình Minh, Tỉnh Vĩnh Long",
       "code": "861",
       "parent_code": "86",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1a0e"
     },
     {
       "_id": "60eaaa6f1173335842c355d7",
@@ -7462,7 +8070,8 @@
       "path_with_type": "Huyện Trà Ôn, Tỉnh Vĩnh Long",
       "code": "862",
       "parent_code": "86",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b599"
     },
     {
       "_id": "60eaaa6f1173335842c355d8",
@@ -7474,7 +8083,8 @@
       "path_with_type": "Huyện Bình Tân, Tỉnh Vĩnh Long",
       "code": "863",
       "parent_code": "86",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e2c8"
     },
     {
       "_id": "60eaaa6f1173335842c355d9",
@@ -7486,7 +8096,8 @@
       "path_with_type": "Thành phố Cao Lãnh, Tỉnh Đồng Tháp",
       "code": "866",
       "parent_code": "87",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7911"
     },
     {
       "_id": "60eaaa6f1173335842c355da",
@@ -7498,7 +8109,8 @@
       "path_with_type": "Thành phố Sa Đéc, Tỉnh Đồng Tháp",
       "code": "867",
       "parent_code": "87",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "872c"
     },
     {
       "_id": "60eaaa6f1173335842c355db",
@@ -7510,7 +8122,8 @@
       "path_with_type": "Thành phố Hồng Ngự, Tỉnh Đồng Tháp",
       "code": "868",
       "parent_code": "87",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3833"
     },
     {
       "_id": "60eaaa6f1173335842c355dc",
@@ -7522,7 +8135,8 @@
       "path_with_type": "Huyện Tân Hồng, Tỉnh Đồng Tháp",
       "code": "869",
       "parent_code": "87",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "68f2"
     },
     {
       "_id": "60eaaa6f1173335842c355dd",
@@ -7534,7 +8148,8 @@
       "path_with_type": "Huyện Hồng Ngự, Tỉnh Đồng Tháp",
       "code": "870",
       "parent_code": "87",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "cfac"
     },
     {
       "_id": "60eaaa6f1173335842c355de",
@@ -7546,7 +8161,8 @@
       "path_with_type": "Huyện Tam Nông, Tỉnh Đồng Tháp",
       "code": "871",
       "parent_code": "87",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "6708"
     },
     {
       "_id": "60eaaa6f1173335842c355df",
@@ -7558,7 +8174,8 @@
       "path_with_type": "Huyện Tháp Mười, Tỉnh Đồng Tháp",
       "code": "872",
       "parent_code": "87",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "379d"
     },
     {
       "_id": "60eaaa6f1173335842c355e0",
@@ -7570,7 +8187,8 @@
       "path_with_type": "Huyện Cao Lãnh, Tỉnh Đồng Tháp",
       "code": "873",
       "parent_code": "87",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "29cf"
     },
     {
       "_id": "60eaaa6f1173335842c355e1",
@@ -7582,7 +8200,8 @@
       "path_with_type": "Huyện Thanh Bình, Tỉnh Đồng Tháp",
       "code": "874",
       "parent_code": "87",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "370b"
     },
     {
       "_id": "60eaaa6f1173335842c355e2",
@@ -7594,7 +8213,8 @@
       "path_with_type": "Huyện Lấp Vò, Tỉnh Đồng Tháp",
       "code": "875",
       "parent_code": "87",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d483"
     },
     {
       "_id": "60eaaa6f1173335842c355e3",
@@ -7606,7 +8226,8 @@
       "path_with_type": "Huyện Lai Vung, Tỉnh Đồng Tháp",
       "code": "876",
       "parent_code": "87",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8eda"
     },
     {
       "_id": "60eaaa6f1173335842c355e4",
@@ -7618,7 +8239,8 @@
       "path_with_type": "Huyện Châu Thành, Tỉnh Đồng Tháp",
       "code": "877",
       "parent_code": "87",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e664"
     },
     {
       "_id": "60eaaa6f1173335842c355e5",
@@ -7630,7 +8252,8 @@
       "path_with_type": "Thành phố Long Xuyên, Tỉnh An Giang",
       "code": "883",
       "parent_code": "89",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fed8"
     },
     {
       "_id": "60eaaa6f1173335842c355e6",
@@ -7642,7 +8265,8 @@
       "path_with_type": "Thành phố Châu Đốc, Tỉnh An Giang",
       "code": "884",
       "parent_code": "89",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "60cc"
     },
     {
       "_id": "60eaaa6f1173335842c355e7",
@@ -7654,7 +8278,8 @@
       "path_with_type": "Huyện An Phú, Tỉnh An Giang",
       "code": "886",
       "parent_code": "89",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ea46"
     },
     {
       "_id": "60eaaa6f1173335842c355e8",
@@ -7666,7 +8291,8 @@
       "path_with_type": "Thị xã Tân Châu, Tỉnh An Giang",
       "code": "887",
       "parent_code": "89",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1414"
     },
     {
       "_id": "60eaaa6f1173335842c355e9",
@@ -7678,7 +8304,8 @@
       "path_with_type": "Huyện Phú Tân, Tỉnh An Giang",
       "code": "888",
       "parent_code": "89",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "67e2"
     },
     {
       "_id": "60eaaa6f1173335842c355ea",
@@ -7690,7 +8317,8 @@
       "path_with_type": "Huyện Châu Phú, Tỉnh An Giang",
       "code": "889",
       "parent_code": "89",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "67ac"
     },
     {
       "_id": "60eaaa6f1173335842c355eb",
@@ -7702,7 +8330,8 @@
       "path_with_type": "Huyện Tịnh Biên, Tỉnh An Giang",
       "code": "890",
       "parent_code": "89",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "971f"
     },
     {
       "_id": "60eaaa6f1173335842c355ec",
@@ -7714,7 +8343,8 @@
       "path_with_type": "Huyện Tri Tôn, Tỉnh An Giang",
       "code": "891",
       "parent_code": "89",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2a8a"
     },
     {
       "_id": "60eaaa6f1173335842c355ed",
@@ -7726,7 +8356,8 @@
       "path_with_type": "Huyện Châu Thành, Tỉnh An Giang",
       "code": "892",
       "parent_code": "89",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "40cb"
     },
     {
       "_id": "60eaaa6f1173335842c355ee",
@@ -7738,7 +8369,8 @@
       "path_with_type": "Huyện Chợ Mới, Tỉnh An Giang",
       "code": "893",
       "parent_code": "89",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "aeab"
     },
     {
       "_id": "60eaaa6f1173335842c355ef",
@@ -7750,7 +8382,8 @@
       "path_with_type": "Huyện Thoại Sơn, Tỉnh An Giang",
       "code": "894",
       "parent_code": "89",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b574"
     },
     {
       "_id": "60eaaa6f1173335842c355f0",
@@ -7762,7 +8395,8 @@
       "path_with_type": "Thành phố Rạch Giá, Tỉnh Kiên Giang",
       "code": "899",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "de99"
     },
     {
       "_id": "60eaaa6f1173335842c355f1",
@@ -7774,7 +8408,8 @@
       "path_with_type": "Thành phố Hà Tiên, Tỉnh Kiên Giang",
       "code": "900",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e319"
     },
     {
       "_id": "60eaaa6f1173335842c355f2",
@@ -7786,7 +8421,8 @@
       "path_with_type": "Huyện Kiên Lương, Tỉnh Kiên Giang",
       "code": "902",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7837"
     },
     {
       "_id": "60eaaa6f1173335842c355f3",
@@ -7798,7 +8434,8 @@
       "path_with_type": "Huyện Hòn Đất, Tỉnh Kiên Giang",
       "code": "903",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7711"
     },
     {
       "_id": "60eaaa6f1173335842c355f4",
@@ -7810,7 +8447,8 @@
       "path_with_type": "Huyện Tân Hiệp, Tỉnh Kiên Giang",
       "code": "904",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c658"
     },
     {
       "_id": "60eaaa6f1173335842c355f5",
@@ -7822,7 +8460,8 @@
       "path_with_type": "Huyện Châu Thành, Tỉnh Kiên Giang",
       "code": "905",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1974"
     },
     {
       "_id": "60eaaa6f1173335842c355f6",
@@ -7834,7 +8473,8 @@
       "path_with_type": "Huyện Giồng Riềng, Tỉnh Kiên Giang",
       "code": "906",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "40b0"
     },
     {
       "_id": "60eaaa6f1173335842c355f7",
@@ -7846,7 +8486,8 @@
       "path_with_type": "Huyện Gò Quao, Tỉnh Kiên Giang",
       "code": "907",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ed51"
     },
     {
       "_id": "60eaaa6f1173335842c355f8",
@@ -7858,7 +8499,8 @@
       "path_with_type": "Huyện An Biên, Tỉnh Kiên Giang",
       "code": "908",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a8a6"
     },
     {
       "_id": "60eaaa6f1173335842c355f9",
@@ -7870,7 +8512,8 @@
       "path_with_type": "Huyện An Minh, Tỉnh Kiên Giang",
       "code": "909",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9569"
     },
     {
       "_id": "60eaaa6f1173335842c355fa",
@@ -7882,7 +8525,8 @@
       "path_with_type": "Huyện Vĩnh Thuận, Tỉnh Kiên Giang",
       "code": "910",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "3ded"
     },
     {
       "_id": "60eaaa6f1173335842c355fb",
@@ -7894,7 +8538,8 @@
       "path_with_type": "Thành phố Phú Quốc, Tỉnh Kiên Giang",
       "code": "911",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7936"
     },
     {
       "_id": "60eaaa6f1173335842c355fc",
@@ -7906,7 +8551,8 @@
       "path_with_type": "Huyện Kiên Hải, Tỉnh Kiên Giang",
       "code": "912",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2ad4"
     },
     {
       "_id": "60eaaa6f1173335842c355fd",
@@ -7918,7 +8564,8 @@
       "path_with_type": "Huyện U Minh Thượng, Tỉnh Kiên Giang",
       "code": "913",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9c9b"
     },
     {
       "_id": "60eaaa6f1173335842c355fe",
@@ -7930,7 +8577,8 @@
       "path_with_type": "Huyện Giang Thành, Tỉnh Kiên Giang",
       "code": "914",
       "parent_code": "91",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "9455"
     },
     {
       "_id": "60eaaa6f1173335842c355ff",
@@ -7942,7 +8590,8 @@
       "path_with_type": "Quận Ninh Kiều, Thành phố Cần Thơ",
       "code": "916",
       "parent_code": "92",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "aae0"
     },
     {
       "_id": "60eaaa6f1173335842c35600",
@@ -7954,7 +8603,8 @@
       "path_with_type": "Quận Ô Môn, Thành phố Cần Thơ",
       "code": "917",
       "parent_code": "92",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "83c9"
     },
     {
       "_id": "60eaaa6f1173335842c35601",
@@ -7966,7 +8616,8 @@
       "path_with_type": "Quận Bình Thuỷ, Thành phố Cần Thơ",
       "code": "918",
       "parent_code": "92",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "877f"
     },
     {
       "_id": "60eaaa6f1173335842c35602",
@@ -7978,7 +8629,8 @@
       "path_with_type": "Quận Cái Răng, Thành phố Cần Thơ",
       "code": "919",
       "parent_code": "92",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d119"
     },
     {
       "_id": "60eaaa6f1173335842c35603",
@@ -7990,7 +8642,8 @@
       "path_with_type": "Quận Thốt Nốt, Thành phố Cần Thơ",
       "code": "923",
       "parent_code": "92",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c92f"
     },
     {
       "_id": "60eaaa6f1173335842c35604",
@@ -8002,7 +8655,8 @@
       "path_with_type": "Huyện Vĩnh Thạnh, Thành phố Cần Thơ",
       "code": "924",
       "parent_code": "92",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a546"
     },
     {
       "_id": "60eaaa6f1173335842c35605",
@@ -8014,7 +8668,8 @@
       "path_with_type": "Huyện Cờ Đỏ, Thành phố Cần Thơ",
       "code": "925",
       "parent_code": "92",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "040a"
     },
     {
       "_id": "60eaaa6f1173335842c35606",
@@ -8026,7 +8681,8 @@
       "path_with_type": "Huyện Phong Điền, Thành phố Cần Thơ",
       "code": "926",
       "parent_code": "92",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c36d"
     },
     {
       "_id": "60eaaa6f1173335842c35607",
@@ -8038,7 +8694,8 @@
       "path_with_type": "Huyện Thới Lai, Thành phố Cần Thơ",
       "code": "927",
       "parent_code": "92",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "1b06"
     },
     {
       "_id": "60eaaa6f1173335842c35608",
@@ -8050,7 +8707,8 @@
       "path_with_type": "Thành phố Vị Thanh, Tỉnh Hậu Giang",
       "code": "930",
       "parent_code": "93",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "eec3"
     },
     {
       "_id": "60eaaa6f1173335842c35609",
@@ -8062,7 +8720,8 @@
       "path_with_type": "Thành phố Ngã Bảy, Tỉnh Hậu Giang",
       "code": "931",
       "parent_code": "93",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b775"
     },
     {
       "_id": "60eaaa6f1173335842c3560a",
@@ -8074,7 +8733,8 @@
       "path_with_type": "Huyện Châu Thành A, Tỉnh Hậu Giang",
       "code": "932",
       "parent_code": "93",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "99e2"
     },
     {
       "_id": "60eaaa6f1173335842c3560b",
@@ -8086,7 +8746,8 @@
       "path_with_type": "Huyện Châu Thành, Tỉnh Hậu Giang",
       "code": "933",
       "parent_code": "93",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "98b0"
     },
     {
       "_id": "60eaaa6f1173335842c3560c",
@@ -8098,7 +8759,8 @@
       "path_with_type": "Huyện Phụng Hiệp, Tỉnh Hậu Giang",
       "code": "934",
       "parent_code": "93",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "13b8"
     },
     {
       "_id": "60eaaa6f1173335842c3560d",
@@ -8110,7 +8772,8 @@
       "path_with_type": "Huyện Vị Thuỷ, Tỉnh Hậu Giang",
       "code": "935",
       "parent_code": "93",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "c308"
     },
     {
       "_id": "60eaaa6f1173335842c3560e",
@@ -8122,7 +8785,8 @@
       "path_with_type": "Huyện Long Mỹ, Tỉnh Hậu Giang",
       "code": "936",
       "parent_code": "93",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7182"
     },
     {
       "_id": "60eaaa6f1173335842c3560f",
@@ -8134,7 +8798,8 @@
       "path_with_type": "Thị xã Long Mỹ, Tỉnh Hậu Giang",
       "code": "937",
       "parent_code": "93",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a79f"
     },
     {
       "_id": "60eaaa6f1173335842c35610",
@@ -8146,7 +8811,8 @@
       "path_with_type": "Thành phố Sóc Trăng, Tỉnh Sóc Trăng",
       "code": "941",
       "parent_code": "94",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d140"
     },
     {
       "_id": "60eaaa6f1173335842c35611",
@@ -8158,7 +8824,8 @@
       "path_with_type": "Huyện Châu Thành, Tỉnh Sóc Trăng",
       "code": "942",
       "parent_code": "94",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "babe"
     },
     {
       "_id": "60eaaa6f1173335842c35612",
@@ -8170,7 +8837,8 @@
       "path_with_type": "Huyện Kế Sách, Tỉnh Sóc Trăng",
       "code": "943",
       "parent_code": "94",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d63c"
     },
     {
       "_id": "60eaaa6f1173335842c35613",
@@ -8182,7 +8850,8 @@
       "path_with_type": "Huyện Mỹ Tú, Tỉnh Sóc Trăng",
       "code": "944",
       "parent_code": "94",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a874"
     },
     {
       "_id": "60eaaa6f1173335842c35614",
@@ -8194,7 +8863,8 @@
       "path_with_type": "Huyện Cù Lao Dung, Tỉnh Sóc Trăng",
       "code": "945",
       "parent_code": "94",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "fe8c"
     },
     {
       "_id": "60eaaa6f1173335842c35615",
@@ -8206,7 +8876,8 @@
       "path_with_type": "Huyện Long Phú, Tỉnh Sóc Trăng",
       "code": "946",
       "parent_code": "94",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "7603"
     },
     {
       "_id": "60eaaa6f1173335842c35616",
@@ -8218,7 +8889,8 @@
       "path_with_type": "Huyện Mỹ Xuyên, Tỉnh Sóc Trăng",
       "code": "947",
       "parent_code": "94",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "def5"
     },
     {
       "_id": "60eaaa6f1173335842c35617",
@@ -8230,7 +8902,8 @@
       "path_with_type": "Thị xã Ngã Năm, Tỉnh Sóc Trăng",
       "code": "948",
       "parent_code": "94",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d10c"
     },
     {
       "_id": "60eaaa6f1173335842c35618",
@@ -8242,7 +8915,8 @@
       "path_with_type": "Huyện Thạnh Trị, Tỉnh Sóc Trăng",
       "code": "949",
       "parent_code": "94",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e113"
     },
     {
       "_id": "60eaaa6f1173335842c35619",
@@ -8254,7 +8928,8 @@
       "path_with_type": "Thị xã Vĩnh Châu, Tỉnh Sóc Trăng",
       "code": "950",
       "parent_code": "94",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "b603"
     },
     {
       "_id": "60eaaa6f1173335842c3561a",
@@ -8266,7 +8941,8 @@
       "path_with_type": "Huyện Trần Đề, Tỉnh Sóc Trăng",
       "code": "951",
       "parent_code": "94",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "e465"
     },
     {
       "_id": "60eaaa6f1173335842c3561b",
@@ -8278,7 +8954,8 @@
       "path_with_type": "Thành phố Bạc Liêu, Tỉnh Bạc Liêu",
       "code": "954",
       "parent_code": "95",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "2695"
     },
     {
       "_id": "60eaaa6f1173335842c3561c",
@@ -8290,7 +8967,8 @@
       "path_with_type": "Huyện Hồng Dân, Tỉnh Bạc Liêu",
       "code": "956",
       "parent_code": "95",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "ebee"
     },
     {
       "_id": "60eaaa6f1173335842c3561d",
@@ -8302,7 +8980,8 @@
       "path_with_type": "Huyện Phước Long, Tỉnh Bạc Liêu",
       "code": "957",
       "parent_code": "95",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "a5e4"
     },
     {
       "_id": "60eaaa6f1173335842c3561e",
@@ -8314,7 +8993,8 @@
       "path_with_type": "Huyện Vĩnh Lợi, Tỉnh Bạc Liêu",
       "code": "958",
       "parent_code": "95",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4d59"
     },
     {
       "_id": "60eaaa6f1173335842c3561f",
@@ -8326,7 +9006,8 @@
       "path_with_type": "Thị xã Giá Rai, Tỉnh Bạc Liêu",
       "code": "959",
       "parent_code": "95",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "35c9"
     },
     {
       "_id": "60eaaa6f1173335842c35620",
@@ -8338,7 +9019,8 @@
       "path_with_type": "Huyện Đông Hải, Tỉnh Bạc Liêu",
       "code": "960",
       "parent_code": "95",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "5b42"
     },
     {
       "_id": "60eaaa6f1173335842c35621",
@@ -8350,7 +9032,8 @@
       "path_with_type": "Huyện Hoà Bình, Tỉnh Bạc Liêu",
       "code": "961",
       "parent_code": "95",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d12d"
     },
     {
       "_id": "60eaaa6f1173335842c35622",
@@ -8362,7 +9045,8 @@
       "path_with_type": "Thành phố Cà Mau, Tỉnh Cà Mau",
       "code": "964",
       "parent_code": "96",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "787a"
     },
     {
       "_id": "60eaaa6f1173335842c35623",
@@ -8374,7 +9058,8 @@
       "path_with_type": "Huyện U Minh, Tỉnh Cà Mau",
       "code": "966",
       "parent_code": "96",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "cdaf"
     },
     {
       "_id": "60eaaa6f1173335842c35624",
@@ -8386,7 +9071,8 @@
       "path_with_type": "Huyện Thới Bình, Tỉnh Cà Mau",
       "code": "967",
       "parent_code": "96",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "dc03"
     },
     {
       "_id": "60eaaa6f1173335842c35625",
@@ -8398,7 +9084,8 @@
       "path_with_type": "Huyện Trần Văn Thời, Tỉnh Cà Mau",
       "code": "968",
       "parent_code": "96",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "bd16"
     },
     {
       "_id": "60eaaa6f1173335842c35626",
@@ -8410,7 +9097,8 @@
       "path_with_type": "Huyện Cái Nước, Tỉnh Cà Mau",
       "code": "969",
       "parent_code": "96",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "abe1"
     },
     {
       "_id": "60eaaa6f1173335842c35627",
@@ -8422,7 +9110,8 @@
       "path_with_type": "Huyện Đầm Dơi, Tỉnh Cà Mau",
       "code": "970",
       "parent_code": "96",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "4dc4"
     },
     {
       "_id": "60eaaa6f1173335842c35628",
@@ -8434,7 +9123,8 @@
       "path_with_type": "Huyện Năm Căn, Tỉnh Cà Mau",
       "code": "971",
       "parent_code": "96",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "baf7"
     },
     {
       "_id": "60eaaa6f1173335842c35629",
@@ -8446,7 +9136,8 @@
       "path_with_type": "Huyện Phú Tân, Tỉnh Cà Mau",
       "code": "972",
       "parent_code": "96",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "8c3a"
     },
     {
       "_id": "60eaaa6f1173335842c3562a",
@@ -8458,7 +9149,15 @@
       "path_with_type": "Huyện Ngọc Hiển, Tỉnh Cà Mau",
       "code": "973",
       "parent_code": "96",
-      "isDeleted": false
+      "isDeleted": false,
+      "id": "d64a"
+    },
+    {
+      "id": "d5e5",
+      "name": "excel",
+      "code": 999999,
+      "type": "Quận",
+      "path_with_type": "Quận abc"
     }
   ]
 }

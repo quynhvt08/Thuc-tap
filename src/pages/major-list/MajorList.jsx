@@ -25,6 +25,7 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import PublishIcon from '@mui/icons-material/Publish';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import * as XLSX from 'xlsx';
 //PHÂN TRANG
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -89,7 +90,6 @@ TablePaginationActions.propTypes = {
 
 const headCells = [
   { id: '', numeric: false, disablePadding: true, label: 'STT' },
-  // { id: 'code', numeric: false, disablePadding: true, label: 'Mã' },
   { id: 'name', numeric: false, disablePadding: true, label: 'Tên ngành' },
   { id: 'code', numeric: false, disablePadding: true, label: 'Mã ngành' },
   { id: 'entranceexamblock', numeric: false, disablePadding: true, label: 'Tổ hợp xét tuyển' },
@@ -193,6 +193,39 @@ function EnhancedTableToolbar(props) {
       // Xử lý lỗi nếu có
     }
   };
+  //IMPORT EXCEL
+  const handleImportExcel = async (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = async (e) => {
+      const data = new Uint8Array(e.target.result);
+      const workbook = XLSX.read(data, { type: 'array' });
+      const sheetName = workbook.SheetNames[0];
+      const worksheet = workbook.Sheets[sheetName];
+      const jsonData = XLSX.utils.sheet_to_json(worksheet);
+
+      // Xử lý và định dạng dữ liệu jsonData
+      const processedData = jsonData.map(item => ({
+        ...item,
+        type: item.type,
+      }));
+
+      try {
+        await Promise.all(processedData.map(item => axios.post('http://localhost:3006/majors', item)));
+        const response = await axios.get('http://localhost:3006/majors');
+        const updatedRows = response.data.map(item => ({
+          ...item,
+          type: item.type,
+        }));
+        // console.log('updatedRows:', updatedRows);
+        setRows(updatedRows);
+      } catch (error) {
+        console.error('Lỗi khi import dữ liệu từ Excel:', error);
+      }
+    };
+    reader.readAsArrayBuffer(file);
+  };
   //SEARCH
   const handleChangeSearchTerm = (event) => {
     setSearchTerm(event.target.value);
@@ -235,8 +268,14 @@ function EnhancedTableToolbar(props) {
           </IconButton>
         </Tooltip>
         <Tooltip sx={{ mr : 1 }} title="Import Excel">
-          <IconButton onClick={handleClickOpen}>
-            <PublishIcon/>
+          <IconButton component="label">
+            <PublishIcon />
+            <input
+              type="file"
+              accept=".xlsx, .xls"
+              style={{ display: 'none' }}
+              onChange={handleImportExcel}
+            />
           </IconButton>
         </Tooltip>
         {/* DIALOG VÀ FORM DÙNG ĐỂ ADD DATA */}

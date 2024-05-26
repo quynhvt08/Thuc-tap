@@ -25,6 +25,7 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import PublishIcon from '@mui/icons-material/Publish';
+import * as XLSX from 'xlsx';
 //PHÂN TRANG
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -195,6 +196,39 @@ function EnhancedTableToolbar(props) {
       console.error('Lỗi khi thêm tỉnh/thành phố:', error);
     }
   };
+  //IMPORT EXCEL
+  const handleImportExcel = async (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = async (e) => {
+      const data = new Uint8Array(e.target.result);
+      const workbook = XLSX.read(data, { type: 'array' });
+      const sheetName = workbook.SheetNames[0];
+      const worksheet = workbook.Sheets[sheetName];
+      const jsonData = XLSX.utils.sheet_to_json(worksheet);
+
+      // Xử lý và định dạng dữ liệu jsonData
+      const processedData = jsonData.map(item => ({
+        ...item,
+        type: item.type === 'thpt' ? 'Trung học phổ thông' : item.type,
+      }));
+
+      try {
+        await Promise.all(processedData.map(item => axios.post('http://localhost:3004/schools', item)));
+        const response = await axios.get('http://localhost:3004/schools');
+        const updatedRows = response.data.map(item => ({
+          ...item,
+          type: item.type === 'thpt' ? 'Trung học phổ thông' : item.type,
+        }));
+        // console.log('updatedRows:', updatedRows);
+        setRows(updatedRows);
+      } catch (error) {
+        console.error('Lỗi khi import dữ liệu từ Excel:', error);
+      }
+    };
+    reader.readAsArrayBuffer(file);
+  };
   //SEARCH
   const handleChangeSearchTerm = (event) => {
     setSearchTerm(event.target.value);
@@ -236,8 +270,14 @@ function EnhancedTableToolbar(props) {
           </IconButton>
         </Tooltip>
         <Tooltip sx={{ mr : 1 }} title="Import Excel">
-          <IconButton onClick={handleClickOpen}>
-            <PublishIcon/>
+          <IconButton component="label">
+            <PublishIcon />
+            <input
+              type="file"
+              accept=".xlsx, .xls"
+              style={{ display: 'none' }}
+              onChange={handleImportExcel}
+            />
           </IconButton>
         </Tooltip>
         {/* DIALOG VÀ FORM DÙNG ĐỂ ADD DATA */}
