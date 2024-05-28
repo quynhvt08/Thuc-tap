@@ -6,8 +6,11 @@ import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+<<<<<<< HEAD
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 
+=======
+>>>>>>> 20779ef412dd5ffd442cff7a445514e91cfed882
 // icons
 const icons = {
   HomeOutlined,
@@ -17,8 +20,12 @@ const icons = {
   MapsHomeWorkOutlinedIcon,
   AccountBalanceIcon,
   WorkOutlineIcon,
+<<<<<<< HEAD
   MenuBookIcon,
   AssignmentIndIcon,
+=======
+  MenuBookIcon
+>>>>>>> 20779ef412dd5ffd442cff7a445514e91cfed882
 };
 
 // ==============================|| MENU ITEMS - SAMPLE PAGE & DOCUMENTATION ||============================== //
