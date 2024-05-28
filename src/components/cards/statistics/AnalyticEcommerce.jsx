@@ -29,7 +29,7 @@ export default function AnalyticEcommerce({ color = 'primary', title, count, per
               {count}
             </Typography>
           </Grid>
-          {percentage && (
+          {percentage !== null && percentage !== undefined  && (
             <Grid item>
               <Chip
                 variant="combined"
@@ -45,11 +45,10 @@ export default function AnalyticEcommerce({ color = 'primary', title, count, per
       </Stack>
       <Box sx={{ pt: 2.25 }}>
         <Typography variant="caption" color="text.secondary">
-          You made an extra{' '}
           <Typography variant="caption" sx={{ color: `${color || 'primary'}.main` }}>
             {extra}
           </Typography>{' '}
-          this year
+          trường THPT đã được thêm mới trong năm nay.
         </Typography>
       </Box>
     </MainCard>

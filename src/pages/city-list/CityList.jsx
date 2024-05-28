@@ -33,7 +33,8 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControl from '@mui/material/FormControl';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import LocationCityOutlinedIcon from '@mui/icons-material/LocationCityOutlined';
-
+import PublishIcon from '@mui/icons-material/Publish';
+import * as XLSX from 'xlsx';
 //PHÂN TRANG
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -204,6 +205,39 @@ function EnhancedTableToolbar(props) {
       console.error('Lỗi khi thêm tỉnh/thành phố:', error);
     }
   };
+  //IMPORT EXCEL
+  const handleImportExcel = async (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = async (e) => {
+      const data = new Uint8Array(e.target.result);
+      const workbook = XLSX.read(data, { type: 'array' });
+      const sheetName = workbook.SheetNames[0];
+      const worksheet = workbook.Sheets[sheetName];
+      const jsonData = XLSX.utils.sheet_to_json(worksheet);
+
+      // Xử lý và định dạng dữ liệu jsonData
+      const processedData = jsonData.map(item => ({
+        ...item,
+        type: item.type === 'tinh' ? 'Tỉnh' : item.type === 'thanh-pho' ? 'Thành phố' : item.type,
+      }));
+
+      try {
+        await Promise.all(processedData.map(item => axios.post('http://localhost:3001/data', item)));
+        const response = await axios.get('http://localhost:3001/data');
+        const updatedRows = response.data.map(item => ({
+          ...item,
+          type: item.type === 'tinh' ? 'Tỉnh' : item.type === 'thanh-pho' ? 'Thành phố' : item.type,
+        }));
+        // console.log('updatedRows:', updatedRows);
+        setRows(updatedRows);
+      } catch (error) {
+        console.error('Lỗi khi import dữ liệu từ Excel:', error);
+      }
+    };
+    reader.readAsArrayBuffer(file);
+  };
   //SEARCH
   const handleChangeSearchTerm = (event) => {
     setSearchTerm(event.target.value);
@@ -223,24 +257,36 @@ function EnhancedTableToolbar(props) {
         >
           <h2> <LocationCityOutlinedIcon/>  &nbsp; Danh sách Tỉnh/Thành Phố</h2>
         </Typography>
-        <FormGroup sx={{ mr: 1 }}>
+        <FormGroup sx={{ mr: 5 }}>
           <FormControl >
             <TextField
               name="name"
               label="Nhập để tìm kiếm.."
               type="text"
               fullWidth
+              // size='small'
               variant="outlined"
               value={searchTerm}
               onChange={handleChangeSearchTerm}
             />
           </FormControl>
         </FormGroup>
-        {/* <Button sx={{ mr: 4 }} variant="contained" onClick={handleSearch}>Tìm</Button> */}
+        
       <React.Fragment>
-        <Tooltip sx={{ mr : 5 }} title="Thêm Tỉnh/Thành phố">
-          <IconButton>
-            <AddLocationAltIcon  onClick={handleClickOpen}/>
+        <Tooltip sx={{ mr : 1 }} title="Thêm 1 Tỉnh/Thành phố">
+          <IconButton onClick={handleClickOpen}>
+            <AddLocationAltIcon/>
+          </IconButton>
+        </Tooltip>
+        <Tooltip sx={{ mr : 1 }} title="Import Excel">
+          <IconButton component="label">
+            <PublishIcon />
+            <input
+              type="file"
+              accept=".xlsx, .xls"
+              style={{ display: 'none' }}
+              onChange={handleImportExcel}
+            />
           </IconButton>
         </Tooltip>
         {/* DIALOG VÀ FORM DÙNG ĐỂ ADD DATA */}
@@ -448,9 +494,9 @@ export default function EnhancedTable() {
   }, [searchTerm, rows]);
   return (
     <Box sx={{ width: '100%' }}>
-      <Paper sx={{ width: '100%', mb: 2 }}>
+      <Paper sx={{ width: '100%', overflowX : 'auto' }}>
         <EnhancedTableToolbar rows={rows} setRows={setRows} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-        <TableContainer  sx={{ flex: '1 1 100%' , ml : 4, mt: 0}}>
+        <TableContainer  sx={{ flex: '1 1 100%' , ml : 4, mr : 2 }} >
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
@@ -461,7 +507,7 @@ export default function EnhancedTable() {
               orderBy={orderBy}
               onRequestSort={handleRequestSort}
             />
-            <TableBody>
+            <TableBody sx={{ maxWidth: '100%', overflowX: 'auto' }}>
               {sortedRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
                   return (
@@ -470,14 +516,14 @@ export default function EnhancedTable() {
                       tabIndex={-1}
                       key={row.id}
                     >
-                      <TableCell>{page * rowsPerPage + index + 1}</TableCell>
-                      <TableCell component="th" scope="row" padding="none">{row.code}</TableCell>
-                      <TableCell align="left">{row.name}</TableCell>
-                      <TableCell align="left">{row.type}</TableCell>
-                      <TableCell align="left">{row.name_with_type}</TableCell>
-                      <TableCell align="left">
+                      <TableCell sx={{ width : '5%' }}>{page * rowsPerPage + index + 1}</TableCell>
+                      <TableCell component="th" scope="row" padding="none" >{row.code}</TableCell>
+                      <TableCell align="left" >{row.name}</TableCell>
+                      <TableCell align="left" >{row.type}</TableCell>
+                      <TableCell align="left" >{row.name_with_type}</TableCell>
+                      <TableCell align="left" sx={{ width : '20%' }}>
                         <Button sx={{ mr: 1 }} variant="contained" color="secondary" size="small" onClick={() => handleClickOpenEditDialog(row)}>Sửa</Button>
-                        <Button sx={{ mr: 1 }} onClick={() => handleClickOpenDeleteDialog(row.id)} variant="contained" color="error" size="small">Xoá</Button>
+                        <Button onClick={() => handleClickOpenDeleteDialog(row.id)} variant="contained" color="error" size="small">Xoá</Button>
                         {/* DIALOG XÁC NHẬN XOÁ */}
                         <Dialog open={openDeleteDialog} onClose={handleCloseDeleteDialog}>
                           <DialogTitle>Xác nhận xoá</DialogTitle>

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // material-ui
 import List from '@mui/material/List';
@@ -21,6 +21,13 @@ export default function ProfileTab() {
 
   const handleListItemClick = (index) => {
     setSelectedIndex(index);
+  };
+
+  const [user, setUser] = useState({ taikhoan: "" });
+
+  const Logout = () => {
+    setUser({ taikhoan: "" });
+    localStorage.removeItem('user');
   };
 
   return (
@@ -50,12 +57,12 @@ export default function ProfileTab() {
         </ListItemIcon>
         <ListItemText primary="Billing" />
       </ListItemButton>
-      <ListItemButton selected={selectedIndex === 2}>
+      <ListItemButton selected={selectedIndex === 2}  onClick={Logout}>
         <ListItemIcon>
           <LogoutOutlined />
         </ListItemIcon>
         <ListItemText primary="Logout" />
-      </ListItemButton>
+      </ListItemButton> 
     </List>
   );
 }

@@ -1,0 +1,59 @@
+{
+  "entranceexamblocks": [
+    {
+      "_id": "60eaaa6f1173335842c35669873",
+      "name": "A00",
+      "block": "A",
+      "subject": "Toán, Vật lý, Hóa học",
+      "id": "f60c"
+    },
+    {
+      "_id": "60eaaa6f1173335842c3565b",
+      "name": "A01",
+      "block": "A",
+      "subject": "Toán, Vật lý, Tiếng Anh",
+      "id": "44dd"
+    },
+    {
+      "_id": "60eaaa6f1173335842c35668",
+      "name": "B00",
+      "block": "B",
+      "subject": "Toán, Hóa học, Sinh học",
+      "id": "f42e"
+    },
+    {
+      "_id": "60eaaa6f1173335842c35639",
+      "name": "C00",
+      "block": "C",
+      "subject": "Văn, Lịch sử, Địa lí",
+      "id": "2ee4"
+    },
+    {
+      "_id": "60eaaa6f1173335842c3562e",
+      "name": "D01",
+      "block": "D",
+      "subject": "Văn, Toán, tiếng Anh",
+      "id": "a49f"
+    },
+    {
+      "id": "f8ac",
+      "name": "C01",
+      "block": "C",
+      "subject": "Văn, Toán, Vật lí"
+    },
+    {
+      "_id": "60eaaa6f1173335842c3566923",
+      "name": "B01",
+      "block": "B",
+      "subject": "Toán, Sinh học, Lịch sử",
+      "id": "f0e7"
+    },
+    {
+      "_id": "60eaaa6f1173335842c35669e473",
+      "name": "A02",
+      "block": "A",
+      "subject": "Toán, Vật lí , Sinh học",
+      "id": "cc6f"
+    }
+  ]
+}

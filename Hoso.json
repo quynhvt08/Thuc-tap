@@ -1,0 +1,40 @@
+{
+  "hoso": [
+    {
+      "id": "01",
+      "id_thisinh": "001",
+      "fullname": "Dư Thị Như Quỳnh",
+      "major": "Công Nghệ Thông Tin",
+      "name_entranceexamblock": "A00",
+      "total_score" : "25.5",
+      "status": "Đậu"
+    },
+    {
+      "id": "02",
+      "id_thisinh": "002",
+      "fullname": "Vương Thị Ngọc Anh",
+      "major": "Sư Phạm Hóa",
+      "name_entranceexamblock": "A00",
+      "total_score" : "26.5",
+      "status": "Đậu"
+    },
+    {
+      "id": "03",
+      "id_thisinh": "001",
+      "fullname": "Dư Thị Như Quỳnh",
+      "major": "Công Nghệ Thông Tin",
+      "name_entranceexamblock": "A01",
+      "total_score" : "23.5",
+      "status": "Rớt"
+    },
+    {
+      "id": "04",
+      "id_thisinh": "003",
+      "fullname": "Hứa Ngọc Diệp",
+      "major": "Sư Phạm Anh",
+      "name_entranceexamblock": "A01",
+      "total_score" : "27.5",
+      "status": "Đậu"
+    }
+  ]
+}
