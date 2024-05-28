@@ -22,7 +22,6 @@ import DialogTitle from '@mui/material/DialogTitle';
 import FormGroup from '@mui/material/FormGroup';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import PublishIcon from '@mui/icons-material/Publish';
 import * as XLSX from 'xlsx';
@@ -180,7 +179,9 @@ function EnhancedTableToolbar(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3004/schools', formData);
+      const formDataWithDate = { ...formData };
+      formDataWithDate.createdAt = new Date().toISOString();
+      const response = await axios.post('http://localhost:3004/schools', formDataWithDate);
       const newEntry = response.data;
       setRows(prevRows => {
         const updatedRows = [...prevRows, newEntry].map(item => {
@@ -691,94 +692,88 @@ useEffect(() => {
   setFilterRows(filteredRows);
 }, [searchTerm, rows]);
   return (
-    <Typography
-      sx={{ flex: '1 1 100%', ml: 2, mt: 1 }}
-      variant="h6"
-      id="tableTitle"
-      component="div"
-    >
-      <Box sx={{ width: '100%' }}>
-        <Paper sx={{ width: '100%'}}>
+    <Box sx={{ width: '100%' }}>
+        <Paper sx={{ width: '100%', overflowX : 'auto' }}>
           <EnhancedTableToolbar rows={rows} setRows={setRows} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           <div style={{ position: 'relative' }}>
-        <Toolbar>
-          <Button variant="contained" color="primary" size="big" onClick={handleToggle}>
-            <FilterAltIcon /> Lọc
-          </Button>
-        </Toolbar>
-        <Collapse in={filterOpen}>
-          <Box
-            ref={boxRef}
-            sx={{
-              position: 'absolute',
-              left: '5px',
-              zIndex: 1,
-              width: '350px',
-              padding: 0,
-              boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)',
-            }}
-          >
-            <Card>
-              <CardContent>
-                <Stack spacing={2} direction="column">
-                  <h3><HomeWorkIcon /> Lọc theo Khu vực </h3>
-                  <FormControl variant="outlined" size="big">
-                    <Select
-                      value={selectedProvince}
-                      onChange={handleProvinceChange}
-                      displayEmpty
-                    >
-                      <MenuItem value="">
-                        <span>Tất cả các tỉnh</span>
-                      </MenuItem>
-                      {provinces.map(({ id, code, name }) => (
-                        <MenuItem key={id} value={code}>{name}</MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                  <FormControl variant="outlined" size="big" disabled={!selectedProvince}>
-                    <Select
-                      value={selectedDistrict}
-                      onChange={handleDistrictChange}
-                      displayEmpty
-                    >
-                      <MenuItem value="">
-                        <span>Tất cả các quận/huyện</span>
-                      </MenuItem>
-                      {filteredDistricts.map(({ id, name, code }) => (
-                        <MenuItem key={id} value={code}>{name}</MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                  <FormControl variant="outlined" size="big" disabled={!selectedDistrict}>
-                    <Select
-                      value={selectedWard}
-                      onChange={handleWardChange}
-                      displayEmpty
-                    >
-                      <MenuItem value="">
-                        <span>Tất cả các xã/phường</span>
-                      </MenuItem>
-                      {filteredWards.map(({ id, name, code }) => (
-                        <MenuItem key={id} value={code}>{name}</MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                </Stack>
-              </CardContent>
-              <CardContent>
-                <Stack spacing={2} direction="column">
-                  <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
-                    <Button variant="contained" color="secondary" size="big" onClick={handleClearFilter}>Xóa lọc</Button>
-                    <Button variant="contained" color="primary" size="big" onClick={() => handleApplyFilter([])}>Áp dụng</Button>
-                  </Stack>
-                </Stack>
-              </CardContent>
-            </Card>
-          </Box>
-        </Collapse>
-      </div>
-          <TableContainer sx={{ flex: '1 1 100%', ml: 3, mt: 0 }}>
+            <Toolbar>
+              <Button variant="contained" color="primary" size="small" onClick={handleToggle}>
+                <FilterAltIcon /> Lọc
+              </Button>
+            </Toolbar>
+            <Collapse in={filterOpen}>
+              <Box
+                ref={boxRef}
+                sx={{
+                  position: 'absolute',
+                  left: '5px',
+                  zIndex: 1,
+                  width: '350px',
+                  padding: 0,
+                  boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)',
+                }}
+              >
+                <Card>
+                  <CardContent>
+                    <Stack spacing={2} direction="column">
+                      <h3><AccountBalanceIcon /> &nbsp;&nbsp;Lọc theo Khu vực </h3>
+                      <FormControl variant="outlined" size="big">
+                        <Select
+                          value={selectedProvince}
+                          onChange={handleProvinceChange}
+                          displayEmpty
+                        >
+                          <MenuItem value="">
+                            <span>Tất cả các tỉnh</span>
+                          </MenuItem>
+                          {provinces.map(({ id, code, name }) => (
+                            <MenuItem key={id} value={code}>{name}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                      <FormControl variant="outlined" size="big" disabled={!selectedProvince}>
+                        <Select
+                          value={selectedDistrict}
+                          onChange={handleDistrictChange}
+                          displayEmpty
+                        >
+                          <MenuItem value="">
+                            <span>Tất cả các quận/huyện</span>
+                          </MenuItem>
+                          {filteredDistricts.map(({ id, name, code }) => (
+                            <MenuItem key={id} value={code}>{name}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                      <FormControl variant="outlined" size="big" disabled={!selectedDistrict}>
+                        <Select
+                          value={selectedWard}
+                          onChange={handleWardChange}
+                          displayEmpty
+                        >
+                          <MenuItem value="">
+                            <span>Tất cả các xã/phường</span>
+                          </MenuItem>
+                          {filteredWards.map(({ id, name, code }) => (
+                            <MenuItem key={id} value={code}>{name}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Stack>
+                  </CardContent>
+                  <CardContent>
+                    <Stack spacing={2} direction="column">
+                      <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
+                        <Button variant="contained" color="secondary" size="big" onClick={handleClearFilter}>Xóa lọc</Button>
+                        <Button variant="contained" color="primary" size="big" onClick={() => handleApplyFilter([])}>Áp dụng</Button>
+                      </Stack>
+                    </Stack>
+                  </CardContent>
+                </Card>
+              </Box>
+            </Collapse>
+          </div>
+          <TableContainer sx={{ flex: '1 1 100%', ml: 4, mr: 2 }}>
             <Table
               sx={{ minWidth: 750 }}
               aria-labelledby="tableTitle"
@@ -793,12 +788,12 @@ useEffect(() => {
                 {filterRows.length > 0 ? (
                   sortedRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => (
                     <TableRow hover tabIndex={-1} key={row.id}>
-                      <TableCell>{page * rowsPerPage + index + 1}</TableCell>
+                      <TableCell sx={{ width : '5%' }}>{page * rowsPerPage + index + 1}</TableCell>
                       <TableCell component="th" scope="row" padding="none">{row.code}</TableCell>
                       <TableCell align="left">{row.name}</TableCell>
                       <TableCell align="left">{row.type}</TableCell>
                       <TableCell align="left">{row.address}</TableCell>
-                      <TableCell align="left">
+                      <TableCell align="left" sx={{ width : '20%' }}>
                         <Button sx={{ mr: 1 }} variant="contained" color="secondary" size="small" onClick={() => handleClickOpenEditDialog(row)}>Sửa</Button>
                         <Button sx={{ mr: 1 }} onClick={() => handleClickOpenDeleteDialog(row.id)} variant="contained" color="error" size="small">Xoá</Button>
                         {/* DIALOG XÁC NHẬN XOÁ */}
@@ -904,7 +899,6 @@ useEffect(() => {
             ActionsComponent={TablePaginationActions}
           />
         </Paper>
-      </Box>
-    </Typography>
+    </Box>
   );
 }

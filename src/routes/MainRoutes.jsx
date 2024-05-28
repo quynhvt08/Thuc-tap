@@ -10,7 +10,6 @@ const Shadow = Loadable(lazy(() => import('pages/component-overview/shadows')));
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/index')));
 
 // render - sample page
-const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
 const CityList = Loadable(lazy(() => import('pages/city-list/CityList')));
 const DistrictList = Loadable(lazy(() => import('pages/district-list/DistrictList')));
 const WardList = Loadable(lazy(() => import('pages/ward-list/WardList')));

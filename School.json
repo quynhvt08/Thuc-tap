@@ -1,83 +1,84 @@
 {
   "schools": [
     {
-      "_id": "60eaaa6f1173335842c35669873",
+      "id": "60eaaa6f1173335842c35669873",
       "name": "Bà Điểm",
       "type": "Trung học phổ thông",
       "address": "huyện Hóc Môn, Tp Hồ Chí Minh",
       "code": "0001",
-      "parent_code1": "770",
-      "parent_code2": "27160",
-      "id": "8de2"
+      "createdAt": "2023-05-28T04:31:45.283Z"
     },
     {
-      "_id": "60eaaa6f1173335842c3565b",
+      "id": "60eaaa6f1173335842c3565b",
       "name": "Lê Quý Đôn",
       "type": "Trung học phổ thông",
       "address": "Phường 13, quận 3, Tp Hồ Chí Minh",
-      "parent_code1": "770",
-      "parent_code2": "27136",
       "code": "0002",
-      "id": "5546"
+      "createdAt": "2023-05-28T04:31:45.283Z"
     },
     {
-      "_id": "60eaaa6f1173335842c35668",
+      "id": "60eaaa6f1173335842c35668",
       "name": "Lê Hồng Phong",
       "type": "Trung học phổ thông",
       "address": "Phường 1, quận 5, Tp Hồ Chí Minh",
       "code": "0003",
-      "parent_code1": "774",
-      "parent_code2": "27325",
-      "id": "cc29"
+      "createdAt": "2023-05-28T04:31:45.283Z"
     },
     {
-      "_id": "60eaaa6f1173335842c35639",
+      "id": "60eaaa6f1173335842c35639",
       "name": "Nguyễn Thượng Hiền",
       "type": "Trung học phổ thông",
       "address": "quận Tân Bình, Tp Hồ Chí Minh",
       "code": "0004",
-      "parent_code1": "774",
-      "parent_code2": "27325",
-      "id": "66d4"
+      "createdAt": "2023-05-28T04:31:45.283Z"
     },
     {
-      "_id": "60eaaa6f1173335842c3562e",
+      "id": "60eaaa6f1173335842c3562e",
       "name": "Nguyễn Thị Minh Khai",
       "type": "Trung học phổ thông",
       "address": "quận 3, Tp Hồ Chí Minh",
       "code": "0005",
-      "parent_code1": "774",
-      "parent_code2": "27325",
-      "id": "fc63"
+      "createdAt": "2023-05-28T04:31:45.283Z"
     },
     {
       "id": "f8ac",
       "name": "test",
       "code": "0006",
       "type": "Trung học phổ thông",
-      "parent_code1": "774",
-      "parent_code2": "27325",
-      "address": "testdata"
+      "address": "testdata",
+      "createdAt": "2023-05-28T04:31:45.283Z"
     },
     {
-      "_id": "60eaaa6f1173335842c3566923",
+      "id": "60eaaa6f1173335842c3566923",
       "name": "Đinh Tiên Hoàng",
       "type": "Trung học phổ thông",
       "address": "Phường Thắng Tam, Thành phố Vũng Tàu,",
       "code": "0007",
-      "parent_code1": "747",
-      "parent_code2": "6508",
-      "id": "8de2"
+      "createdAt": "2023-05-28T04:31:45.283Z"
     },
     {
-      "_id": "60eaaa6f1173335842c35669e473",
+      "id": "60eaaa6f1173335842c35669e473",
       "name": "Nguyễn Thị Minh Khai",
       "type": "Trung học phổ thông",
       "address": "Phường 10, Thành phố Vũng Tàu,",
       "code": "0008",
-      "parent_code1": "747",
-      "parent_code2": "26536",
-      "id": "8de2"
+      "createdAt": "2023-05-28T04:31:45.283Z"
+    },
+    {
+      "id": "70d5",
+      "name": "testdata",
+      "code": "321",
+      "type": "thpt",
+      "address": "testdata",
+      "createdAt": "2024-05-28T04:31:45.283Z"
+    },
+    {
+      "id": "d794",
+      "name": "new school",
+      "code": "99999",
+      "type": "thpt",
+      "address": "newschool",
+      "createdAt": "2024-05-28T05:00:46.056Z"
     }
   ]
 }

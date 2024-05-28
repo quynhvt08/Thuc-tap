@@ -493,22 +493,21 @@ export default function EnhancedTable() {
     setFilterRows(filteredRows);
   }, [searchTerm, rows]);
   return (
-    <Box sx={{ width: '100%'}} visuallyHidden>
-      <Paper sx={{ width: '100%'}}>
+    <Box sx={{ width: '100%' }}>
+      <Paper sx={{ width: '100%', overflowX : 'auto' }}>
         <EnhancedTableToolbar rows={rows} setRows={setRows} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-        <TableContainer  sx={{ flex: '1 1 100%' , ml : 4, mt: 0}} >
+        <TableContainer  sx={{ flex: '1 1 100%' , ml : 4, mr : 2 }} >
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
             size={'medium'}
-            
           >
             <EnhancedTableHead
               order={order}
               orderBy={orderBy}
               onRequestSort={handleRequestSort}
             />
-            <TableBody>
+            <TableBody sx={{ maxWidth: '100%', overflowX: 'auto' }}>
               {sortedRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
                   return (
@@ -517,12 +516,12 @@ export default function EnhancedTable() {
                       tabIndex={-1}
                       key={row.id}
                     >
-                      <TableCell>{page * rowsPerPage + index + 1}</TableCell>
-                      <TableCell component="th" scope="row" padding="none">{row.code}</TableCell>
-                      <TableCell align="left">{row.name}</TableCell>
-                      <TableCell align="left">{row.type}</TableCell>
-                      <TableCell align="left">{row.name_with_type}</TableCell>
-                      <TableCell align="left">
+                      <TableCell sx={{ width : '5%' }}>{page * rowsPerPage + index + 1}</TableCell>
+                      <TableCell component="th" scope="row" padding="none" >{row.code}</TableCell>
+                      <TableCell align="left" >{row.name}</TableCell>
+                      <TableCell align="left" >{row.type}</TableCell>
+                      <TableCell align="left" >{row.name_with_type}</TableCell>
+                      <TableCell align="left" sx={{ width : '20%' }}>
                         <Button sx={{ mr: 1 }} variant="contained" color="secondary" size="small" onClick={() => handleClickOpenEditDialog(row)}>Sửa</Button>
                         <Button onClick={() => handleClickOpenDeleteDialog(row.id)} variant="contained" color="error" size="small">Xoá</Button>
                         {/* DIALOG XÁC NHẬN XOÁ */}
