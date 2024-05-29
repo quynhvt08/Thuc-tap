@@ -48,7 +48,7 @@ export default function AnalyticEcommerce({ color = 'primary', title, count, per
           <Typography variant="caption" sx={{ color: `${color || 'primary'}.main` }}>
             {extra}
           </Typography>{' '}
-          trường THPT đã được thêm mới trong năm nay.
+          bản ghi được thêm mới trong năm nay.
         </Typography>
       </Box>
     </MainCard>

@@ -15,11 +15,7 @@
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-<<<<<<< HEAD
     "start:json-server": "concurrently \"json-server --port 3001 db.json\" \"json-server --port 3002 DistrictList.json\" \"json-server --port 3003 ward.json\" \"json-server --port 3004 School.json\" \"json-server --port 3005 EntranceExamBlocks.json\" \"json-server --port 3006 Major.json\" \"json-server --port 3007 Hoso.json\""
-=======
-    "start:json-server": "concurrently \"json-server --port 3001 db.json\" \"json-server --port 3002 DistrictList.json\" \"json-server --port 3003 ward.json\" \"json-server --port 3004 School.json\" \"json-server --port 3005 EntranceExamBlocks.json\" \"json-server --port 3006 Major.json\""
->>>>>>> 20779ef412dd5ffd442cff7a445514e91cfed882
   },
   "dependencies": {
     "@ant-design/colors": "^7.0.2",

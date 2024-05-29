@@ -29,14 +29,6 @@ export default function App() {
       console.log("Đăng nhập thành công (User).");
       setUser({ taikhoan: details.taikhoan });
       localStorage.setItem('user', JSON.stringify({ taikhoan: details.taikhoan }));
-    } else if (details.taikhoan === GiamThi.taikhoan && details.password === GiamThi.password) {
-      console.log("Đăng nhập thành công (GiamThi).");
-      setUser({ taikhoan: details.taikhoan });
-      localStorage.setItem('user', JSON.stringify({ taikhoan: details.taikhoan }));
-    } else if (details.taikhoan === Quantri.taikhoan && details.password === Quantri.password) {
-      console.log("Đăng nhập thành công (Quantri).");
-      setUser({ taikhoan: details.taikhoan });
-      localStorage.setItem('user', JSON.stringify({ taikhoan: details.taikhoan }));
     } else {
       console.log("Tài khoản hoặc mật khẩu chưa chính xác!");
       setError("Tài khoản hoặc mật khẩu chưa chính xác!");
@@ -53,10 +45,10 @@ export default function App() {
       {user.taikhoan !== "" ? (
         <div className="App">
           <ThemeCustomization>
-            <ScrollTop>            
-              <RouterProvider router={router} />        
+            <ScrollTop>
+              <RouterProvider router={router} />
+              {/* <button onClick={Logout}>Đăng xuất</button> */}
             </ScrollTop>
-             <button onClick={Logout}>Đăng xuất</button>
           </ThemeCustomization>
         </div>
       ) : (
