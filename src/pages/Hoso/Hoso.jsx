@@ -22,10 +22,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import FormGroup from '@mui/material/FormGroup';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import HomeWorkIcon from '@mui/icons-material/HomeWork';
+import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 import PublishIcon from '@mui/icons-material/Publish';
-import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import * as XLSX from 'xlsx';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 //PHÂN TRANG
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -96,6 +96,7 @@ const headCells = [
   { id: 'total_score', numeric: false, disablePadding: true, label: 'Tổng điểm' },
   { id: 'status', numeric: false, disablePadding: true, label: 'Trạng thái' },
 ];
+
 
 const visuallyHidden = {
   border: 0,
@@ -256,7 +257,7 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >      
-          <h2> <AssignmentIndIcon  /> &nbsp;&nbsp;Danh sách hồ sơ</h2>
+          <h2> <AssignmentIndIcon /> &nbsp;&nbsp;Danh sách Hồ sơ</h2>
         </Typography>
         <FormGroup sx={{ mr : 5 }}>
           <FormControl >
@@ -670,16 +671,9 @@ export default function EnhancedTable() {
     );
     setFilterRows(filteredRows);
   }, [searchTerm, rows]);
-
   return (
-    <Typography
-      sx={{ flex: '1 1 100%', ml: 2, mt: 0 }}
-      variant="h6"
-      id="tableTitle"
-      component="div"
-    >
-      <Box sx={{ width: '100%' }}>
-        <Paper sx={{ width: '100%'}}>
+    <Box sx={{ width: '100%' }}>
+      <Paper sx={{ width: '100%', overflowX : 'auto' }}>
           <EnhancedTableToolbar rows={rows} setRows={setRows} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           <div style={{ position: 'relative' }}>
             <Toolbar>
@@ -702,7 +696,7 @@ export default function EnhancedTable() {
                 <Card>
                   <CardContent>
                     <Stack spacing={2} direction="column">
-                      <h3><HomeWorkIcon /> Lọc theo Khu vực </h3>
+                      <h3><MapsHomeWorkOutlinedIcon /> &nbsp;&nbsp;Lọc theo Khu vực </h3>
                       <FormControl variant="outlined" size="big">
                         <Select
                           value={selectedProvince}
@@ -759,7 +753,7 @@ export default function EnhancedTable() {
               </Box>
             </Collapse>
           </div>
-          <TableContainer sx={{ flex: '1 1 100%', ml: 3, mt: 0 }}>
+          <TableContainer sx={{ flex: '1 1 100%', ml: 4, mr: 2}}>
             <Table
               sx={{ minWidth: 750 }}
               aria-labelledby="tableTitle"
@@ -803,8 +797,7 @@ export default function EnhancedTable() {
             onRowsPerPageChange={handleRowsPerPageChange}
             ActionsComponent={TablePaginationActions}
           />
-        </Paper>
-      </Box>
-    </Typography>
+      </Paper>
+    </Box>
   );
 }

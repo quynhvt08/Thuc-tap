@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 // material-ui
@@ -23,12 +24,6 @@ export default function ProfileTab() {
     setSelectedIndex(index);
   };
 
-  const [user, setUser] = useState({ taikhoan: "" });
-
-  const Logout = () => {
-    setUser({ taikhoan: "" });
-    localStorage.removeItem('user');
-  };
 
   return (
     <List component="nav" sx={{ p: 0, '& .MuiListItemIcon-root': { minWidth: 32 } }}>
@@ -57,7 +52,7 @@ export default function ProfileTab() {
         </ListItemIcon>
         <ListItemText primary="Billing" />
       </ListItemButton>
-      <ListItemButton selected={selectedIndex === 2}  onClick={Logout}>
+      <ListItemButton selected={selectedIndex === 2}  component={Link} to="/logout">
         <ListItemIcon>
           <LogoutOutlined />
         </ListItemIcon>

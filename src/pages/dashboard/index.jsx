@@ -121,7 +121,7 @@ export default function DashboardDefault() {
     }, []);
     useEffect(() => {
       if (newHososThisYear_passed !== 0 && newHososLastYear_passed !== 0) {
-        const newTotalHosos_passed = newHososThisYear_passed;
+        const newTotalHosos_passed = newHososThisYear_passed + newHososLastYear_passed;
         const oldTotalHoso_passed = newHososLastYear_passed;
         console.log("so ho dau so hien tai: " + newTotalHosos_passed);
         console.log("tong ho so truong cu: " + oldTotalHoso_passed);
@@ -162,7 +162,7 @@ useEffect(() => {
 }, []);
 useEffect(() => {
   if (newHososThisYear_notpassed !== 0 && newHososLastYear_notpassed !== 0) {
-    const newTotalHosos_notpassed = newHososThisYear_notpassed;
+    const newTotalHosos_notpassed = newHososThisYear_notpassed + newHososLastYear_notpassed;
     const oldTotalHoso_notpassed = newHososLastYear_notpassed;
     console.log("so ho so hien tai: " + newTotalHosos_notpassed);
     console.log("tong ho so truong cu: " + oldTotalHoso_notpassed);

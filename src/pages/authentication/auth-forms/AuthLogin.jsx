@@ -1,40 +1,29 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-
-// material-ui
-import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
-import Divider from '@mui/material/Divider';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormHelperText from '@mui/material/FormHelperText';
-import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
-import InputAdornment from '@mui/material/InputAdornment';
-import IconButton from '@mui/material/IconButton';
-import InputLabel from '@mui/material/InputLabel';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-
-// third party
+import React, { useState } from 'react';
+import axios from 'axios';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-
-// project import
+import { useNavigate } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import InputLabel from '@mui/material/InputLabel';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormHelperText from '@mui/material/FormHelperText';
+import Link from '@mui/material/Link';
+import Box from '@mui/material/Box';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import AnimateButton from 'components/@extended/AnimateButton';
+import { Typography } from '@mui/material';
 
-// assets
-import EyeOutlined from '@ant-design/icons/EyeOutlined';
-import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined';
-import FirebaseSocial from './FirebaseSocial';
+const AuthLogin = ({ isDemo = false }) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
 
-// ============================|| JWT - LOGIN ||============================ //
-
-export default function AuthLogin({ isDemo = false }) {
-  const [checked, setChecked] = React.useState(false);
-
-  const [showPassword, setShowPassword] = React.useState(false);
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -43,123 +32,138 @@ export default function AuthLogin({ isDemo = false }) {
     event.preventDefault();
   };
 
-  return (
-    <>
-      <Formik
-        initialValues={{
-          email: '',
-          password: '',
-          submit: null
-        }}
-        validationSchema={Yup.object().shape({
-          email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-          password: Yup.string().max(255).required('Password is required')
-        })}
-      >
-        {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
-          <form noValidate onSubmit={handleSubmit}>
-            <Grid container spacing={3}>
-              <Grid item xs={12}>
-                <Stack spacing={1}>
-                  <InputLabel htmlFor="email-login">Email Address</InputLabel>
-                  <OutlinedInput
-                    id="email-login"
-                    type="email"
-                    value={values.email}
-                    name="email"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    placeholder="Enter email address"
-                    fullWidth
-                    error={Boolean(touched.email && errors.email)}
-                  />
-                </Stack>
-                {touched.email && errors.email && (
-                  <FormHelperText error id="standard-weight-helper-text-email-login">
-                    {errors.email}
-                  </FormHelperText>
-                )}
-              </Grid>
-              <Grid item xs={12}>
-                <Stack spacing={1}>
-                  <InputLabel htmlFor="password-login">Password</InputLabel>
-                  <OutlinedInput
-                    fullWidth
-                    error={Boolean(touched.password && errors.password)}
-                    id="-password-login"
-                    type={showPassword ? 'text' : 'password'}
-                    value={values.password}
-                    name="password"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    endAdornment={
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility"
-                          onClick={handleClickShowPassword}
-                          onMouseDown={handleMouseDownPassword}
-                          edge="end"
-                          color="secondary"
-                        >
-                          {showPassword ? <EyeOutlined /> : <EyeInvisibleOutlined />}
-                        </IconButton>
-                      </InputAdornment>
-                    }
-                    placeholder="Enter password"
-                  />
-                </Stack>
-                {touched.password && errors.password && (
-                  <FormHelperText error id="standard-weight-helper-text-password-login">
-                    {errors.password}
-                  </FormHelperText>
-                )}
-              </Grid>
+  const handleLogin = async (values, setSubmitting) => {
+    setError('');
+    setSuccess('');
 
-              <Grid item xs={12} sx={{ mt: -1 }}>
-                <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        checked={checked}
-                        onChange={(event) => setChecked(event.target.checked)}
-                        name="checked"
-                        color="primary"
-                        size="small"
-                      />
-                    }
-                    label={<Typography variant="h6">Keep me sign in</Typography>}
-                  />
-                  <Link variant="h6" component={RouterLink} color="text.primary">
-                    Forgot Password?
-                  </Link>
-                </Stack>
-              </Grid>
-              {errors.submit && (
-                <Grid item xs={12}>
-                  <FormHelperText error>{errors.submit}</FormHelperText>
-                </Grid>
+    try {
+      const response = await axios.get('http://localhost:3008/users', {
+        params: {
+          email: values.email,
+          password: values.password
+        }
+      });
+      const user = response.data.find(user => user.email === values.email && user.password === values.password);
+      if (user) {
+        localStorage.setItem('token', user.token);
+        setSuccess(`Đăng nhập thành công. Welcome ${user.name}!`);
+        navigate('/');
+      } else {
+        setError('Email hoặc password không hợp lệ');
+      }
+    } catch (error) {
+      setError('An error occurred');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <Formik
+      initialValues={{
+        email: '',
+        password: '',
+      }}
+      validationSchema={Yup.object().shape({
+        email: Yup.string().email('Phải là email hợp lệ').max(255).required('Email là bắt buộc'),
+        password: Yup.string().max(255).required('Mật khẩu là bắt buộc'),
+      })}
+      onSubmit={(values, { setSubmitting }) => {
+        handleLogin(values, setSubmitting);
+      }}
+    >
+      {({ errors, handleBlur, handleChange, touched, values, isSubmitting, handleSubmit }) => (
+        <form noValidate onSubmit={handleSubmit}>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <Stack spacing={1}>
+                <InputLabel htmlFor="email-login"></InputLabel>
+                <OutlinedInput
+                  id="email-login"
+                  type="email"
+                  value={values.email}
+                  name="email"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  placeholder="Nhập địa chỉ email"
+                  fullWidth
+                  error={Boolean(touched.email && errors.email)}
+                  sx={{ height: '50px', fontSize: '0.9rem' }}
+                />
+              </Stack>
+              {touched.email && errors.email && (
+                <FormHelperText error id="standard-weight-helper-text-email-login">
+                  {errors.email}
+                </FormHelperText>
               )}
-              <Grid item xs={12}>
+            </Grid>
+            <Grid item xs={12}>
+              <Stack spacing={0}>
+                <InputLabel htmlFor="password-login"></InputLabel>
+                <OutlinedInput
+                  fullWidth
+                  error={Boolean(touched.password && errors.password)}
+                  id="password-login"
+                  type={showPassword ? 'text' : 'password'}
+                  value={values.password}
+                  name="password"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  placeholder="Nhập mật khẩu"
+                  sx={{ height: '50px', fontSize: '0.9rem' }}
+                />
+              </Stack>
+              {touched.password && errors.password && (
+                <FormHelperText error id="standard-weight-helper-text-password-login">
+                  {errors.password}
+                </FormHelperText>
+              )}
+            </Grid>
+            <Grid item xs={12}>
+              <Box mt={0}>
+                {error && (
+                  <Typography variant="body1" color="error" style={{ fontSize: '1em' }}>
+                    {error}
+                  </Typography>
+                )}
+                {success && (
+                  <Typography variant="body1" color="primary" style={{ fontSize: '1em' }}>
+                    {success}
+                  </Typography>
+                )}
+              </Box>
+              <Box mt={2}>
                 <AnimateButton>
-                  <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" color="primary">
-                    Login
+                  <Button fullWidth size="large" type="submit" variant="contained" color="primary" disabled={isSubmitting}>
+                    Đăng nhập
                   </Button>
                 </AnimateButton>
-              </Grid>
-              <Grid item xs={12}>
-                <Divider>
-                  <Typography variant="caption"> Login with</Typography>
-                </Divider>
-              </Grid>
-              <Grid item xs={12}>
-                <FirebaseSocial />
-              </Grid>
+              </Box>
             </Grid>
-          </form>
-        )}
-      </Formik>
-    </>
+            <Grid item xs={12}>
+              <Box mt={2} textAlign="center">
+                <Link href="https://hcmue.edu.vn" variant="body2">
+                    Bản quyền thuộc Trường Đại học Sư phạm Thành phố Hồ Chí Minh &#169;
+                </Link>
+              </Box>
+            </Grid>
+          </Grid>
+        </form>
+      )}
+    </Formik>
   );
-}
+};
 
-AuthLogin.propTypes = { isDemo: PropTypes.bool };
+export default AuthLogin;

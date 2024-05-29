@@ -23,6 +23,7 @@ import SettingTab from './SettingTab';
 import Avatar from 'components/@extended/Avatar';
 import MainCard from 'components/MainCard';
 import Transitions from 'components/@extended/Transitions';
+import { Link } from 'react-router-dom';
 
 // assets
 import LogoutOutlined from '@ant-design/icons/LogoutOutlined';
@@ -133,7 +134,7 @@ export default function Profile() {
                       </Grid>
                       <Grid item>
                         <Tooltip title="Logout">
-                          <IconButton size="large" sx={{ color: 'text.primary' }}>
+                          <IconButton size="large" sx={{ color: 'text.primary' }} component={Link} to="/logout">
                             <LogoutOutlined />
                           </IconButton>
                         </Tooltip>

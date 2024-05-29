@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import hcmueLogo from '../../images/hcmue.png';
 
 // material-ui
 import Grid from '@mui/material/Grid';
@@ -16,12 +17,10 @@ export default function Login() {
     <AuthWrapper>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Stack direction="row" justifyContent="space-between" alignItems="baseline" sx={{ mb: { xs: -0.5, sm: 0.5 } }}>
-            <Typography variant="h3">Login</Typography>
-            <Typography component={Link} to="/register" variant="body1" sx={{ textDecoration: 'none' }} color="primary">
-              Don&apos;t have an account?
-            </Typography>
+          <Stack direction="row" justifyContent="center" alignItems="baseline" sx={{ mb: { xs: -0.5, sm: 0.5 } }}>
+          <img src={hcmueLogo} alt="HCMUE Logo" style={{ width: '100px', marginBottom: '20px' }} />       
           </Stack>
+          <Typography variant="h3" align="center">Quản lý hồ sơ xét tuyển</Typography>
         </Grid>
         <Grid item xs={12}>
           <AuthLogin />

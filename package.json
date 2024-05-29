@@ -15,7 +15,7 @@
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "start:json-server": "concurrently \"json-server --port 3001 db.json\" \"json-server --port 3002 DistrictList.json\" \"json-server --port 3003 ward.json\" \"json-server --port 3004 School.json\" \"json-server --port 3005 EntranceExamBlocks.json\" \"json-server --port 3006 Major.json\" \"json-server --port 3007 Hoso.json\""
+    "start:json-server": "concurrently \"json-server --port 3001 db.json\" \"json-server --port 3002 DistrictList.json\" \"json-server --port 3003 ward.json\" \"json-server --port 3004 School.json\" \"json-server --port 3005 EntranceExamBlocks.json\" \"json-server --port 3006 Major.json\" \"json-server --port 3007 Hoso.json\" \"json-server --port 3008 User.json\""
   },
   "dependencies": {
     "@ant-design/colors": "^7.0.2",
@@ -98,6 +98,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^3.2.5",
     "react-error-overlay": "6.0.11",
-    "vite": "^5.2.11"
+    "vite": "^5.2.12"
   }
 }
