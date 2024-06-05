@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -35,6 +34,7 @@ import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import LocationCityOutlinedIcon from '@mui/icons-material/LocationCityOutlined';
 import PublishIcon from '@mui/icons-material/Publish';
 import * as XLSX from 'xlsx';
+import apiCall from '../../configAxios';
 //PHÂN TRANG
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -163,7 +163,8 @@ function EnhancedTableToolbar(props) {
   const [formData, setFormData] = useState({
     name: '',
     code: '',
-    type: ''
+    type: '',
+    name_with_type: ''
   });
 
   //MỞ / ĐÓNG DIALOG
@@ -187,7 +188,7 @@ function EnhancedTableToolbar(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/data', formData);
+      const response = await axios.post('http://localhost:3001/cities', formData);
       const newEntry = response.data;
       setRows(prevRows => {
         const updatedRows = [...prevRows, newEntry].map(item => {
@@ -224,8 +225,8 @@ function EnhancedTableToolbar(props) {
       }));
 
       try {
-        await Promise.all(processedData.map(item => axios.post('http://localhost:3001/data', item)));
-        const response = await axios.get('http://localhost:3001/data');
+        await Promise.all(processedData.map(item => axios.post('http://localhost:3001/cities', item)));
+        const response = await axios.get('http://localhost:3001/cities');
         const updatedRows = response.data.map(item => ({
           ...item,
           type: item.type === 'tinh' ? 'Tỉnh' : item.type === 'thanh-pho' ? 'Thành phố' : item.type,
@@ -337,6 +338,19 @@ function EnhancedTableToolbar(props) {
                   onChange={handleChange}
                 />
               </FormControl>
+              <FormControl>
+                <TextField
+                  required
+                  margin="normal"
+                  name="name_with_type"
+                  label="Chi tiết"
+                  type="text"
+                  fullWidth
+                  variant="outlined"
+                  value={formData.name_with_type}
+                  onChange={handleChange}
+                />
+              </FormControl>
               <DialogActions>
                 <Button sx={{ mr: 1 }} variant="outlined" onClick={handleClose}>Hủy</Button>
                 <Button variant="contained" onClick={handleSubmit} type="submit">Thêm</Button>
@@ -369,7 +383,8 @@ export default function EnhancedTable() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get('http://localhost:3001/data');
+        console.log("token on header: ", apiCall.defaults.headers.common['Authorization']);
+        const result = await axios.get('http://localhost:3001/cities');
         const processedData = result.data.map(item => {
           if (item.type === 'tinh') {
             return { ...item, type: 'Tỉnh' };
@@ -379,6 +394,7 @@ export default function EnhancedTable() {
           return item;
         });
         setRows(processedData);
+        
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -443,7 +459,7 @@ export default function EnhancedTable() {
   
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3001/data/${selectedRowId}`);
+      await axios.delete(`http://localhost:3001/cities/${selectedRowId}`);
       setRows(rows.filter((row) => row.id !== selectedRowId));
       setFilterRows(filterRows.filter((row) => row.id !== selectedRowId));
       handleCloseDeleteDialog();
@@ -452,9 +468,8 @@ export default function EnhancedTable() {
     }
   };
   const handleEdit = async () => {
-    console.log("info: ", selectedRowData);
     try {
-      await axios.put(`http://localhost:3001/data/${selectedRowId}`, selectedRowData);
+      await axios.put(`http://localhost:3001/cities/${selectedRowId}`, selectedRowData);
       const updatedRows = rows.map(row =>
         row.id === selectedRowId ? selectedRowData : row
       );
@@ -542,7 +557,7 @@ export default function EnhancedTable() {
                           <DialogTitle>Cập nhật thông tin Tỉnh/Thành Phố</DialogTitle>
                           <DialogContent>
                             <DialogContentText>
-                              Nhập đầy đủ các trường thông tin dưới đây để thêm mới 1 bản ghi.
+                              Sửa thông tin của trường bạn muốn thay đổi và nhấn nút cập nhật để cập nhật thông tin
                             </DialogContentText>
                             <FormGroup>
                               <FormControl>
@@ -585,6 +600,20 @@ export default function EnhancedTable() {
                                   variant="outlined"
                                   // value={formData.type}
                                   value={selectedRowData?.type || ''}
+                                  onChange={handleChange}
+                                />
+                              </FormControl>
+                              <FormControl>
+                                <TextField
+                                  required
+                                  margin="normal"
+                                  name="name_with_type"
+                                  label="Chi tiết"
+                                  type="text"
+                                  fullWidth
+                                  variant="outlined"
+                                  // value={formData.type}
+                                  value={selectedRowData?.name_with_type || ''}
                                   onChange={handleChange}
                                 />
                               </FormControl>

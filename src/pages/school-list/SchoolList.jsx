@@ -181,7 +181,7 @@ function EnhancedTableToolbar(props) {
     try {
       const formDataWithDate = { ...formData };
       formDataWithDate.createdAt = new Date().toISOString();
-      const response = await axios.post('http://localhost:3004/schools', formDataWithDate);
+      const response = await axios.post('http://localhost:3001/schools', formDataWithDate);
       const newEntry = response.data;
       setRows(prevRows => {
         const updatedRows = [...prevRows, newEntry].map(item => {
@@ -216,8 +216,8 @@ function EnhancedTableToolbar(props) {
       }));
 
       try {
-        await Promise.all(processedData.map(item => axios.post('http://localhost:3004/schools', item)));
-        const response = await axios.get('http://localhost:3004/schools');
+        await Promise.all(processedData.map(item => axios.post('http://localhost:3001/schools', item)));
+        const response = await axios.get('http://localhost:3001/schools');
         const updatedRows = response.data.map(item => ({
           ...item,
           type: item.type === 'thpt' ? 'Trung học phổ thông' : item.type,
@@ -374,7 +374,7 @@ export default function EnhancedTable() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get('http://localhost:3004/schools');
+        const result = await axios.get('http://localhost:3001/schools');
         const processedData = result.data.map(item => {
           if (item.type === 'thpt') {
             return { ...item, type: 'Trung học phổ thông' };
@@ -442,7 +442,7 @@ export default function EnhancedTable() {
   
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3004/schools/${selectedRowId}`);
+      await axios.delete(`http://localhost:3001/schools/${selectedRowId}`);
       setRows(rows.filter((row) => row.id !== selectedRowId));
       setFilterRows(filterRows.filter((row) => row.id !== selectedRowId));
       handleCloseDeleteDialog();
@@ -453,7 +453,7 @@ export default function EnhancedTable() {
   const handleEdit = async () => {
     // console.log("info: ", selectedRowData);
     try {
-      await axios.put(`http://localhost:3004/schools/${selectedRowId}`, selectedRowData);
+      await axios.put(`http://localhost:3001/schools/${selectedRowId}`, selectedRowData);
       const updatedRows = rows.map(row =>
         row.id === selectedRowId ? selectedRowData : row
       );
@@ -506,7 +506,7 @@ const boxRef = useRef(null);
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/data');
+      const response = await axios.get('http://localhost:3001/cities');
       setProvinces(response.data.map(({ _id, code, name_with_type }) => ({ id: _id, code, name: name_with_type })));
     } catch (error) {
       console.error('Error fetching provinces:', error);
@@ -521,7 +521,7 @@ useEffect(() => {
   if (selectedProvince) {
     const fetchDistricts = async () => {
       try {
-        const response = await axios.get(`http://localhost:3002/districts?provinceCode=${selectedProvince}`);
+        const response = await axios.get(`http://localhost:3001/districts?provinceCode=${selectedProvince}`);
         setDistricts(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
       } catch (error) {
         console.error('Error fetching districts:', error);
@@ -538,7 +538,7 @@ useEffect(() => {
   if (selectedDistrict) {
     const fetchWards = async () => {
       try {
-        const response = await axios.get(`http://localhost:3003/wards?districtCode=${selectedDistrict}`);
+        const response = await axios.get(`http://localhost:3001/wards?districtCode=${selectedDistrict}`);
         setWards(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
       } catch (error) {
         console.error('Error fetching wards:', error);
@@ -555,7 +555,7 @@ useEffect(() => {
   if (selectedWard) {
     const fetchSchools = async () => {
       try {
-        const response = await axios.get(`http://localhost:3004/School?wardCode=${selectedWard}`);
+        const response = await axios.get(`http://localhost:3001/schools?wardCode=${selectedWard}`);
         setWards(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
       } catch (error) {
         console.error('Error fetching wards:', error);

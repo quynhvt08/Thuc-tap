@@ -1,29 +1,34 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import * as Yup from 'yup';
-import { Formik } from 'formik';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+// material-ui
 import Button from '@mui/material/Button';
+import FormHelperText from '@mui/material/FormHelperText';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
-import Link from '@mui/material/Link';
-import Box from '@mui/material/Box';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import Stack from '@mui/material/Stack';
+import {Box, Link} from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
+// third party
+import * as Yup from 'yup';
+import { Formik } from 'formik';
+import apiCall from '../../../configAxios';
+
+// project import
 import AnimateButton from 'components/@extended/AnimateButton';
-import { Typography } from '@mui/material';
 
-const AuthLogin = ({ isDemo = false }) => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
-  const navigate = useNavigate();
+// assets
+import EyeOutlined from '@ant-design/icons/EyeOutlined';
+import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined';
 
+// ============================|| JWT - LOGIN ||============================ //
+
+export default function AuthLogin() {
+  const [showPassword, setShowPassword] = React.useState(false);
+  const [loadingAPI, setLoadingAPI] = React.useState(false);
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -31,139 +36,129 @@ const AuthLogin = ({ isDemo = false }) => {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+  const navigate = useNavigate();
 
-  const handleLogin = async (values, setSubmitting) => {
-    setError('');
-    setSuccess('');
-
+  const handleSubmit = async (values, { setErrors }) => {
+    setLoadingAPI(true);
     try {
-      const response = await axios.get('http://localhost:3008/users', {
-        params: {
-          email: values.email,
-          password: values.password
+      const response = await apiCall.get('/users');
+      if (response && response.data) {
+        const user = response.data.find(user => user.email === values.email && user.password === values.password);
+        if (user) {
+          const token = user.token;
+          localStorage.setItem('token', token);
+          apiCall.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+          navigate('../');
+        } else {
+          setErrors({ submit: 'Email hoặc mật khẩu không đúng' });
         }
-      });
-      const user = response.data.find(user => user.email === values.email && user.password === values.password);
-      if (user) {
-        localStorage.setItem('token', user.token);
-        setSuccess(`Đăng nhập thành công. Welcome ${user.name}!`);
-        navigate('/');
       } else {
-        setError('Email hoặc password không hợp lệ');
+        setErrors({ submit: error.response ? error.response.data.message : 'Something went wrong' });
       }
     } catch (error) {
-      setError('An error occurred');
-    } finally {
-      setSubmitting(false);
+        console.log("error: ", error)
+        setErrors({ submit: error.response ? error.response.data.message : 'Something went wrong' });
     }
+    setLoadingAPI(false);
   };
-
   return (
-    <Formik
-      initialValues={{
-        email: '',
-        password: '',
-      }}
-      validationSchema={Yup.object().shape({
-        email: Yup.string().email('Phải là email hợp lệ').max(255).required('Email là bắt buộc'),
-        password: Yup.string().max(255).required('Mật khẩu là bắt buộc'),
-      })}
-      onSubmit={(values, { setSubmitting }) => {
-        handleLogin(values, setSubmitting);
-      }}
-    >
-      {({ errors, handleBlur, handleChange, touched, values, isSubmitting, handleSubmit }) => (
-        <form noValidate onSubmit={handleSubmit}>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <Stack spacing={1}>
-                <InputLabel htmlFor="email-login"></InputLabel>
-                <OutlinedInput
-                  id="email-login"
-                  type="email"
-                  value={values.email}
-                  name="email"
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  placeholder="Nhập địa chỉ email"
-                  fullWidth
-                  error={Boolean(touched.email && errors.email)}
-                  sx={{ height: '50px', fontSize: '0.9rem' }}
-                />
-              </Stack>
-              {touched.email && errors.email && (
-                <FormHelperText error id="standard-weight-helper-text-email-login">
-                  {errors.email}
-                </FormHelperText>
-              )}
-            </Grid>
-            <Grid item xs={12}>
-              <Stack spacing={0}>
-                <InputLabel htmlFor="password-login"></InputLabel>
-                <OutlinedInput
-                  fullWidth
-                  error={Boolean(touched.password && errors.password)}
-                  id="password-login"
-                  type={showPassword ? 'text' : 'password'}
-                  value={values.password}
-                  name="password"
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
-                      >
-                        {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                  placeholder="Nhập mật khẩu"
-                  sx={{ height: '50px', fontSize: '0.9rem' }}
-                />
-              </Stack>
-              {touched.password && errors.password && (
-                <FormHelperText error id="standard-weight-helper-text-password-login">
-                  {errors.password}
-                </FormHelperText>
-              )}
-            </Grid>
-            <Grid item xs={12}>
-              <Box mt={0}>
-                {error && (
-                  <Typography variant="body1" color="error" style={{ fontSize: '1em' }}>
-                    {error}
-                  </Typography>
+    <>
+      <Formik
+        initialValues={{
+          email: '',
+          password: '',
+          submit: null
+        }}
+        validationSchema={Yup.object().shape({
+          email: Yup.string().email('Email không hợp lệ').max(255).required('Vui lòng nhập Email'),
+          password: Yup.string().max(255).required('Vui lòng nhập password')
+        })}
+        onSubmit={handleSubmit}
+      >
+        {({ errors, handleBlur, handleChange, handleSubmit, touched, values }) => (
+          <form noValidate>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <Stack spacing={1}>
+                  <InputLabel htmlFor="email-login">Địa chỉ Email</InputLabel>
+                  <OutlinedInput
+                    id="email-login"
+                    type="email"
+                    value={values.email}
+                    name="email"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    placeholder="Nhập địa chỉ email của bạn"
+                    fullWidth
+                    error={Boolean(touched.email && errors.email)}
+                  />
+                </Stack>
+                {touched.email && errors.email && (
+                  <FormHelperText error id="standard-weight-helper-text-email-login">
+                    {errors.email}
+                  </FormHelperText>
                 )}
-                {success && (
-                  <Typography variant="body1" color="primary" style={{ fontSize: '1em' }}>
-                    {success}
-                  </Typography>
+              </Grid>
+              <Grid item xs={12} sx={{ mb: 2 }}>
+                <Stack spacing={1}>
+                  <InputLabel htmlFor="password-login">Mật khẩu</InputLabel>
+                  <OutlinedInput
+                    fullWidth
+                    error={Boolean(touched.password && errors.password)}
+                    id="-password-login"
+                    type={showPassword ? 'text' : 'password'}
+                    value={values.password}
+                    name="password"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                          color="secondary"
+                        >
+                          {showPassword ? <EyeOutlined /> : <EyeInvisibleOutlined />}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                    placeholder="Nhập mật khẩu của bạn"
+                  />
+                </Stack>
+                {touched.password && errors.password && (
+                  <FormHelperText error id="standard-weight-helper-text-password-login">
+                    {errors.password}
+                  </FormHelperText>
                 )}
-              </Box>
-              <Box mt={2}>
+              </Grid>
+              {errors.submit && (
+                <Grid item xs={12}>
+                  <FormHelperText error>{errors.submit}</FormHelperText>
+                </Grid>
+              )}
+              <Grid item xs={12}>
                 <AnimateButton>
-                  <Button fullWidth size="large" type="submit" variant="contained" color="primary" disabled={isSubmitting}>
+                  <Button fullWidth size="large" type="submit" variant="contained" color="primary" onClick={handleSubmit}>
+                  {loadingAPI && <CircularProgress size={20}  sx={{ color:'white', ml: -2, mr: 1}}/>}
                     Đăng nhập
                   </Button>
                 </AnimateButton>
-              </Box>
-            </Grid>
-            <Grid item xs={12}>
-              <Box mt={2} textAlign="center">
-                <Link href="https://hcmue.edu.vn" variant="body2">
+              </Grid>
+              <Grid item xs={12}>
+                <Box mt={2} textAlign="center">
+                  <Link href="https://hcmue.edu.vn" variant="body2">
                     Bản quyền thuộc Trường Đại học Sư phạm Thành phố Hồ Chí Minh &#169;
-                </Link>
-              </Box>
+                  </Link>
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
-        </form>
-      )}
-    </Formik>
+          </form>
+        )}
+      </Formik>
+    </>
   );
-};
+}
 
-export default AuthLogin;
+AuthLogin.propTypes = { isDemo: PropTypes.bool };

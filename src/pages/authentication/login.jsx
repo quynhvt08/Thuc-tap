@@ -21,6 +21,7 @@ export default function Login() {
           <img src={hcmueLogo} alt="HCMUE Logo" style={{ width: '100px', marginBottom: '20px' }} />       
           </Stack>
           <Typography variant="h3" align="center">Quản lý hồ sơ xét tuyển</Typography>
+          
         </Grid>
         <Grid item xs={12}>
           <AuthLogin />

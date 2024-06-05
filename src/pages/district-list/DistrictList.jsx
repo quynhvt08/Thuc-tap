@@ -179,7 +179,7 @@ function EnhancedTableToolbar(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3002/districts', formData);
+      const response = await axios.post('http://localhost:3001/districts', formData);
       // Cập nhật state với mục nhập mới
       const newEntry = response.data;
       setRows(prevRows => {
@@ -222,8 +222,8 @@ function EnhancedTableToolbar(props) {
       }));
 
       try {
-        await Promise.all(processedData.map(item => axios.post('http://localhost:3002/districts', item)));
-        const response = await axios.get('http://localhost:3002/districts');
+        await Promise.all(processedData.map(item => axios.post('http://localhost:3001/districts', item)));
+        const response = await axios.get('http://localhost:3001/districts');
         const updatedRows = response.data.map(item => ({
           ...item,
           type: item.type === 'quan' ? 'Quận' : item.type === 'huyen' ? 'Huyện' : item.type === 'thi-xa' ? 'Thị xã' : item.type,
@@ -380,7 +380,7 @@ export default function EnhancedTable() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get('http://localhost:3002/districts');
+        const result = await axios.get('http://localhost:3001/districts');
         const processedData = result.data.map(item => {
           if (item.type === 'quan') {
             return { ...item, type: 'Quận' };
@@ -457,7 +457,7 @@ export default function EnhancedTable() {
   
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3002/districts/${selectedRowId}`);
+      await axios.delete(`http://localhost:3001/districts/${selectedRowId}`);
       setRows(rows.filter((row) => row.id !== selectedRowId));
       setFilterRows(filterRows.filter((row) => row.id !== selectedRowId));
       handleCloseDeleteDialog();
@@ -468,7 +468,7 @@ export default function EnhancedTable() {
   const handleEdit = async () => {
     // console.log("info: ", selectedRowData);
     try {
-      await axios.put(`http://localhost:3002/districts/${selectedRowId}`, selectedRowData);
+      await axios.put(`http://localhost:3001/districts/${selectedRowId}`, selectedRowData);
       const updatedRows = rows.map(row =>
         row.id === selectedRowId ? selectedRowData : row
       );
@@ -519,7 +519,7 @@ export default function EnhancedTable() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/data');
+        const response = await axios.get('http://localhost:3001/cities');
         setProvinces(response.data.map(({ _id, code, name_with_type }) => ({ id: _id, code, name: name_with_type })));
       } catch (error) {
         console.error('Error fetching provinces:', error);
@@ -534,7 +534,7 @@ export default function EnhancedTable() {
     if (selectedProvince) {
       const fetchDistricts = async () => {
         try {
-          const response = await axios.get(`http://localhost:3002/districts?provinceCode=${selectedProvince}`);
+          const response = await axios.get(`http://localhost:3001/districts?provinceCode=${selectedProvince}`);
           setDistricts(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
         } catch (error) {
           console.error('Error fetching districts:', error);
@@ -551,7 +551,7 @@ export default function EnhancedTable() {
     if (selectedDistrict) {
       const fetchWards = async () => {
         try {
-          const response = await axios.get(`http://localhost:3003/wards?districtCode=${selectedDistrict}`);
+          const response = await axios.get(`http://localhost:3001/wards?districtCode=${selectedDistrict}`);
           setWards(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
         } catch (error) {
           console.error('Error fetching wards:', error);

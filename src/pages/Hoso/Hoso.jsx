@@ -89,7 +89,9 @@ TablePaginationActions.propTypes = {
 };
 
 const headCells = [
-  { id: 'id', numeric: false, disablePadding: true, label: 'Mã Hồ Sơ' },
+  { id: 'id', numeric: false, disablePadding: true, label: 'id' },
+  { id: 'id_thisinh', numeric: false, disablePadding: true, label: 'Mã thí sinh' },
+
   { id: 'fullname', numeric: false, disablePadding: true, label: 'Thí sinh' },
   { id: 'major', numeric: false, disablePadding: true, label: 'Ngành' },
   { id: 'name_entranceexamblock', numeric: false, disablePadding: true, label: 'Tổ hợp' },
@@ -153,10 +155,12 @@ function EnhancedTableToolbar(props) {
   const { rows, setRows, searchTerm, setSearchTerm} = props;
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    code: '',
-    type: '',
-    path_with_type: ''
+    id_thisinh: '',
+    fullname: '',
+    major: '',
+    name_entranceexamblock: '',
+    total_score: '',
+    status: ''
   });
 
   //MỞ DIALOG
@@ -181,20 +185,13 @@ function EnhancedTableToolbar(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3002/districts', formData);
+      const formDataWithDate = { ...formData };
+      formDataWithDate.createdAt = new Date().toISOString();
+      const response = await axios.post('http://localhost:3001/hoso', formDataWithDate);
       // Cập nhật state với mục nhập mới
       const newEntry = response.data;
       setRows(prevRows => {
         const updatedRows = [...prevRows, newEntry].map(item => {
-          if (item.type === 'quan') {
-            return { ...item, type: 'Quận' };
-          } else if (item.type === 'thanh-pho') {
-            return { ...item, type: 'Thành phố' };
-          } else if (item.type === 'thi-xa') {
-            return { ...item, type: 'Thị xã' };
-          } else if (item.type === 'huyen') {
-            return { ...item, type: 'Huyện' };
-          }
           return item;
         });
         return updatedRows;
@@ -219,16 +216,16 @@ function EnhancedTableToolbar(props) {
 
       // Xử lý và định dạng dữ liệu jsonData
       const processedData = jsonData.map(item => ({
-        ...item,
-        type: item.type === 'quan' ? 'Quận' : item.type === 'huyen' ? 'Huyện' : item.type === 'thi-xa' ? 'Thị xã' : item.type,
+        ...item,  
+        // type: item.type === 'quan' ? 'Quận' : item.type === 'huyen' ? 'Huyện' : item.type === 'thi-xa' ? 'Thị xã' : item.type,
       }));
 
       try {
-        await Promise.all(processedData.map(item => axios.post('http://localhost:3002/districts', item)));
-        const response = await axios.get('http://localhost:3002/districts');
+        await Promise.all(processedData.map(item => axios.post('http://localhost:3001/hoso', item)));
+        const response = await axios.get('http://localhost:3001/hoso');
         const updatedRows = response.data.map(item => ({
           ...item,
-          type: item.type === 'quan' ? 'Quận' : item.type === 'huyen' ? 'Huyện' : item.type === 'thi-xa' ? 'Thị xã' : item.type,
+          // type: item.type === 'quan' ? 'Quận' : item.type === 'huyen' ? 'Huyện' : item.type === 'thi-xa' ? 'Thị xã' : item.type,
         }));
         // console.log('updatedRows:', updatedRows);
         setRows(updatedRows);
@@ -274,7 +271,7 @@ function EnhancedTableToolbar(props) {
         </FormGroup>
       </>
       <React.Fragment>
-        <Tooltip sx={{ mr : 1 }} title="Thêm Quận/Huyện">
+        <Tooltip sx={{ mr : 1 }} title="Thêm hồ sơ">
           <IconButton  onClick={handleClickOpen}>
             <AddLocationAltIcon/>
           </IconButton>
@@ -292,23 +289,37 @@ function EnhancedTableToolbar(props) {
         </Tooltip>
         {/* DIALOG VÀ FORM DÙNG ĐỂ ADD DATA */}
         <Dialog open={open} onClose={handleClose}>
-          <DialogTitle>Thêm mới 1 Quận/Huyện</DialogTitle>
+          <DialogTitle>Thêm mới 1 Hồ sơ</DialogTitle>
           <DialogContent>
             <DialogContentText>
               Nhập đầy đủ các trường thông tin dưới đây để thêm mới 1 bản ghi.
             </DialogContentText>
             <FormGroup>
+            <FormControl>
+                <TextField
+                  autoFocus
+                  required
+                  margin="normal"
+                  name="id_thisinh"
+                  label="Mã thí sinh"
+                  type="text"
+                  fullWidth
+                  variant="outlined"
+                  value={formData.id_thisinh}
+                  onChange={handleChange}
+                />
+              </FormControl>
               <FormControl>
                 <TextField
                   autoFocus
                   required
                   margin="normal"
-                  name="name"
-                  label="Tên Quận/Huyện"
+                  name="fullname"
+                  label="Tên thí sinh"
                   type="text"
                   fullWidth
                   variant="outlined"
-                  value={formData.name}
+                  value={formData.fullname}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -316,12 +327,12 @@ function EnhancedTableToolbar(props) {
                 <TextField
                   required
                   margin="normal"
-                  name="code"
-                  label="Mã Quận/Huyện"
+                  name="major"
+                  label="Tên ngành"
                   type="text"
                   fullWidth
                   variant="outlined"
-                  value={formData.code}
+                  value={formData.major}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -329,12 +340,12 @@ function EnhancedTableToolbar(props) {
                 <TextField
                   required
                   margin="normal"
-                  name="type"
-                  label="Loại"
+                  name="name_entranceexamblock"
+                  label="Khối"
                   type="text"
                   fullWidth
                   variant="outlined"
-                  value={formData.type}
+                  value={formData.name_entranceexamblock}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -342,12 +353,25 @@ function EnhancedTableToolbar(props) {
                 <TextField
                   required
                   margin="normal"
-                  name="path_with_type"
-                  label="Chi tiết"
+                  name="total_score"
+                  label="Tổng điểm"
                   type="text"
                   fullWidth
                   variant="outlined"
-                  value={formData.path_with_type}
+                  value={formData.total_score}
+                  onChange={handleChange}
+                />
+              </FormControl>
+              <FormControl>
+                <TextField
+                  required
+                  margin="normal"
+                  name="status"
+                  label="Trạng thái"
+                  type="text"
+                  fullWidth
+                  variant="outlined"
+                  value={formData.status}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -382,17 +406,8 @@ export default function EnhancedTable() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get('http://localhost:3007/hoso');
+        const result = await axios.get('http://localhost:3001/hoso');
         const processedData = result.data.map(item => {
-          if (item.type === 'quan') {
-            return { ...item, type: 'Quận' };
-          } else if (item.type === 'thanh-pho') {
-            return { ...item, type: 'Thành phố' };
-          } else if (item.type === 'thi-xa') {
-            return { ...item, type: 'Thị xã' };
-          } else if (item.type === 'huyen') {
-            return { ...item, type: 'Huyện' };
-          }
           return item;
         });
         setRows(processedData);
@@ -449,57 +464,57 @@ export default function EnhancedTable() {
     setPage(0);
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setSelectedRowData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setSelectedRowData((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
+  // };
   
-  const handleDelete = async () => {
-    try {
-      await axios.delete(`http://localhost:3002/districts/${selectedRowId}`);
-      setRows(rows.filter((row) => row.id !== selectedRowId));
-      setFilterRows(filterRows.filter((row) => row.id !== selectedRowId));
-      handleCloseDeleteDialog();
-    } catch (error) {
-      console.error("Lỗi khi xoá dữ liệu:", error);
-    }
-  };
-  const handleEdit = async () => {
-    // console.log("info: ", selectedRowData);
-    try {
-      await axios.put(`http://localhost:3002/districts/${selectedRowId}`, selectedRowData);
-      const updatedRows = rows.map(row =>
-        row.id === selectedRowId ? selectedRowData : row
-      );
-      setRows(updatedRows);
-      setFilterRows(updatedRows);
-      setSelectedRowId(null);
-      handleCloseEditDialog();
-    } catch (error) {
-      console.error("Lỗi khi cập nhật dữ liệu:", error);
-    }
-  };
-  const handleClickOpenEditDialog = (rowData) => {
-    setSelectedRowData(rowData);
-    setSelectedRowId(rowData.id);
-    setOpenEditDialog(true);
-  };
+  // const handleDelete = async () => {
+  //   try {
+  //     await axios.delete(`http://localhost:3001/hoso/${selectedRowId}`);
+  //     setRows(rows.filter((row) => row.id !== selectedRowId));
+  //     setFilterRows(filterRows.filter((row) => row.id !== selectedRowId));
+  //     handleCloseDeleteDialog();
+  //   } catch (error) {
+  //     console.error("Lỗi khi xoá dữ liệu:", error);
+  //   }
+  // };
+  // const handleEdit = async () => {
+  //   // console.log("info: ", selectedRowData);
+  //   try {
+  //     await axios.put(`http://localhost:3001/hoso/${selectedRowId}`, selectedRowData);
+  //     const updatedRows = rows.map(row =>
+  //       row.id === selectedRowId ? selectedRowData : row
+  //     );
+  //     setRows(updatedRows);
+  //     setFilterRows(updatedRows);
+  //     setSelectedRowId(null);
+  //     handleCloseEditDialog();
+  //   } catch (error) {
+  //     console.error("Lỗi khi cập nhật dữ liệu:", error);
+  //   }
+  // };
+  // const handleClickOpenEditDialog = (rowData) => {
+  //   setSelectedRowData(rowData);
+  //   setSelectedRowId(rowData.id);
+  //   setOpenEditDialog(true);
+  // };
 
-  const handleCloseEditDialog = () => {
-    setOpenEditDialog(false);
-  };
+  // const handleCloseEditDialog = () => {
+  //   setOpenEditDialog(false);
+  // };
 
-  const handleClickOpenDeleteDialog = (id) => {
-    setOpenDeleteDialog(true);
-    setSelectedRowId(id);
-  };
+  // const handleClickOpenDeleteDialog = (id) => {
+  //   setOpenDeleteDialog(true);
+  //   setSelectedRowId(id);
+  // };
 
-  const handleCloseDeleteDialog = () => {
-    setOpenDeleteDialog(false);
-  };
+  // const handleCloseDeleteDialog = () => {
+  //   setOpenDeleteDialog(false);
+  // };
 
   // BỘ LỌC
   const [filterOpen, setFilterOpen] = useState(false);
@@ -521,7 +536,7 @@ export default function EnhancedTable() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/data');
+        const response = await axios.get('http://localhost:3001/cities');
         setProvinces(response.data.map(({ _id, code, name_with_type }) => ({ id: _id, code, name: name_with_type })));
       } catch (error) {
         console.error('Error fetching provinces:', error);
@@ -536,7 +551,7 @@ export default function EnhancedTable() {
     if (selectedProvince) {
       const fetchDistricts = async () => {
         try {
-          const response = await axios.get(`http://localhost:3002/districts?provinceCode=${selectedProvince}`);
+          const response = await axios.get(`http://localhost:3001/districts?provinceCode=${selectedProvince}`);
           setDistricts(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
         } catch (error) {
           console.error('Error fetching districts:', error);
@@ -553,7 +568,7 @@ export default function EnhancedTable() {
     if (selectedDistrict) {
       const fetchWards = async () => {
         try {
-          const response = await axios.get(`http://localhost:3003/wards?districtCode=${selectedDistrict}`);
+          const response = await axios.get(`http://localhost:3001/wards?districtCode=${selectedDistrict}`);
           setWards(response.data.map(({ id, code, parent_code, name_with_type }) => ({ id, code, parent_code, name: name_with_type })));
         } catch (error) {
           console.error('Error fetching wards:', error);
@@ -667,7 +682,7 @@ export default function EnhancedTable() {
   //SEARCH
   useEffect(() => {
     const filteredRows = rows.filter((row) =>
-      row.name_entranceexamblock.toLowerCase().includes(searchTerm.toLowerCase())
+      row.fullname.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilterRows(filteredRows);
   }, [searchTerm, rows]);
@@ -767,15 +782,28 @@ export default function EnhancedTable() {
               <TableBody >
                 {filterRows.length > 0 ? (
                   sortedRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => (
-                    <TableRow hover tabIndex={-1} key={row.id}>
-                      <TableCell component="th" scope="row" padding="none">{row.id}</TableCell>
+                    <TableRow hover tabIndex={-1} key={row.id_thisinh}>
+                      <TableCell sx={{ width : '5%' }}>{page * rowsPerPage + index + 1}</TableCell>
+                      <TableCell align="left">{row.id_thisinh}</TableCell>
                       <TableCell align="left">{row.fullname}</TableCell>
                       <TableCell align="left">{row.major}</TableCell>
                       <TableCell align="left">{row.name_entranceexamblock}</TableCell>
                       <TableCell align="left">{row.total_score}</TableCell>
                       <TableCell align="left"> {row.status === 'Đậu' ? (
-                          <Button variant="contained" color="success">Đậu</Button> ) : row.status === 'Rớt' ? (
-                          <Button variant="contained" color="secondary">Rớt</Button> ) : null}
+                          <Button variant="contained" color="success" sx={{
+                            '&:hover': {
+                              backgroundColor: 'success.main',
+                              boxShadow: 'none', 
+                              cursor: 'default'
+                            }
+                          }}>Đậu</Button> ) : row.status === 'Rớt' ? (
+                          <Button variant="contained" color="secondary" sx={{
+                            '&:hover': {
+                              backgroundColor: 'secondary.main',
+                              boxShadow: 'none',
+                              cursor: 'default'
+                            }
+                          }}>Rớt</Button> ) : null}
                       </TableCell>
                     </TableRow>
                   ))

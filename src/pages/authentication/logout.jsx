@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import apiCall from '../../configAxios';
 
 const Logout = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Clear the token from localStorage
     localStorage.removeItem('token');
-    // Redirect to the login page
+    delete apiCall.defaults.headers.common['Authorization'];
     navigate('/login');
   }, [navigate]);
 
-  return null; // No need to render anything
+  return null; 
 };
 
 export default Logout;
